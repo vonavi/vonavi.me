@@ -1,0 +1,6 @@
+safe: false
+auto: false
+server: false
+url: http://www.vonavi.me
+
+source: ./source
