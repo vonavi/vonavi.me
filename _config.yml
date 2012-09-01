@@ -4,3 +4,8 @@ server: false
 url: http://www.vonavi.me
 
 source: ./source
+
+title: "Батискаф FuntooMacs"
+description: "Бортжурнал погружений в Funtoo, Emacs и другие субстанции"
+
+exclude: ['README']
