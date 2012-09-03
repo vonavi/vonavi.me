@@ -1,0 +1,7 @@
+---
+---
+User-Agent: *
+Disallow: /atom.xml
+Disallow: /css/
+Disallow: /images/
+Sitemap: {{ site.url }}/sitemap.xml
