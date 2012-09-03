@@ -36,7 +36,7 @@ body {
 #header-wrapper {
     width: 100%;
     background: #4771a5;
-    font-family: Trebuchet MS, Lucida Grande, Arial, sans-serif;
+    font-family: "Trebuchet MS", "Lucida Grande", Arial, sans-serif;
     padding: 4px 0 7px 40px;
     white-space: nowrap;
 }
@@ -84,7 +84,7 @@ body {
     margin: 0 1em;
 }
 #crosscol-wrapper ul.PageList li a {
-    font-family: Trebuchet MS, Lucida Grande, Arial, sans-serif;
+    font-family: "Trebuchet MS", "Lucida Grande", Arial, sans-serif;
     text-shadow: 0 1px rgba(255,255,255,.2);
     text-decoration: none;
 }
@@ -92,7 +92,15 @@ body {
 #footer-wrapper #footer {
     display: table-cell;
     vertical-align: middle;
-    white-space: nowrap;
+
     color: #29568f;
+    font-family: "Trebuchet MS", "Lucida Grande", Arial, sans-serif;
     text-align: center;
+    white-space: nowrap;
+}
+
+#flattr {
+    position: absolute;
+    margin-top: 2em;
+    right: 2em;
 }

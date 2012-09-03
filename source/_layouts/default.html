@@ -8,12 +8,18 @@
     {% else %}
       <title>{{ page.title }}</title>
     {% endif %}
-    <meta name="author" content="visconte"/>
-    <link href="http://feeds.feedburner.com/visconte" rel="alternate" title="visconte" type="application/atom+xml"/>
+    <meta name="author" content="vonavi"/>
+
+    <link href="http://feeds.feedburner.com/visconte" rel="alternate"
+          title="vonavi" type="application/atom+xml"/>
     <!-- Homepage CSS -->
-    <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection"/>
+    <link rel="stylesheet" href="/css/screen.css" type="text/css"
+          media="screen, projection"/>
     <!-- Main CSS -->
-    <link rel="stylesheet" href="/css/main.css" type="text/css" media="screen, projection"/>
+    <link rel="stylesheet" href="/css/main.css" type="text/css"
+          media="screen, projection"/>
+    <!-- Syntax highlighting CSS -->
+    <link rel="stylesheet" href="/css/solarized.css" type="text/css"/>
   </head>
 
   <body>
@@ -40,6 +46,14 @@
       </div>
       <!-- end crosscol wrapper -->
 
+      <!-- Static Flattr button -->
+      <div id="flattr">
+        <a href="http://flattr.com/thing/870082/FuntooMacs" target="_blank">
+          <img src="http://api.flattr.com/button/flattr-badge-large.png"
+               alt="Flattr this" title="Flattr this" />
+        </a>
+      </div>
+
       <!-- Main -->
       <div id="main">
         {{ content }}
@@ -50,10 +64,12 @@
       <div id="footer-wrapper">
         <!-- Footer -->
         <div id="footer">
-          <p>&copy; Copyright 2011&ndash;2012 by <strong>visconte</strong>.</p>
+          <p>&copy; Copyright 2012 by <strong>vonavi</strong>.</p>
 
           <p>
-            Content licensed under the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons attribution-noncommercial-sharealike License.</a>
+            Content licensed under
+            the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative
+            Commons attribution-noncommercial-sharealike License.</a>
           </p>
         </div> <!-- end footer -->
       </div>

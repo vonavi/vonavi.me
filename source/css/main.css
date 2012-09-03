@@ -95,20 +95,29 @@ table td {
     border-bottom: 1px solid #ddd;
     padding: .2em 1em;
 }
-pre {
-    font-family: Inconsolata, Courier New, Courier, monospace;
-    background-color: #eee;
+
+pre, code {
+    font-family: Inconsolata, Consolas, "Courier New", Courier, monospace;
+    background-color: #efefef;
     border: 1px solid #ddd;
-    margin-bottom: 1em;
-    padding: 5px;
-    overflow: auto;
 
     border-radius: 3px;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
+}
+pre {
+    margin-bottom: 1em;
+    padding: 5px;
+    overflow: auto;
+
     box-shadow: rgba(0,0,0,.07) 0 1px 2px inset;
     -moz-box-shadow: rgba(0,0,0,.07) 0 1px 2px inset;
     -webkit-box-shadow: rgba(0,0,0,.07) 0 1px 2px inset;
+}
+code {padding: 1px 3px;}
+pre code {
+    padding: 0 !important;
+    border: none !important;
 }
 pre::-webkit-scrollbar {
     height: 8px;
@@ -130,20 +139,5 @@ pre::-webkit-scrollbar-thumb:horizontal {
     background-color: #ccc;
     -webkit-border-radius: 4px;
 }
-pre code {
-    padding: 0 !important;
-    background-color: #eee !important;
-    border: none !important;
-    white-space: pre !important;
-}
-code {
-    font-family: Inconsolata, Courier New, Courier, monospace;
-    color: #444;
-    padding: 0 .2em;
-    background-color: #f8f8f8;
-    border: 1px solid #dedede;
-    border-radius: 3px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    white-space: nowrap;
-}
+
+
