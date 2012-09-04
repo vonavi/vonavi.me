@@ -3,12 +3,12 @@ auto: false
 server: false
 url: http://www.vonavi.me
 
-source: ./source
-plugins: ./plugins
+source: source
+plugins: plugins
 pygments: false # default python pygments have been replaced by pygments.rb
 
-title: "Батискаф FuntooMacs"
-description: "Бортжурнал погружений в Funtoo, Emacs и другие субстанции"
+title: "Emacs' Blog-Mode"
+description: "Самоорганизующиеся заметки в самонастраиваемом редакторе"
 imgdir: http://dl.dropbox.com/u/35307988/www.vonavi.me/images
 
 exclude: ['README']
