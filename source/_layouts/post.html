@@ -14,3 +14,12 @@ layout: default
 </script>
 <p><a href="#">Наверх</a></p>
 {% endif %}
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery.colorbox-min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('a[href$=".png"], a[href$=".gif"], a[href$=".jpg"], a[href$=".jpeg"]').colorbox();
+});
+</script>
+
