@@ -7,12 +7,6 @@ a {
     outline: none;
 }
 a:hover {text-decoration: underline !important;}
-a[href$=".png"], a[href$=".gif"], a[href$=".jpg"], a[href$=".jpeg"] {
-    cursor: pointer;
-    cursor: zoom-in;
-    cursor: -moz-zoom-in;
-    cursor: -webkit-zoom-in;
-}
 
 body {
     position: absolute;
@@ -38,7 +32,6 @@ body {
     background: #4771a5;
     font-family: "Trebuchet MS", "Lucida Grande", Arial, sans-serif;
     padding: 4px 0 7px 40px;
-    white-space: nowrap;
 }
 #crosscol-wrapper {
     width: 100%;
@@ -75,10 +68,7 @@ body {
     color: #96b1d2;
 }
 
-#crosscol-wrapper ul.PageList {
-    text-align: center;
-    white-space: nowrap;
-}
+#crosscol-wrapper ul.PageList {text-align: center;}
 #crosscol-wrapper ul.PageList li {
     display: inline-block;
     margin: 0 1em;
@@ -96,7 +86,6 @@ body {
     color: #29568f;
     font-family: "Trebuchet MS", "Lucida Grande", Arial, sans-serif;
     text-align: center;
-    white-space: nowrap;
 }
 
 #flattr {

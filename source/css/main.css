@@ -1,3 +1,4 @@
+#main > *:first-child {margin-top: .67em;}
 #main h1, #main h2, #main h3,
 #main h4, #main h5, #main h6 {
     font-style: italic;
@@ -23,14 +24,13 @@
     padding-bottom: .6em;
 }
 
-#main > *:first-child {margin-top: .67em;}
 #main p {margin-bottom: 1em;}
 #main ul, #main ol {
     list-style-position: outside;
     margin-left: 2em;
     margin-bottom: 1em;
 }
-#main ul#posts {
+#main ul.posts {
     margin-left: 0;
     list-style-type: none;
 }
@@ -46,10 +46,12 @@
     max-width: 100%;
 }
 #main p img {margin: 0;}
-img.emoji {
-    margin: 0 !important;
-    padding: 0 !important;
-    border: 0 !important;
+#main a[href$=".png"], #main a[href$=".gif"],
+#main a[href$=".jpg"], #main a[href$=".jpeg"] {
+    cursor: pointer;
+    cursor: zoom-in;
+    cursor: -moz-zoom-in;
+    cursor: -webkit-zoom-in;
 }
 
 .float-left {
@@ -139,5 +141,3 @@ pre::-webkit-scrollbar-thumb:horizontal {
     background-color: #ccc;
     -webkit-border-radius: 4px;
 }
-
-
