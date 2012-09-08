@@ -6,6 +6,7 @@ url: http://www.vonavi.me
 source: source
 plugins: plugins
 pygments: false # default python pygments have been replaced by pygments.rb
+permalink: pretty
 
 title: "Emacs' Blog-Mode"
 description: "Самоорганизующиеся заметки в самонастраиваемом редакторе"
