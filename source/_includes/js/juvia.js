@@ -2,7 +2,7 @@
     var options = {
         container   : '#comments',
         site_key    : 'l4s7w2xqw8mv0ykiuo3oxumvfqkook6',
-        topic_key   : location.path,
+        topic_key   : location.pathname,
         topic_url   : location.href,
         topic_title : document.title || location.href,
         include_base: !window.Juvia,
