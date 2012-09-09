@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Debian и Logical Volume Manager: установка и перенос Linux на другой диск
+title: "Debian и Logical Volume Manager: установка и перенос Linux на другой диск"
 category: ru
 comments: yes
 ---
