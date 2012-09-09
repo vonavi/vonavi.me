@@ -28,7 +28,7 @@
         }
 
         var result =
-            'http://juvia-vonavi.rhcloud.com/api/show_topic.js' +
+            'http://testjuvia-visconte.rhcloud.com/api/show_topic.js' +
             '?_c=' + window._juviaRequestCounter +
             '&' + makeQueryString(options);
         window._juviaRequestCounter++;
