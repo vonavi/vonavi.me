@@ -12,5 +12,3 @@ permalink: pretty
 title: "Emacs' Blog-Mode"
 description: "Самоорганизующиеся заметки в самонастраиваемом редакторе"
 imgdir: http://dl.dropbox.com/u/35307988/www.vonavi.me/images
-
-exclude: ['README']

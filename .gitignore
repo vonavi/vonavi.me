@@ -1,6 +1,6 @@
 .bundle/
 .rvmrc
-_site/
-public/
+public/*
+!public/README
 tmp/
 vendor/

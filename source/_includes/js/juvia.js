@@ -2,9 +2,9 @@
     var options = {
         container   : '#comments',
         site_key    : 'l4s7w2xqw8mv0ykiuo3oxumvfqkook6',
-        topic_key   : location.pathname,
-        topic_url   : location.href,
-        topic_title : document.title || location.href,
+        topic_key   : '{{ page.url }}',
+        topic_url   : '{{ site.url }}{{ page.url }}',
+        topic_title : '{{ page.title }}' || '{{ site.url }}{{ page.url }}',
         include_base: !window.Juvia,
         include_css : !window.Juvia
     };
