@@ -1,4 +1,6 @@
 .bundle/
 .rvmrc
 _site/
+public/
+tmp/
 vendor/

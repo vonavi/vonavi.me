@@ -4,6 +4,7 @@ server: false
 url: http://www.vonavi.me
 
 source: source
+destination: public
 plugins: plugins
 pygments: false # default python pygments have been replaced by pygments.rb
 permalink: pretty
