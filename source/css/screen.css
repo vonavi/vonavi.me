@@ -31,14 +31,18 @@ body {
     width: 100%;
     background: #4771a5;
     font-family: "Trebuchet MS", "Lucida Grande", Arial, sans-serif;
-    padding: 4px 0 7px 40px;
+    padding: 40px 0 14px 2.5em;
 }
 #crosscol-wrapper {
+    position: fixed;
+    top: 0;
     width: 100%;
-    background-color: #96b1d2;
-    box-shadow: 0 1px 3px #29568f, rgba(255,255,255,.2) 0 -1px inset;
-    -moz-box-shadow: 0 1px 3px #29568f, rgba(255,255,255,.2) 0 -1px inset;
-    -webkit-box-shadow: 0 1px 3px #29568f, rgba(255,255,255,.2) 0 -1px inset;
+    z-index: 100;
+
+    background-color: #29568f;
+    box-shadow: 0 1px 3px rgba(0,0,0,.5);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 #main {
     width: 35em;
@@ -57,7 +61,7 @@ body {
 }
 
 #header-wrapper a.title {
-    font-size: 27px;
+    font-size: 28px;
     font-weight: bold;
     color: #29568f;
     text-decoration: none !important;
@@ -68,14 +72,15 @@ body {
     color: #96b1d2;
 }
 
-#crosscol-wrapper ul.PageList {text-align: center;}
+#crosscol-wrapper ul.PageList {padding-left: 2em;}
 #crosscol-wrapper ul.PageList li {
     display: inline-block;
     margin: 0 1em;
+    line-height: 26px;
 }
 #crosscol-wrapper ul.PageList li a {
+    color: #4771a5;
     font-family: "Trebuchet MS", "Lucida Grande", Arial, sans-serif;
-    text-shadow: 0 1px rgba(255,255,255,.2);
     text-decoration: none;
 }
 
