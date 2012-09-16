@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     {% if page.url == '/index.html' %}
       <title>{{ site.title }}</title>
-      <meta name="description" content="{{ site.description }}">
+      <meta name="description" content="{{ site.description }}" />
     {% else %}
       <title>{{ page.title }}</title>
     {% endif %}
-    <meta name="author" content="vonavi"/>
+    <meta name="author" content="vonavi" />
 
-    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="/favicon.png" type="image/png" />
     <link href="http://feeds.feedburner.com/vonavi-blog-ru"
           rel="alternate" title="vonavi-blog-ru"
-          type="application/atom+xml"/>
+          type="application/atom+xml" />
     <!-- Screen CSS -->
     <link rel="stylesheet" href="/css/screen.css" type="text/css"
-          media="screen, projection"/>
+          media="screen, projection" />
     <!-- Main CSS -->
     <link rel="stylesheet" href="/css/main.css" type="text/css"
-          media="screen, projection"/>
+          media="screen, projection" />
     <!-- Syntax highlighting CSS -->
-    <link rel="stylesheet" href="/css/solarized.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/solarized.css" type="text/css" />
     <!-- ColorBox CSS -->
-    <link rel="stylesheet" href="/css/colorbox.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/colorbox.css" type="text/css" />
 
     <!-- Flattr button JavaScript -->
     <script type="text/javascript">
@@ -43,26 +43,24 @@
   <body>
     <!-- Outer wrapper -->
     <div id="outer-wrapper">
+      <!-- Crosscol wrapper -->
+      <div id="crosscol-wrapper">
+        <span>
+          <a href="/">Главная</a>
+        </span>
+
+        <span>
+          <a href="http://feeds.feedburner.com/vonavi-blog-ru">Подписка</a>
+        </span>
+      </div>
+      <!-- end crosscol wrapper -->
+
       <!-- Header wrapper -->
       <div id="header-wrapper">
         <p><a class="title" href="/">{{ site.title }}</a></p>
         <p class="description">{{ site.description }}</p>
       </div>
       <!-- end header wrapper -->
-
-      <!-- Crosscol wrapper -->
-      <div id="crosscol-wrapper">
-        <ul class="PageList">
-          <li id="homepage">
-            <a href="/">Главная</a>
-          </li>
-
-          <li id="subscribe">
-            <a href="http://feeds.feedburner.com/vonavi-blog-ru">Подписка</a>
-          </li>
-        </ul>
-      </div>
-      <!-- end crosscol wrapper -->
 
       <!-- Flattr button with counter -->
       <div id="flattr">
@@ -85,13 +83,9 @@
       <div id="footer-wrapper">
         <!-- Footer -->
         <div id="footer">
-          <p>&copy; Copyright 2012 by <strong>vonavi</strong>.</p>
-
-          <p>
-            Content licensed under
-            the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative
-            Commons attribution-noncommercial-sharealike License</a>.
-          </p>
+          &copy; 2012 Vladimir Ivanov. Licensed
+          under <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC
+          BY-NC-SA 3.0</a>
         </div> <!-- end footer -->
       </div>
       <!-- end footer wrapper -->

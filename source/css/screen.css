@@ -1,12 +1,12 @@
-/* Bluetone Creative Color Scheme:
-   dark-blue: #29568f    blue: #4771a5    light-blue: #96b1d2
+/* Art Deco web color scheme
+   http://www.creativecolorschemes.com/resources/free-color-schemes/art-deco-color-scheme.shtml
+   dark-blue: #3f647e    blue: #688fad    light-blue: #9fc1d3
    */
 * {margin: 0; padding: 0;}
 a {
-    color: #29568f;
+    color: #3f647e;
     outline: none;
 }
-a:hover {text-decoration: underline !important;}
 
 body {
     position: absolute;
@@ -23,73 +23,60 @@ body {
     overflow: hidden;
 }
 
-#header-wrapper, #crosscol-wrapper, #main {
+#crosscol-wrapper, #header-wrapper, #main {
     position: relative;
     clear: both;
 }
+#crosscol-wrapper {
+    width: 100%;
+    background-color: #688fad;
+    padding-left: 1.5em;
+}
 #header-wrapper {
     width: 100%;
-    background: #4771a5;
-    font-family: "Trebuchet MS", "Lucida Grande", Arial, sans-serif;
-    padding: 40px 0 14px 2.5em;
-}
-#crosscol-wrapper {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-
-    background-color: #29568f;
-    box-shadow: 0 1px 3px rgba(0,0,0,.5);
-    -moz-box-shadow: 0 1px 3px rgba(0,0,0,.5);
-    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.5);
+    background-color: #9fc1d3;
+    padding: 14px 0 10px 2.5em;
 }
 #main {
     width: 35em;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 4em;
+    padding-bottom: 28px;
 }
 #footer-wrapper {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 4em;
-    display: table;
-    background: #4771a5;
+    background-color: #688fad;
 }
 
+#crosscol-wrapper span {margin: 0 1em;}
+#crosscol-wrapper span a {
+    color: #3f647e;
+    font: 14px/28px "Trebuchet MS", "Lucida Grande", Arial, sans-serif;
+    text-decoration: none;
+}
+#crosscol-wrapper span a:hover {color: #9fc1d3;}
+
 #header-wrapper a.title {
-    font-size: 28px;
+    color: #3f647e;
+    font-family: "Trebuchet MS", "Lucida Grande", Arial, sans-serif;
+    font-size: 24px;
     font-weight: bold;
-    color: #29568f;
+    text-transform: uppercase;
     text-decoration: none !important;
 }
 #header-wrapper p.description {
+    color: #688fad;
+    font-family: "Trebuchet MS", "Lucida Grande", Arial, sans-serif;
     font-size: 14px;
     font-style: italic;
-    color: #96b1d2;
-}
-
-#crosscol-wrapper ul.PageList {padding-left: 2em;}
-#crosscol-wrapper ul.PageList li {
-    display: inline-block;
-    margin: 0 1em;
-    line-height: 26px;
-}
-#crosscol-wrapper ul.PageList li a {
-    color: #4771a5;
-    font-family: "Trebuchet MS", "Lucida Grande", Arial, sans-serif;
-    text-decoration: none;
 }
 
 #footer-wrapper #footer {
-    display: table-cell;
-    vertical-align: middle;
-
-    color: #29568f;
-    font-family: "Trebuchet MS", "Lucida Grande", Arial, sans-serif;
+    color: #3f647e;
+    font: 14px/28px "Trebuchet MS", "Lucida Grande", Arial, sans-serif;
     text-align: center;
 }
 
