@@ -5,8 +5,8 @@
         topic_key   : '{{ page.url }}',
         topic_url   : '{{ site.url }}{{ page.url }}',
         topic_title : '{{ page.title }}' || '{{ site.url }}{{ page.url }}',
-        include_base: !window.Juvia,
-        include_css : !window.Juvia
+        include_base: true,
+        include_css : false
     };
 
     function makeQueryString(options) {
