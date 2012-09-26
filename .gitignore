@@ -1,6 +1,6 @@
 .bundle/
 .rvmrc
 public/*
-!public/gitkeep
+!public/.gitkeep
 tmp/
 vendor/
