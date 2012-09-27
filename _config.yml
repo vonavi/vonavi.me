@@ -7,8 +7,10 @@ source: source
 destination: public
 plugins: plugins
 pygments: false # default python pygments have been replaced by pygments.rb
-permalink: pretty
+permalink: /blog/:categories/:year/:month/:day/:title/
 
 title: "Emacs' Blog-Mode"
 description: "Самоорганизующиеся заметки в самонастраиваемом редакторе"
 imgdir: http://dl.dropbox.com/u/35307988/www.vonavi.me/images
+
+exclude: ['Templates']

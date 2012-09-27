@@ -1,7 +1,6 @@
 ---
-layout: post
-title: Установка Linux на компьютер с предустановленной Windows
-category: ru
+layout:   post
+title:    Установка Linux на компьютер с предустановленной Windows
 comments: yes
 ---
 

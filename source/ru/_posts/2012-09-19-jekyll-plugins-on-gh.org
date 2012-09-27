@@ -1,7 +1,6 @@
 ---
-layout: post
-title: Размещаем Jekyll с расширениями на GitHub, оттачивая своё Git-фу
-category: ru
+layout:   post
+title:    Размещаем Jekyll с расширениями на GitHub, оттачивая своё Git-фу
 comments: yes
 ---
 
