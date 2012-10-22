@@ -28,6 +28,7 @@ body {
     clear: both;
 }
 #crosscol-wrapper {
+    display: table;
     width: 100%;
     background-color: #688fad;
 }
@@ -50,21 +51,25 @@ body {
     background-color: #688fad;
 }
 
-#crosscol-wrapper ul.PageList {padding-left: 2em;}
-#crosscol-wrapper ul.PageList li {display: inline-block;}
+#crosscol-wrapper ul.PageList {
+    display: table-cell;
+    vertical-align: middle;
+    height: 2em;
+    padding-left: 1.5em;
+}
+#crosscol-wrapper ul.PageList li {
+    display: inline-block;
+    float: left;
+    margin: 0 1em;
+}
 #crosscol-wrapper ul.PageList li a {
     display: block;
-    padding: 0 .5em;
-
     color: #3f647e;
     font-family: "Trebuchet MS", "Lucida Grande", Arial, sans-serif;
-    line-height: 2em;
+    line-height: 1em;
     text-decoration: none;
 }
-#crosscol-wrapper ul.PageList li a:hover {
-    color: #688fad;
-    background-color: #3f647e;
-}
+#crosscol-wrapper ul.PageList li a:hover {color: #9fc1d3;}
 
 #header-wrapper a.title {
     color: #3f647e;
