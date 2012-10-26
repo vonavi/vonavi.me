@@ -31,15 +31,15 @@ body {
     display: table;
     width: 100%;
     background-color: #688fad;
+    border-bottom: 2px solid #3f647e;
 }
 #header-wrapper {
     width: 100%;
     background-color: #9fc1d3;
-    padding: .7em 0 .8em 2.5em;
+    padding: .7em 0 .8em 3em;
 }
 #main {
     width: 35em;
-    display: block;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 2em;
@@ -48,14 +48,15 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
+    display: table;
     background-color: #688fad;
 }
 
 #crosscol-wrapper ul.PageList {
     display: table-cell;
     vertical-align: middle;
-    height: 2em;
-    padding-left: 1.5em;
+    height: 30px;
+    padding-left: 2em;
 }
 #crosscol-wrapper ul.PageList li {
     display: inline-block;
@@ -64,30 +65,32 @@ body {
 }
 #crosscol-wrapper ul.PageList li a {
     display: block;
-    color: #3f647e;
-    font-family: "Trebuchet MS", "Lucida Grande", Arial, sans-serif;
-    line-height: 1em;
+    font: bold 15px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
 }
-#crosscol-wrapper ul.PageList li a:hover {color: #9fc1d3;}
+#crosscol-wrapper ul.PageList li a:hover {text-decoration: underline;}
 
 #header-wrapper a.title {
-    color: #3f647e;
     font-family: "Trebuchet MS", "Lucida Grande", Arial, sans-serif;
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
-    text-decoration: none !important;
+    text-decoration: none;
 }
 #header-wrapper p.description {
     color: #688fad;
-    font-family: "Trebuchet MS", "Lucida Grande", Arial, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #footer-wrapper #footer {
+    display: table-cell;
+    vertical-align: middle;
+    height: 2em;
+}
+#footer-wrapper #footer p {
     color: #3f647e;
-    font-family: "Trebuchet MS", "Lucida Grande", Arial, sans-serif;
-    line-height: 2em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
     text-align: center;
 }
 
