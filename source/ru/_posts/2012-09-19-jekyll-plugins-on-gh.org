@@ -5,8 +5,8 @@ comments: yes
 ---
 
 Изначально GitHub подкупает тем, что предлагает /готовую среду для
-статического сайта/ с [[http://jekyllrb.com/][Jekyll]] и средствами обслуживания Git. Позже
-вскрывается и его теневая сторона: на [[http://pages.github.com/][GitHub Pages]] доступен только
+статического сайта/ с [[http://jekyllrb.com][Jekyll]] и средствами обслуживания Git. Позже
+вскрывается и его теневая сторона: на [[http://pages.github.com][GitHub Pages]] доступен только
 /\laquo{}стерильный\raquo{} Jekyll без расширений/, тогда как [[https://github.com/mojombo/jekyll/wiki/Plugins][их количество]]
 растёт день ото дня. Если вы вкусили сладость сторонних расширений
 (например, на локальной системе) и остались довольны, то почему бы не
@@ -77,13 +77,13 @@ $ git config branch.source.merge refs/heads/source
 #+begin_src console
 $ git submodule add -b master <repository> _site
 #+end_src
-На место =<repository>= следует подставить ссылку вида
+Вместо =<repository>= следует подставить ссылку вида
 =git@github.com:username/username.github.com.git= на удалённый
 репозиторий.
 
 Теперь в корне Git-директории находится ветка *source*, а в =_site=
 --- ветка *master*, в точности соответствующая удалённой
-*origin/master*. В данных ветках, правки можно вносить, контролировать
+*origin/master*. В данных ветках правки можно вносить, контролировать
 и отсылать на GitHub /независимо друг от друга/.
 
 *** Тонкости работы Jekyll

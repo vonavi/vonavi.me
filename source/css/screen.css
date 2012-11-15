@@ -52,7 +52,7 @@ body {
     background-color: #3f647e;
 }
 
-#crosscol-wrapper ul.PageList {padding-left: 2.1em;}
+#crosscol-wrapper ul.PageList {padding-left: 1.8em;}
 #crosscol-wrapper ul.PageList li {
     display: table;
     float: left;
@@ -61,7 +61,7 @@ body {
 #crosscol-wrapper ul.PageList li a {
     display: table-cell;
     vertical-align: middle;
-    padding: 0 1em;
+    padding: 0 1.5em;
     color: #9fc1d3;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 15px;
