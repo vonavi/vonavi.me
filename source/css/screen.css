@@ -1,7 +1,12 @@
 /* Art Deco web color scheme
    http://www.creativecolorschemes.com/resources/free-color-schemes/art-deco-color-scheme.shtml
-   dark-blue: #3f647e    blue: #688fad    light-blue: #9fc1d3
+   dark-blue: #3f647e   blue: #688fad           light-blue: #9fc1d3
+   light-grey: #c9c9c9  light-green: #95d47a
    */
+@font-face {
+    font-family: Fontello;
+    src: url("/font/fontello.ttf");
+}
 * {margin: 0; padding: 0;}
 a {
     color: #3f647e;
@@ -35,7 +40,7 @@ body {
 #header-wrapper {
     width: 100%;
     background-color: #9fc1d3;
-    padding: .7em 0 .8em 3em;
+    padding: .7em 0 .8em 2.7em;
 }
 #main {
     width: 35em;
@@ -52,7 +57,7 @@ body {
     background-color: #3f647e;
 }
 
-#crosscol-wrapper ul.PageList {padding-left: 1.8em;}
+#crosscol-wrapper ul.PageList {padding-left: 1.3em;}
 #crosscol-wrapper ul.PageList li {
     display: table;
     float: left;
@@ -61,16 +66,30 @@ body {
 #crosscol-wrapper ul.PageList li a {
     display: table-cell;
     vertical-align: middle;
-    padding: 0 1.5em;
+    padding: 0 1.4em;
     color: #9fc1d3;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 15px;
+    font-weight: bold;
     text-decoration: none;
 }
-#crosscol-wrapper ul.PageList li a:hover {color: #eee;}
+#crosscol-wrapper ul.PageList li a:hover {color: #c9c9c9;}
+[class^="icon-"]:before {
+    display: inline-block;
+    width: 1em;
+    margin-right: .3em;
+    color: #95d47a;
+    font-family: Fontello;
+    font-size: 120%;
+    font-style: normal;
+    font-weight: normal;
+    text-align: right;
+}
+.icon-home:before { content: '\2302'; } /* '⌂' */
+.icon-rss:before { content: '\f09e'; } /* '' */
 
 #header-wrapper a.title {
-    font-family: "Trebuchet MS", "Lucida Grande", Arial, sans-serif;
+    font-family: "Lucida Grande", "Trebuchet MS", Arial, sans-serif;
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
