@@ -67,20 +67,19 @@ body {
     display: table-cell;
     vertical-align: middle;
     padding: 0 1.4em;
-    color: #9fc1d3;
+    color: #c9c9c9;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 15px;
-    font-weight: bold;
     text-decoration: none;
 }
-#crosscol-wrapper ul.PageList li a:hover {color: #c9c9c9;}
+#crosscol-wrapper ul.PageList li a:hover {color: #fff;}
 [class^="icon-"]:before {
     display: inline-block;
     width: 1em;
-    margin-right: .3em;
+    margin-right: .4em;
     color: #95d47a;
     font-family: Fontello;
-    font-size: 120%;
+    font-size: 125%;
     font-style: normal;
     font-weight: normal;
     text-align: right;
