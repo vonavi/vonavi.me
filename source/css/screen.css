@@ -36,6 +36,11 @@ body {
     float: left;
     width: 100%;
     background-color: #3f647e;
+    box-shadow: 0 1px 1px rgba(51,51,51,.3);
+    -moz-box-shadow: 0 1px 1px rgba(51,51,51,.3);
+    -webkit-box-shadow: 0 1px 1px rgba(51,51,51,.3);
+    -o-box-shadow: 0 1px 1px rgba(51,51,51,.3);
+    z-index: 10;
 }
 #header-wrapper {
     width: 100%;
@@ -59,27 +64,31 @@ body {
 
 #crosscol-wrapper ul.PageList {padding-left: 1.3em;}
 #crosscol-wrapper ul.PageList li {
-    display: table;
     float: left;
-    height: 2.5em;
+    height: 2em;
+    line-height: 30px;
+    list-style: none;
 }
 #crosscol-wrapper ul.PageList li a {
-    display: table-cell;
-    vertical-align: middle;
+    display: inline-block;
     padding: 0 1.4em;
     color: #c9c9c9;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: bold;
     text-decoration: none;
 }
 #crosscol-wrapper ul.PageList li a:hover {color: #fff;}
 [class^="icon-"]:before {
     display: inline-block;
+    vertical-align: middle;
+    height: 3px;
     width: 1em;
-    margin-right: .4em;
+    margin-right: .3em;
     color: #95d47a;
     font-family: Fontello;
-    font-size: 125%;
+    font-size: 22px;
+    line-height: 0;
     font-style: normal;
     font-weight: normal;
     text-align: right;
@@ -94,7 +103,7 @@ body {
     text-transform: uppercase;
     text-decoration: none;
 }
-#header-wrapper p.description {
+#header-wrapper p.annotation {
     color: #688fad;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
