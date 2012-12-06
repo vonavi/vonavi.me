@@ -7,6 +7,10 @@
     font-family: Fontello;
     src: url("/font/fontello.ttf");
 }
+h1, h2, h3, h4, h5, h6 {
+    color: #3f647e;
+    font-family: "Lucida Grande", "Trebuchet MS", Arial, sans-serif !important;
+}
 * {margin: 0; padding: 0;}
 a {
     color: #3f647e;
@@ -17,7 +21,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    font: 16px/1.4 Georgia, serif;
+    font: 16px/1.4 "Lucida Grande", "Trebuchet MS", Arial, sans-serif;
     color: #333;
 }
 #outer-wrapper {
@@ -45,7 +49,7 @@ body {
 #header-wrapper {
     width: 100%;
     background-color: #9fc1d3;
-    padding: .7em 0 .8em 2.7em;
+    padding: .7em 0 .8em 2.5em;
 }
 #main {
     width: 35em;
@@ -62,19 +66,18 @@ body {
     background-color: #3f647e;
 }
 
-#crosscol-wrapper ul.PageList {padding-left: 1.3em;}
+#crosscol-wrapper ul.PageList {padding-left: 1.5em;}
 #crosscol-wrapper ul.PageList li {
     float: left;
     height: 2em;
-    line-height: 30px;
+    line-height: 2em;
     list-style: none;
 }
 #crosscol-wrapper ul.PageList li a {
     display: inline-block;
-    padding: 0 1.4em;
+    padding: 0 1em;
     color: #c9c9c9;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
     text-decoration: none;
 }
@@ -82,7 +85,7 @@ body {
 [class^="icon-"]:before {
     display: inline-block;
     vertical-align: middle;
-    height: 3px;
+    height: 2px;
     width: 1em;
     margin-right: .3em;
     color: #95d47a;
@@ -93,26 +96,22 @@ body {
     font-weight: normal;
     text-align: right;
 }
-.icon-home:before { content: '\2302'; } /* '⌂' */
+.icon-home:before { content: '\e8a2'; } /* '' */
+.icon-about:before { content: '\e705'; } /* '' */
 .icon-rss:before { content: '\f09e'; } /* '' */
 
 #header-wrapper a.title {
-    font-family: "Lucida Grande", "Trebuchet MS", Arial, sans-serif;
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
 }
-#header-wrapper p.annotation {
-    color: #688fad;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
+#header-wrapper p.annotation {color: #688fad;}
 
 #footer-wrapper #footer {
     display: table-cell;
     vertical-align: middle;
     color: #688fad;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 15px;
     text-align: center;
 }
