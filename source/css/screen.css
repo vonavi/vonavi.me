@@ -7,10 +7,6 @@
     font-family: Fontello;
     src: url("/font/fontello.ttf");
 }
-h1, h2, h3, h4, h5, h6 {
-    color: #3f647e;
-    font-family: "Lucida Grande", "Trebuchet MS", Arial, sans-serif !important;
-}
 * {margin: 0; padding: 0;}
 a {
     color: #3f647e;
@@ -21,7 +17,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    font: 16px/1.4 "Lucida Grande", "Trebuchet MS", Arial, sans-serif;
+    font: 16px/1.4 Georgia, serif;
     color: #333;
 }
 #outer-wrapper {
@@ -77,7 +73,8 @@ body {
     display: inline-block;
     padding: 0 1em;
     color: #c9c9c9;
-    font-size: 15px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
     font-weight: bold;
     text-decoration: none;
 }
@@ -85,7 +82,7 @@ body {
 [class^="icon-"]:before {
     display: inline-block;
     vertical-align: middle;
-    height: 2px;
+    height: 3px;
     width: 1em;
     margin-right: .3em;
     color: #95d47a;
@@ -96,22 +93,27 @@ body {
     font-weight: normal;
     text-align: right;
 }
-.icon-home:before { content: '\e8a2'; } /* '' */
-.icon-about:before { content: '\e705'; } /* '' */
-.icon-rss:before { content: '\f09e'; } /* '' */
+.icon-home:before {content: "\e8a2";} /* "" */
+.icon-about:before {content: "\e705";} /* "" */
+.icon-rss:before {content: "\f09e";} /* "" */
 
 #header-wrapper a.title {
+    font-family: "Lucida Grande", "Trebuchet MS", Arial, sans-serif;
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
 }
-#header-wrapper p.annotation {color: #688fad;}
+#header-wrapper p.annotation {
+    color: #688fad;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
 #footer-wrapper #footer {
     display: table-cell;
     vertical-align: middle;
     color: #688fad;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 15px;
     text-align: center;
 }
