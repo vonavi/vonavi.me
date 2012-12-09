@@ -36,10 +36,10 @@ body {
     float: left;
     width: 100%;
     background-color: #3f647e;
-    box-shadow: 0 1px 1px rgba(51,51,51,.3);
-    -moz-box-shadow: 0 1px 1px rgba(51,51,51,.3);
-    -webkit-box-shadow: 0 1px 1px rgba(51,51,51,.3);
-    -o-box-shadow: 0 1px 1px rgba(51,51,51,.3);
+    box-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -o-box-shadow: 0 1px 1px rgba(0,0,0,.3);
     z-index: 10;
 }
 #header-wrapper {
@@ -51,18 +51,18 @@ body {
     width: 35em;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 2.5em;
+    padding-bottom: 2em;
 }
 #footer-wrapper {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 2.5em;
-    display: table;
+    height: 2em;
+    line-height: 2em;
     background-color: #3f647e;
 }
 
-#crosscol-wrapper ul.PageList {padding-left: 1.5em;}
+#crosscol-wrapper ul.PageList {padding-left: 1.25em;}
 #crosscol-wrapper ul.PageList li {
     float: left;
     height: 2em;
@@ -71,10 +71,10 @@ body {
 }
 #crosscol-wrapper ul.PageList li a {
     display: inline-block;
-    padding: 0 1em;
+    padding: 0 1.25em;
     color: #c9c9c9;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
     text-decoration: none;
 }
@@ -82,7 +82,7 @@ body {
 [class^="icon-"]:before {
     display: inline-block;
     vertical-align: middle;
-    height: 3px;
+    height: 2px;
     width: 1em;
     margin-right: .3em;
     color: #95d47a;
@@ -110,8 +110,6 @@ body {
 }
 
 #footer-wrapper #footer {
-    display: table-cell;
-    vertical-align: middle;
     color: #688fad;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 15px;
