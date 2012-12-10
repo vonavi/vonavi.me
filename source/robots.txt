@@ -2,6 +2,9 @@
 ---
 User-Agent: *
 Disallow: /atom.xml
+Disallow: /categories/
 Disallow: /css/
+Disallow: /fonts/
 Disallow: /images/
+Disallow: /js/
 Sitemap: {{ site.url }}/sitemap.xml
