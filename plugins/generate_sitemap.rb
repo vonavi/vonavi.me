@@ -76,11 +76,6 @@ module Jekyll
         # Skip files that don't exist yet (e.g. paginator pages)
         if FileTest.exist?(site.source + path)
 
-          # Ignore SASS, SCSS, and CSS files
-          if path =~ /\.(sass|scss|css)$/
-            next
-          end
-
           mod_date = File.mtime(site.source + path)
 
           # Use the user-specified permalink if one is given.
@@ -93,6 +88,11 @@ module Jekyll
               path.gsub!($1, page.output_ext)
             end
           end
+
+          # Ignore hidden files
+          next if path =~ /\/\./
+          # Ignore SASS, SCSS, and CSS files
+          next if path =~ /\.(sass|scss|css)$/
 
           # Remove the trailing 'index.html' if there is one, and just output the folder name.
           if path =~ /\/index\.html$/
