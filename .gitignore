@@ -4,4 +4,3 @@ bin/
 public/*
 !public/.gitkeep
 tmp/
-vendor/
