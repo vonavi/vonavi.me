@@ -9,9 +9,8 @@ plugins: plugins
 pygments: false # default python pygments have been replaced by pygments.rb
 permalink: /blog/:categories/:year/:month/:day/:title/
 
-title: "Emacs' Blog-Mode"
-annotation: "Самоорганизующиеся заметки в самонастраиваемом редакторе"
-description: "Блог о Linux, Emacs, Jekyll и OpenSource"
+title: "Редактор на стероидах"
+description: "O редакторе GNU Emacs, ОС Linux, движке Jekyll и не только"
 googleplus: https://plus.google.com/106537166685709212154
 
 imgdir: http://dl.dropbox.com/u/35307988/www.vonavi.me/images
