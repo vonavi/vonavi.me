@@ -74,7 +74,7 @@ body {
     padding: 0 1.25em;
     color: #c9c9c9;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
     text-decoration: none;
 }
@@ -82,13 +82,13 @@ body {
 [class^="icon-"]:before {
     display: inline-block;
     vertical-align: middle;
-    height: 2px;
+    height: 1.15em;
     width: 1em;
     margin-right: .3em;
     color: #95d47a;
     font-family: Fontello;
     font-size: 22px;
-    line-height: 0;
+    line-height: 1em;
     font-style: normal;
     font-weight: normal;
     text-align: right;
@@ -112,7 +112,7 @@ body {
 #footer-wrapper #footer {
     color: #688fad;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     text-align: center;
 }
 #footer-wrapper #footer a {color: #688fad;}
