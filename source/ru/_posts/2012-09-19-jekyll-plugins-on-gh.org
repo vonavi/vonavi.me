@@ -38,6 +38,9 @@ comments: yes
 напрямую в *master*. Предлагаю вашему вниманию творческую переработку
 этих решений с замечаниями, найденными в процессе освоения.
 
+*Прим.* Настоящие джигиты, вероятно, предпочтут [[http://log.pardus.de/2012/08/modular-git-with-git-subtree.html][git subtree]], уже
+вошедший в состав Git с версии 1.7.11.
+
 *** Создание ветки с исходниками
 
 *Внимание!* Перед внесением изменений обязательно создайте резервную
@@ -50,23 +53,16 @@ $ git branch -m master source
 Выполним /push/ ветки с исходниками в удалённый репозиторий *origin*,
 попутно создав там ветку *source*
 #+begin_src console
-$ git push origin source
+$ git push -u origin source
 #+end_src
-Теперь у нас есть локальная ветка *source* и две удалённые: *master* и
-*source*. Как и до переименования, локальная ветка следует ветке
-*origin/master*
-#+begin_src console
-$ git config -l | grep branch
-branch.source.remote=origin
-branch.source.merge=refs/heads/master
-#+end_src
-Что означает: =git pull= забирает изменения не из свежесозданной
-*origin/source*, а как и прежде --- из *origin/master* (такое странное
-поведение объясняется /несимметричностью push в Git/). Внесём правку в
-конфигурацию Git, устраняющую подобное несоответствие
-#+begin_src console
-$ git config branch.source.merge refs/heads/source
-#+end_src
+Теперь у нас есть локальная ветка *source* и две удалённые: *master*
+и *source*. Опция =-u= (или =--set-upstream=) указана неспроста: без
+неё локальная ветка следовала бы *origin/master*, как это было до
+переименования. Другими словами, =git pull= забирало бы изменения не
+из свежесозданной *origin/source*, а как и прежде ---
+из *origin/master* (такое странное поведение объясняется
+/несимметричностью push в Git/). Опция =-u= призвана устранить
+подобное несоответствие.
 
 *** Подключение подмодуля
 

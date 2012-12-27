@@ -52,8 +52,8 @@ web: bundle exec thin start -p $PORT
 используйте проект [[https://github.com/bry4n/rack-jekyll][Rack-Jekyll]], который не работает с последними
 версиями Jekyll. Для наших целей достаточно простого [[https://github.com/gmarik/rack-try_static][Rack-Try_static]],
 тем более, что инструкции по его эксплуатации с Jekyll очень просты, и
-изложены в [[http://gmarik.info/blog/2010/05/10/blogging-with-jekyll-and-heroku-for-free][Blogging With Jekyll, Rack And Heroku For Free!]]. Сводятся
-они к созданию =config.ru= следующего содержания:
+изложены в [[http://gmarik.info/blog/2010/05/10/blogging-with-jekyll-and-heroku-for-free][\laquo{}Blogging With Jekyll, Rack And Heroku For
+Free!\raquo{}]]. Сводятся они к созданию =config.ru= следующего содержания:
 #+begin_src ruby
 require 'rack'
 require 'rack/contrib/try_static'
@@ -95,16 +95,15 @@ gem 'rack-contrib'
 #+end_src
 и выполним их установку
 #+begin_src console
-$ bundle install --path vendor/bundle
+$ bundle install
 #+end_src
-Внесём в список игнорируемых =.gitignore= следующие папки:
-#+begin_src sh
-.bundle/
-_site/
-vendor/
+Внесём =_site/= в список игнорируемых
+#+begin_src console
+$ echo '_site/' >> .gitignore
 #+end_src
-Остаётся наполнить новый сайт содержанием и развернуть приложение на
-Heroku:
+
+После чего остаётся наполнить новый сайт содержанием и развернуть
+приложение на Heroku:
 #+begin_src console
 $ echo 'Hello, World!' > index.html
 $ git add .
@@ -119,6 +118,6 @@ $ bundle exec jekyll --server --auto
 генерируя сайт по адресу =http://localhost:4000=.
 
 *P.S.* На материал поста оказало влияние вдумчивое чтение постов
-[[http://mwmanning.com/2011/11/29/Run-Your-Jekyll-Site-On-Heroku.html][\laquo{}Run Your Jekyll Site On Heroku\raquo{}]] и [[http://mwmanning.com/2011/12/04/Jekyll-on-Heroku-Part-2.html][\laquo{}Jekyll on Heroku Part 2:
-Rack 'Em\raquo{}]]. За что выражаю искреннюю признательность их автору
-Matthew Manning.
+[[http://mwmanning.com/2011/11/29/Run-Your-Jekyll-Site-On-Heroku.html][\laquo{}Run Your Jekyll Site On Heroku\raquo{}]] и [[http://mwmanning.com/2011/12/04/Jekyll-on-Heroku-Part-2.html][\laquo{}Jekyll on
+Heroku Part 2: Rack 'Em\raquo{}]]. За что выражаю искреннюю признательность их
+автору Matthew Manning.

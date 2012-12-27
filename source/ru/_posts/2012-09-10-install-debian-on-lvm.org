@@ -138,5 +138,5 @@ Flags/) и инициализируем его как физический ра�
 # vgreduce debian /dev/sda1
 #+end_src
 Теперь старый диск может быть удалён после отключения питания.
-Дополнительно, данный метод переноса описан в [[http://tldp.org/HOWTO/LVM-HOWTO/removeadisk.html][Removing an Old Disk]] и
-[[http://www.nestor.minsk.by/sr/2004/02/40213.html][повести о Linux и LVM]].
+Дополнительно, данный метод переноса описан в [[http://tldp.org/HOWTO/LVM-HOWTO/removeadisk.html][\laquo{}Removing an Old
+Disk\raquo{}]] и [[http://www.nestor.minsk.by/sr/2004/02/40213.html][повести о Linux и LVM]].
