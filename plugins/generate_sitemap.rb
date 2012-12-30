@@ -93,6 +93,8 @@ module Jekyll
           next if path =~ /\/\./
           # Ignore SASS, SCSS, and CSS files
           next if path =~ /\.(sass|scss|css)$/
+          # Ignore explicit files
+          next if path =~ /\/(atom\.xml|robots\.txt)$/
 
           # Remove the trailing 'index.html' if there is one, and just output the folder name.
           if path =~ /\/index\.html$/
