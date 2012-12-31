@@ -69,12 +69,11 @@ module Jekyll
       result = ''
 
       # First, try to find any stand-alone pages.
-      site.pages.each{ |page|
+      site.pages.each { |page|
         path = page.subfolder + '/' + page.name
 
         # Skip files that don't exist yet (e.g. paginator pages)
         if FileTest.exist?(site.source + path)
-
           mod_date = File.mtime(site.source + path)
           path = page.destination('')
 
@@ -86,9 +85,7 @@ module Jekyll
           next if path =~ /\/(atom\.xml|robots\.txt)$/
 
           # Remove the trailing 'index.html' if there is one, and just output the folder name.
-          if path =~ /\/index\.html$/
-            path = path[0..-11]
-          end
+          path = path[0..-11] if path =~ /\/index\.html$/
 
           if page.data.has_key?('changefreq')
             changefreq = page.data["changefreq"]
@@ -101,14 +98,16 @@ module Jekyll
       }
 
       # Next, find all the posts.
-      posts = site.posts.each { |post|
+      site.posts.each { |post|
+        url = post.url
+        url = url[0..-11] if url =~ /\/index\.html$/
+
         if post.data.has_key?('changefreq')
           changefreq = post.data['changefreq']
         else
           changefreq = ''
         end
-        url = post.url
-        url = url[0..-11] if url =~ /\/index\.html$/
+
         result += entry(url, post.date, changefreq, site)
       }
 
@@ -128,15 +127,12 @@ module Jekyll
     #    e.g. the Googlebot). This may be specified in the page's YAML front matter. If it is not set, nothing
     #    is output for this property.
     def entry(path, date, changefreq, site)
+      url = site.config['url']
+      # Remove the trailing slash from the url if it is present, for consistency.
+      url = url[0..-2] if url =~ /\/$/
 
-      if site.config['url']
-        url = site.config['url']
-      else
-        url = ''
-      end
-
-      # Remove the trailing slash from the baseurl if it is present, for consistency.
       baseurl = site.config['baseurl']
+      # Remove the trailing slash from the baseurl if it is present, for consistency.
       baseurl = baseurl[0..-2] if baseurl =~ /\/$/
 
       "
