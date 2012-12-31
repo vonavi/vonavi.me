@@ -66,7 +66,6 @@ module Jekyll
     #
     #  +site+ is the global Site object.
     def generate_content(site)
-      md_files = /(\.(md|mkdn?|mdown|markdown))$/
       result = ''
 
       # First, try to find any stand-alone pages.
@@ -77,17 +76,7 @@ module Jekyll
         if FileTest.exist?(site.source + path)
 
           mod_date = File.mtime(site.source + path)
-
-          # Use the user-specified permalink if one is given.
-          if page.permalink
-            path = page.permalink
-            path = '/' + path if not path =~ /^\//
-          else
-            # Be smart about the output filename.
-            if path =~ md_files || path =~ /(\.textile)$/ || path =~ /(\.org)$/
-              path.gsub!($1, page.output_ext)
-            end
-          end
+          path = page.destination('')
 
           # Ignore hidden files
           next if path =~ /\/\./
@@ -112,8 +101,7 @@ module Jekyll
       }
 
       # Next, find all the posts.
-      posts = site.site_payload['site']['posts']
-      for post in posts do
+      posts = site.posts.each { |post|
         if post.data.has_key?('changefreq')
           changefreq = post.data['changefreq']
         else
@@ -122,7 +110,7 @@ module Jekyll
         url = post.url
         url = url[0..-11] if url =~ /\/index\.html$/
         result += entry(url, post.date, changefreq, site)
-      end
+      }
 
       result
     end
