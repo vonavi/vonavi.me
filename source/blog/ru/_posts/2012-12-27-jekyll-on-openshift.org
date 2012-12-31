@@ -55,11 +55,8 @@ $ rhc app create <app> ruby-1.9
 $ rhc cartridge list
 #+end_src
 Приложение доступно по адресу =http://<app>-<namespace>.rhcloud.com=.
-Локальный Git-репозиторий /не создаётся с нуля/, а должен быть
-клонирован
-#+begin_src console
-$ rhc app git-clone <app>
-#+end_src
+В довершение установки, Git-репозиторий приложения будет клонирован в
+директорию =<app>=.
 
 *** Генерация сайта с Jekyll
 
