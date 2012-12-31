@@ -7,4 +7,6 @@ Disallow: /css/
 Disallow: /fonts/
 Disallow: /images/
 Disallow: /js/
+Disallow: /robots.txt
+Disallow: /sitemap.xml
 Sitemap: {{ site.url }}/sitemap.xml
