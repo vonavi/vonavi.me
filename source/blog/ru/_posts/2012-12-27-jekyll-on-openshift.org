@@ -84,10 +84,11 @@ destination: public
 #+end_src
 Не забудем и о файле =public/.gitkeep= (иначе Jekyll его запросто
 удалит). Казалось бы, что может быть проще? Создать пустой файл
-=.gitkeep=, а Jekyll уже сам скопирует его в =public=. Но тут очень
+=.gitkeep=, а Jekyll сам скопирует его в =public=. Но тут очень
 неприятная засада: несмотря на [[https://github.com/mojombo/jekyll/wiki/Configuration][описание в документации]], директива
-/include/ в =_config.yml= [[https://github.com/mojombo/jekyll/issues/558][не работает]]. Поэтому следует создать
-исходник =gitkeep= (без точки в имени) следующего содержания:
+/include/ в =_config.yml= [[https://github.com/mojombo/jekyll/issues/558][не работает]], а без неё Jekyll игнорирует
+скрытые файлы. Поэтому мы просто создадим исходник =gitkeep= (без
+точки в имени) следующего содержания:
 #+begin_src yaml
 ---
 permalink: .gitkeep
