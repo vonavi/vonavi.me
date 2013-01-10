@@ -45,7 +45,7 @@ body {
 #header-wrapper {
     width: 100%;
     background-color: #9fc1d3;
-    padding: .7em 0 .8em 2.5em;
+    padding: .7em 0 .8em 2em;
 }
 #main {
     width: 35em;
@@ -62,7 +62,7 @@ body {
     background-color: #3f647e;
 }
 
-#crosscol-wrapper ul.PageList {padding-left: 1.25em;}
+#crosscol-wrapper ul.PageList {padding-left: 1em;}
 #crosscol-wrapper ul.PageList li {
     float: left;
     height: 2em;
@@ -71,7 +71,7 @@ body {
 }
 #crosscol-wrapper ul.PageList li a {
     display: inline-block;
-    padding: 0 1.25em;
+    padding: 0 1em;
     color: #c9c9c9;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -82,13 +82,13 @@ body {
 [class^="icon-"]:before {
     display: inline-block;
     vertical-align: middle;
-    height: 1.15em;
+    height: 3px;
     width: 1em;
     margin-right: .3em;
     color: #95d47a;
     font-family: Fontello;
-    font-size: 22px;
-    line-height: 1em;
+    font-size: 19px;
+    line-height: 1px;
     font-style: normal;
     font-weight: normal;
     text-align: right;
