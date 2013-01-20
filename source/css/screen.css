@@ -82,20 +82,27 @@ body {
 [class^="icon-"]:before {
     display: inline-block;
     vertical-align: middle;
-    height: 3px;
+    height: 1.05em;
     width: 1em;
-    margin-right: .3em;
+    margin-right: 7px;
     color: #95d47a;
     font-family: Fontello;
     font-size: 19px;
-    line-height: 1px;
+    line-height: 1em;
     font-style: normal;
     font-weight: normal;
     text-align: right;
 }
-.icon-home:before {content: "\e8a2";} /* "" */
+.icon-home:before {
+    content: "\e8a2"; /* "" */
+    font-size: 20px;
+    margin-right: 6px;
+}
 .icon-about:before {content: "\e705";} /* "" */
-.icon-rss:before {content: "\f09e";} /* "" */
+.icon-rss:before {
+    content: "\f09e"; /* "" */
+    height: 1em;
+}
 
 #header-wrapper a.title {
     font-family: "Lucida Grande", "Trebuchet MS", Arial, sans-serif;
