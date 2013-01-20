@@ -4,8 +4,8 @@
    light-grey: #c9c9c9  light-green: #95d47a
    */
 @font-face {
-    font-family: Fontello;
-    src: url("/fonts/fontello.ttf");
+    font-family: FontAwesome;
+    src: url("/fonts/fontawesome-webfont.ttf");
 }
 * {margin: 0; padding: 0;}
 a {
@@ -83,27 +83,23 @@ body {
 [class^="icon-"]:before {
     display: inline-block;
     vertical-align: middle;
-    height: 1.05em;
     width: 1em;
     margin-right: 7px;
     color: #95d47a;
-    font-family: Fontello;
+    font-family: FontAwesome;
     font-size: 19px;
-    line-height: 1em;
     font-style: normal;
     font-weight: normal;
     text-align: right;
 }
 .icon-home:before {
-    content: "\e8a2"; /* "" */
+    content: "\f015"; /* "" */
     font-size: 20px;
     margin-right: 6px;
+    margin-bottom: 2px;
 }
-.icon-about:before {content: "\e705";} /* "" */
-.icon-rss:before {
-    content: "\f09e"; /* "" */
-    height: 1em;
-}
+.icon-about:before {content: "\f05a";} /* "" */
+.icon-rss:before {content: "\f09e";} /* "" */
 
 #header-wrapper a.title {
     font-family: "Lucida Grande", "Trebuchet MS", Arial, sans-serif;
