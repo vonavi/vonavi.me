@@ -20,11 +20,11 @@ SSH]] делают установку приложений одновремен�
 приложениями осуществляется из [[http://openshift.redhat.com/app/console][web-консоли]] или обычной консоли после
 установки [[https://openshift.redhat.com/community/developers/install-the-client-tools][клиентской части]]
 #+begin_src console
-$ gem install rhc
+  $ gem install rhc
 #+end_src
 Перво-наперво, выполним настройку
 #+begin_src console
-$ rhc setup
+  $ rhc setup
 #+end_src
 где вам любезно предложат загрузить публичный SSH-ключ
 =~/.ssh/id_rsa.pub= (а при его отсутствии --- ещё и создать новый) и
@@ -34,25 +34,25 @@ $ rhc setup
 
 Посредством команд можно добавить вручную как SSH-ключ
 #+begin_src console
-$ rhc sshkey add <name> <path to SSH key file>
+  $ rhc sshkey add <name> <path to SSH key file>
 #+end_src
 так и *namespace*
 #+begin_src console
-$ rhc domain create <namespace>
+  $ rhc domain create <namespace>
 #+end_src
 Предусмотрена и возможность последующего изменения субдомена
 приложений:
 #+begin_src console
-$ rhc domain update <old namespace> <new namespace>
+  $ rhc domain update <old namespace> <new namespace>
 #+end_src
 Само приложение создаётся следующим образом:
 #+begin_src console
-$ rhc app create <app> ruby-1.9
+  $ rhc app create <app> ruby-1.9
 #+end_src
 где после имени идёт тип приложения, полный список которых выдаётся
 командой
 #+begin_src console
-$ rhc cartridge list
+  $ rhc cartridge list
 #+end_src
 Приложение доступно по адресу =http://<app>-<namespace>.rhcloud.com=.
 В довершение установки, Git-репозиторий приложения будет клонирован в
@@ -75,9 +75,9 @@ OpenShift использует сервер [[https://www.phusionpassenger.com][
 обязанностями на порядок лучше, чем сервер WEBrick из состава Jekyll),
 что на языке файла конфигурации =_config.yml= выражается в форме
 #+begin_src yaml
-auto: false
-server: false
-destination: public
+  auto: false
+  server: false
+  destination: public
 #+end_src
 Не забудем и о файле =public/.gitkeep= (иначе Jekyll его запросто
 удалит). Казалось бы, что может быть проще? Создать пустой файл
@@ -87,15 +87,15 @@ destination: public
 скрытые файлы. Поэтому мы просто создадим исходник =gitkeep= (без
 точки в имени) следующего содержания:
 #+begin_src yaml
----
-permalink: .gitkeep
----
+  ---
+  permalink: .gitkeep
+  ---
 #+end_src
 Остальные файлы в папке назначения Git должен игнорировать в
 соответствии со строками в =.gitignore=
 #+begin_src sh
-public/*
-!public/.gitkeep
+  public/*
+  !public/.gitkeep
 #+end_src
 
 Однако мы всё ещё не указали запуск Jekyll'а, для чего как раз
@@ -105,35 +105,35 @@ public/*
 приложений]]. В нашем случае достаточно добавить в
 =.openshift/action_hooks/build= следующее:
 #+begin_src sh
-# Fix problem with Jekyll and UTF-8
-export LANG=en_US.UTF-8
+  # Fix problem with Jekyll and UTF-8
+  export LANG=en_US.UTF-8
 
-cd $OPENSHIFT_REPO_DIR
-bundle exec jekyll
+  cd $OPENSHIFT_REPO_DIR
+  bundle exec jekyll
 #+end_src
 
 *** Заключительные штрихи по настройке
 
 Для установки gem'ов, необходимых приложению, создадим =Gemfile=
 #+begin_src ruby
-source :rubygems
+  source :rubygems
 
-gem 'jekyll'
+  gem 'jekyll'
 #+end_src
 и выполним команду
 #+begin_src console
-$ bundle install
+  $ bundle install
 #+end_src
 После чего развернём приложение на OpenShift:
 #+begin_src console
-$ echo 'Hello, World!' > index.html
-$ git add .
-$ git commit -m "my first commit"
-$ git push origin master
+  $ echo 'Hello, World!' > index.html
+  $ git add .
+  $ git commit -m "my first commit"
+  $ git push origin master
 #+end_src
 
 Для локальной генерации сайта запускается команда
 #+begin_src console
-$ bundle exec jekyll --server --auto
+  $ bundle exec jekyll --server --auto
 #+end_src
 генерируя сайт по адресу =http://localhost:4000=.

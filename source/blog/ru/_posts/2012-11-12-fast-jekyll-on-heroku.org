@@ -20,14 +20,14 @@ Jekyll, [[http://www.juev.ru/2012/03/09/heroku/][ведущие блогов]] �
 После регистрации на [[http://www.heroku.com][Heroku]] и установки [[https://toolbelt.heroku.com][Heroku Toolbelt]], создадим
 приложение *myapp*:
 #+begin_src console
-$ heroku create myapp
+  $ heroku create myapp
 #+end_src
 расположенное по адресу =http://myapp.herokuapp.com=. Настройка Git
 для управления приложением:
 #+begin_src console
-$ cd myapp
-$ git init
-$ heroku git:remote -a myapp
+  $ cd myapp
+  $ git init
+  $ heroku git:remote -a myapp
 #+end_src
 
 *** Запуск приложения на Heroku
@@ -35,7 +35,7 @@ $ heroku git:remote -a myapp
 Директория приложения должна включать в себя файлы =Gemfile= и
 =Gemfile.lock= для установки gem'ов посредством *bundler*, а также
 =Procfile=. Последний предназначен для запуска процессов на Heroku,
-которые исчисляются в так называемых [[https://devcenter.heroku.com/articles/dynos][\laquo{}dyno\raquo{}]]. В бесплатном варианте
+которые исчисляются в так называемых [[https://devcenter.heroku.com/articles/dynos][\laquo{}dyno\raquo]]. В бесплатном варианте
 доступен лишь один *web dyno*, запускающий один web-процесс.
 
 Не выбирайте в качестве web-процесса запуск самого Jekyll'а, поскольку
@@ -45,25 +45,25 @@ $ heroku git:remote -a myapp
 поддерживают интерфейс [[http://en.wikipedia.org/wiki/Rack_(web_server_interface)][Rack]]). Например, запуск *Thin* в =Procfile=
 выглядит так:
 #+begin_src yaml
-web: bundle exec thin start -p $PORT
+  web: bundle exec thin start -p $PORT
 #+end_src
 Управляется web-сервер посредством *Rack*, чьи параметры настройки
 хранятся в файле =config.ru= в директории приложения. Только не
 используйте проект [[https://github.com/bry4n/rack-jekyll][Rack-Jekyll]], который не работает с последними
 версиями Jekyll. Для наших целей достаточно простого [[https://github.com/gmarik/rack-try_static][Rack-Try_static]],
 тем более, что инструкции по его эксплуатации с Jekyll очень просты, и
-изложены в [[http://gmarik.info/blog/2010/05/10/blogging-with-jekyll-and-heroku-for-free][\laquo{}Blogging With Jekyll, Rack And Heroku For
-Free!\raquo{}]]. Сводятся они к созданию =config.ru= следующего содержания:
+изложены в [[http://gmarik.info/blog/2010/05/10/blogging-with-jekyll-and-heroku-for-free][\laquo{}Blogging With Jekyll, Rack And Heroku For Free!\raquo]]. Сводятся
+они к созданию =config.ru= следующего содержания:
 #+begin_src ruby
-require 'rack'
-require 'rack/contrib/try_static'
+  require 'rack'
+  require 'rack/contrib/try_static'
 
-use Rack::TryStatic,
-    :root => "_site",   # static files root dir
-    :urls => %w[/],     # match all requests
-    :try => ['.html', 'index.html', '/index.html'] # try these postfixes sequentially
-# otherwise 404 NotFound
-run lambda { [404, {'Content-Type' => 'text/html'}, ['Not Found']]}
+  use Rack::TryStatic,
+  :root => "_site", # static files root dir
+  :urls => %w[/],   # match all requests
+  :try => ['.html', 'index.html', '/index.html'] # try these postfixes sequentially
+  # otherwise 404 NotFound
+  run lambda { [404, {'Content-Type' => 'text/html'}, ['Not Found']] }
 #+end_src
 Теперь все запросы к приложению будут переадресованы в директорию
 =_site=, на которую указывает ключ =:root=.
@@ -79,45 +79,44 @@ Heroku использует [[https://devcenter.heroku.com/articles/buildpacks][
 [[https://github.com/mattmanning/heroku-buildpack-ruby-jekyll][buildpack]] для генерации сайтов с помощью Jekyll. Настройка приложения
 на использование данного buildpack'а задаётся всего одной командой
 #+begin_src console
-$ heroku config:add BUILDPACK_URL=http://github.com/mattmanning/heroku-buildpack-ruby-jekyll.git
+  $ heroku config:add BUILDPACK_URL=http://github.com/mattmanning/heroku-buildpack-ruby-jekyll.git
 #+end_src
 
 *** Заключительная настройка
 
 Включим gem'ы, необходимые приложению, в файл =Gemfile=
 #+begin_src ruby
-source :rubygems
+  source :rubygems
 
-gem 'jekyll'
-gem 'RedCloth'
-gem 'thin'
-gem 'rack-contrib'
+  gem 'jekyll'
+  gem 'RedCloth'
+  gem 'thin'
+  gem 'rack-contrib'
 #+end_src
 и выполним их установку
 #+begin_src console
-$ bundle install
+  $ bundle install
 #+end_src
 Внесём =_site/= в список игнорируемых
 #+begin_src console
-$ echo '_site/' >> .gitignore
+  $ echo '_site/' >> .gitignore
 #+end_src
 
 После чего остаётся наполнить новый сайт содержанием и развернуть
 приложение на Heroku:
 #+begin_src console
-$ echo 'Hello, World!' > index.html
-$ git add .
-$ git commit -m "my first commit"
-$ git push heroku master
+  $ echo 'Hello, World!' > index.html
+  $ git add .
+  $ git commit -m "my first commit"
+  $ git push heroku master
 #+end_src
 
 Локально, Jekyll запускается, как обычно, командой
 #+begin_src console
-$ bundle exec jekyll --server --auto
+  $ bundle exec jekyll --server --auto
 #+end_src
 генерируя сайт по адресу =http://localhost:4000=.
 
-*P.S.* На материал поста оказало влияние вдумчивое чтение постов
-[[http://mwmanning.com/2011/11/29/Run-Your-Jekyll-Site-On-Heroku.html][\laquo{}Run Your Jekyll Site On Heroku\raquo{}]] и [[http://mwmanning.com/2011/12/04/Jekyll-on-Heroku-Part-2.html][\laquo{}Jekyll on
-Heroku Part 2: Rack 'Em\raquo{}]]. За что выражаю искреннюю признательность их
-автору Matthew Manning.
+*P.S.* На материал поста оказало влияние вдумчивое чтение постов [[http://mwmanning.com/2011/11/29/Run-Your-Jekyll-Site-On-Heroku.html][\laquo{}Run
+Your Jekyll Site On Heroku\raquo]] и [[http://mwmanning.com/2011/12/04/Jekyll-on-Heroku-Part-2.html][\laquo{}Jekyll on Heroku Part 2: Rack 'Em\raquo]]. За
+что выражаю искреннюю признательность их автору Matthew Manning.

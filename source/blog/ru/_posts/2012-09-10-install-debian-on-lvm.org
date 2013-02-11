@@ -36,8 +36,8 @@ Install/, вам будет предложено пройти стандартн
 Приятно, что можно сразу настроить интернет (при установке с netinst
 часть пакетов нужно скачать) и русскую локаль с раскладкой.
 
-В разделе /\laquo{}Разметка дисков\raquo{}/ выбираем /\laquo{}Вручную\raquo{}/, и далее
---- /\laquo{}Настройка менеджера логических томов (LVM)\raquo{}/:
+В разделе /\laquo{}Разметка дисков\raquo/ выбираем /\laquo{}Вручную\raquo/, и далее ---
+/\laquo{}Настройка менеджера логических томов (LVM)\raquo/:
 
 [[{{ site.imgdir }}/partman_active_partition_0.png][{{ site.imgdir }}/partman_active_partition_0.png]]
 
@@ -111,32 +111,32 @@ APT, на этом установка Debian завершена.
 *Внимание!* Не стоит переносить данные с рабочего раздела, что может
 [[http://www.celtnet.org.uk/articles/?a=articles&p=1892][обернуться их потерей]]. Отдадим должное LVM, который честно об этом
 [[http://tldp.org/HOWTO/LVM-HOWTO/removeadisk.html][предупреждает]]: /\laquo{}WARNING: moving of active logical volumes may cause
-data loss!\raquo{}/.
+data loss!\raquo/.
 
 Перенос системы на другой диск достигается всего в несколько несложных
 шагов. Условимся, что =/dev/sda1= --- это раздел с исходной системой,
 а =/dev/sdb1= --- это новый чистый раздел. Для начала, пустому разделу
-на новом диске укажем флаг *lvm* (/Gparted \rarr{} Partition \rarr{} Manage
+на новом диске укажем флаг *lvm* (/Gparted \rarr Partition \rarr Manage
 Flags/) и инициализируем его как физический раздел LVM
 #+begin_src console
-# pvcreate /dev/sdb1
+  # pvcreate /dev/sdb1
 #+end_src
 Теперь добавим в группу томов *debian*, содержащую переносимый раздел
 #+begin_src console
-# vgextend debian /dev/sdb1
+  # vgextend debian /dev/sdb1
 #+end_src
 Перенесём физические экстенты (/physical extents/), чей размер около
 4МБ, с раздела =/dev/sda1= на =/dev/sdb1=:
 #+begin_src console
-# pvmove /dev/sda1 /dev/sdb1
+  # pvmove /dev/sda1 /dev/sdb1
 #+end_src
 Учтите, что операция переноса физических экстентов занимает много
 времени. Если вы хотите наблюдать за процессом переноса, укажите в
 команде ключ =-v=. После окончания процедуры, удалите физический том
 из группы томов
 #+begin_src console
-# vgreduce debian /dev/sda1
+  # vgreduce debian /dev/sda1
 #+end_src
 Теперь старый диск может быть удалён после отключения питания.
-Дополнительно, данный метод переноса описан в [[http://tldp.org/HOWTO/LVM-HOWTO/removeadisk.html][\laquo{}Removing an Old
-Disk\raquo{}]] и [[http://www.nestor.minsk.by/sr/2004/02/40213.html][повести о Linux и LVM]].
+Дополнительно, данный метод переноса описан в [[http://tldp.org/HOWTO/LVM-HOWTO/removeadisk.html][\laquo{}Removing an Old Disk\raquo]] и
+[[http://www.nestor.minsk.by/sr/2004/02/40213.html][повести о Linux и LVM]].
