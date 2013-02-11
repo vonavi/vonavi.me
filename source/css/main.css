@@ -119,7 +119,7 @@ pre {
 code {
     display: inline-block;
     line-height: 1em;
-    padding: 2px 3px;
+    padding: 1px 3px;
 }
 pre code {
     padding: 0 !important;
