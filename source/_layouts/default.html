@@ -15,32 +15,44 @@
     <link href="http://feeds.feedburner.com/vonavi-blog-ru"
           rel="alternate" title="vonavi-blog-ru"
           type="application/atom+xml" />
+
     <!-- Screen CSS -->
     <link rel="stylesheet" href="/css/screen.css" type="text/css"
           media="screen, projection" />
+
     <!-- Main CSS -->
     <link rel="stylesheet" href="/css/main.css" type="text/css"
           media="screen, projection" />
+
     <!-- Syntax highlighting CSS -->
     <link rel="stylesheet" href="/css/solarized.css" type="text/css" />
-    <!-- ColorBox CSS -->
+
+    <!-- ColorBox -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.colorbox-min.js"></script>
     <link rel="stylesheet" href="/css/colorbox.css" type="text/css" />
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('a[href$=".png"], a[href$=".gif"], a[href$=".jpg"], a[href$=".jpeg"]').colorbox();
+      });
+    </script>
+
     <!-- Juvia commenting system CSS -->
     <link rel="stylesheet" href="/css/juvia.css" type="text/css"
           media="screen, projection" />
 
     <!-- Flattr button JavaScript -->
     <script type="text/javascript">
-/* <![CDATA[ */
-    (function() {
+      /* <![CDATA[ */
+      (function() {
         var s = document.createElement('script');
         var t = document.getElementsByTagName('script')[0];
         s.type = 'text/javascript';
         s.async = true;
         s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
         t.parentNode.insertBefore(s, t);
-    })();
-/* ]]> */
+      })();
+      /* ]]> */
     </script>
   </head>
 
