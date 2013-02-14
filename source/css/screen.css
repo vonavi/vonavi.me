@@ -99,9 +99,9 @@ body {
     margin-right: 7px;
     margin-bottom: 2px;
 }
+.icon-archive:before {content: "\f01c";}
 .icon-about:before {content: "\f05a";}
 .icon-rss:before {content: "\f09e";}
-.icon-archive:before {content: "\f01c";}
 
 #header-wrapper a.title {
     font-family: "Lucida Grande", "Trebuchet MS", Arial, sans-serif;
