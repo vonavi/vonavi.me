@@ -45,7 +45,7 @@ body {
 #header-wrapper {
     width: 100%;
     background-color: #9fc1d3;
-    padding: .7em 0 .8em 2em;
+    padding: .7em 0 .8em 2.5em;
 }
 #main {
     width: 35em;
@@ -62,7 +62,7 @@ body {
     background-color: #3f647e;
 }
 
-#crosscol-wrapper ul.PageList {padding-left: 1em;}
+#crosscol-wrapper ul.PageList {padding-left: 1.2em;}
 #crosscol-wrapper ul.PageList li {
     float: left;
     height: 2em;
@@ -71,7 +71,7 @@ body {
 }
 #crosscol-wrapper ul.PageList li a {
     display: inline-block;
-    padding: 0 1em;
+    padding: 0 1.4em;
     color: #c9c9c9;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
@@ -79,12 +79,12 @@ body {
     text-decoration: none;
     text-shadow: 0 -1px rgba(0,0,0,.3);
 }
-#crosscol-wrapper ul.PageList li a:hover {color: #fff;}
+#crosscol-wrapper ul.PageList li a:hover {color: #ddd;}
 [class^="icon-"]:before {
     display: inline-block;
     vertical-align: middle;
     width: 1em;
-    margin-right: 7px;
+    margin-right: 8px;
     color: #95d47a;
     font-family: FontAwesome;
     font-size: 19px;
@@ -92,14 +92,16 @@ body {
     font-weight: normal;
     text-align: right;
 }
+/* Fix the unproper size of the icon-home in FA 3.0 */
 .icon-home:before {
-    content: "\f015"; /* "" */
+    content: "\f015";
     font-size: 20px;
-    margin-right: 6px;
+    margin-right: 7px;
     margin-bottom: 2px;
 }
-.icon-about:before {content: "\f05a";} /* "" */
-.icon-rss:before {content: "\f09e";} /* "" */
+.icon-about:before {content: "\f05a";}
+.icon-rss:before {content: "\f09e";}
+.icon-archive:before {content: "\f01c";}
 
 #header-wrapper a.title {
     font-family: "Lucida Grande", "Trebuchet MS", Arial, sans-serif;
@@ -107,7 +109,7 @@ body {
     font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
-    text-shadow: 0px 1px 1px rgba(63,100,126,.5);
+    text-shadow: 0 1px 1px rgba(63,100,126,.5);
 }
 #header-wrapper p.description {
     color: #688fad;
