@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/bdewey/org-ruby.git
+  revision: a82df37e0bc551dce346f575f76c1e19f54d42c8
+  specs:
+    org-ruby (0.8.0)
+      rubypants (>= 0.2.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -16,8 +23,6 @@ GEM
     liquid (2.4.1)
     maruku (0.6.1)
       syntax (>= 1.0.0)
-    org-ruby (0.8.0)
-      rubypants (>= 0.2.0)
     posix-spawn (0.3.6)
     pygments.rb (0.3.7)
       posix-spawn (~> 0.3.6)
@@ -31,5 +36,5 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 0.12.0)
-  org-ruby (~> 0.8.0)
+  org-ruby!
   pygments.rb (~> 0.3.7)
