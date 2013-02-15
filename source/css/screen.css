@@ -1,131 +1,131 @@
 /* Art Deco web color scheme
-   http://www.creativecolorschemes.com/resources/free-color-schemes/art-deco-color-scheme.shtml
-   dark-blue: #3f647e   blue: #688fad           light-blue: #9fc1d3
-   light-grey: #c9c9c9  light-green: #95d47a
-   */
+ * http://www.creativecolorschemes.com/resources/free-color-schemes/art-deco-color-scheme.shtml
+ * dark-blue: #3f647e   blue: #688fad           light-blue: #9fc1d3
+ * light-grey: #c9c9c9  light-green: #95d47a
+ */
 @font-face {
-    font-family: FontAwesome;
-    src: url("/fonts/fontawesome-webfont.ttf");
+  font-family: FontAwesome;
+  src: url("/fonts/fontawesome-webfont.ttf");
 }
 * {margin: 0; padding: 0;}
 a {
-    color: #3f647e;
-    outline: none;
+  color: #3f647e;
+  outline: none;
 }
 
 body {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    font: 16px/1.4 Georgia, serif;
-    color: #333;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font: 16px/1.4 Georgia, serif;
+  color: #333;
 }
 #outer-wrapper {
-    position: relative;
-    width: 100%;
-    min-width: 800px;
-    min-height: 100%;
-    overflow: hidden;
+  position: relative;
+  width: 100%;
+  min-width: 800px;
+  min-height: 100%;
+  overflow: hidden;
 }
 
 #crosscol-wrapper, #header-wrapper, #main {
-    position: relative;
-    clear: both;
+  position: relative;
+  clear: both;
 }
 #crosscol-wrapper {
-    float: left;
-    width: 100%;
-    background-color: #3f647e;
-    box-shadow: 0 1px 3px rgba(63,100,126,.8), inset 0 -1px 1px rgba(0,0,0,.1);
-    -moz-box-shadow: 0 1px 3px rgba(63,100,126,.8), inset 0 -1px 1px rgba(0,0,0,.1);
-    -webkit-box-shadow: 0 1px 3px rgba(63,100,126,.8), inset 0 -1px 1px rgba(0,0,0,.1);
-    -o-box-shadow: 0 1px 3px rgba(63,100,126,.8), inset 0 -1px 1px rgba(0,0,0,.1);
-    z-index: 10;
+  float: left;
+  width: 100%;
+  background-color: #3f647e;
+  box-shadow: 0 1px 3px rgba(63,100,126,.8), inset 0 -1px 1px rgba(0,0,0,.1);
+  -moz-box-shadow: 0 1px 3px rgba(63,100,126,.8), inset 0 -1px 1px rgba(0,0,0,.1);
+  -webkit-box-shadow: 0 1px 3px rgba(63,100,126,.8), inset 0 -1px 1px rgba(0,0,0,.1);
+  -o-box-shadow: 0 1px 3px rgba(63,100,126,.8), inset 0 -1px 1px rgba(0,0,0,.1);
+  z-index: 10;
 }
 #header-wrapper {
-    width: 100%;
-    background-color: #9fc1d3;
-    padding: .7em 0 .8em 2.5em;
+  width: 100%;
+  background-color: #9fc1d3;
+  padding: .7em 0 .8em 2.5em;
 }
 #main {
-    width: 35em;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 2em;
+  width: 35em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 2em;
 }
 #footer-wrapper {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2em;
-    line-height: 2em;
-    background-color: #3f647e;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2em;
+  line-height: 2em;
+  background-color: #3f647e;
 }
 
 #crosscol-wrapper ul.PageList {padding-left: 1.2em;}
 #crosscol-wrapper ul.PageList li {
-    float: left;
-    height: 2em;
-    line-height: 2em;
-    list-style: none;
+  float: left;
+  height: 2em;
+  line-height: 2em;
+  list-style: none;
 }
 #crosscol-wrapper ul.PageList li a {
-    display: inline-block;
-    padding: 0 1.4em;
-    color: #c9c9c9;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-    text-decoration: none;
-    text-shadow: 0 -1px rgba(0,0,0,.3);
+  display: inline-block;
+  padding: 0 1.4em;
+  color: #c9c9c9;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 -1px rgba(0,0,0,.3);
 }
 #crosscol-wrapper ul.PageList li a:hover {color: #ddd;}
 [class^="icon-"]:before {
-    display: inline-block;
-    vertical-align: middle;
-    width: 1em;
-    margin-right: 8px;
-    color: #95d47a;
-    font-family: FontAwesome;
-    font-size: 19px;
-    font-style: normal;
-    font-weight: normal;
-    text-align: right;
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  margin-right: 8px;
+  color: #95d47a;
+  font-family: FontAwesome;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: normal;
+  text-align: right;
 }
 /* Fix the unproper size of the icon-home in FA 3.0 */
 .icon-home:before {
-    content: "\f015";
-    font-size: 20px;
-    margin-right: 7px;
-    margin-bottom: 2px;
+  content: "\f015";
+  font-size: 20px;
+  margin-right: 7px;
+  margin-bottom: 2px;
 }
 .icon-archive:before {content: "\f01c";}
 .icon-about:before {content: "\f05a";}
 .icon-rss:before {content: "\f09e";}
 
 #header-wrapper a.title {
-    font-family: "Lucida Grande", "Trebuchet MS", Arial, sans-serif;
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
-    text-shadow: 0 1px 1px rgba(63,100,126,.5);
+  font-family: "Lucida Grande", "Trebuchet MS", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-shadow: 0 1px 1px rgba(63,100,126,.5);
 }
 #header-wrapper p.description {
-    color: #688fad;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #688fad;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #footer-wrapper #footer {
-    color: #688fad;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    text-align: center;
+  color: #688fad;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  text-align: center;
 }
 #footer-wrapper #footer a {color: #688fad;}
 
 #flattr {
-    position: absolute;
-    margin-top: 2em;
-    left: 2em;
+  position: absolute;
+  margin-top: 2em;
+  left: 2em;
 }
