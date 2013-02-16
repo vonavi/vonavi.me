@@ -80,16 +80,12 @@ OpenShift использует сервер [[https://www.phusionpassenger.com][
   destination: public
 #+end_src
 Не забудем и о файле =public/.gitkeep= (иначе Jekyll его запросто
-удалит). Казалось бы, что может быть проще? Создать пустой файл
-=.gitkeep=, а Jekyll сам скопирует его в =public=. Но тут очень
-неприятная засада: несмотря на [[https://github.com/mojombo/jekyll/wiki/Configuration][описание в документации]], директива
-/include/ в =_config.yml= [[https://github.com/mojombo/jekyll/issues/558][не работает]], а без неё Jekyll игнорирует
-скрытые файлы. Поэтому мы просто создадим исходник =gitkeep= (без
-точки в имени) следующего содержания:
+удалит). Jekyll игнорирует все скрытые файлы, кроме тех, что явно
+указаны директивой =include= (начиная с версии 0.12). Нужно создать
+пустой файл =.gitkeep= в папке с исходниками и добавить в
+=_config.yml= запись
 #+begin_src yaml
-  ---
-  permalink: .gitkeep
-  ---
+  include: ['.gitkeep']
 #+end_src
 Остальные файлы в папке назначения Git должен игнорировать в
 соответствии со строками в =.gitignore=

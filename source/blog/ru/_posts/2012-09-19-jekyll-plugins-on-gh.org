@@ -99,16 +99,10 @@ comments: yes
 =_site=.
 
 Дадим понять GitHub Pages, что [[https://help.github.com/articles/using-jekyll-with-pages][запускать Jekyll не надо]] при помощи
-пустого файла =.nojekyll=. [[https://github.com/mojombo/jekyll/issues/558][Досадный баг]] не позволяет просто поместить
-=.nojekyll= в исходники и включить в папку назначения, добавив в
-=_config.yml= строку
+пустого файла =.nojekyll=. Начиная с Jekyll 0.12, скрытые файлы
+учитываются наравне с другими, если их явно указать в =_config.yml=:
 #+begin_src yaml
   include: ['.nojekyll']
 #+end_src
-Вместо этого следует создать файл =nojekyll= (/без точки в имени/) с
-содержанием
-#+begin_src yaml
-  ---
-  permalink: .nojekyll
-  ---
-#+end_src
+Соответствующий файл-пустышка =.nojekyll= должен находиться в папке с
+исходниками.
