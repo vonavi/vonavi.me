@@ -112,7 +112,7 @@ OpenShift использует сервер [[https://www.phusionpassenger.com][
 
 Для установки gem'ов, необходимых приложению, создадим =Gemfile=
 #+begin_src ruby
-  source :rubygems
+  source 'https://rubygems.org'
 
   gem 'jekyll'
 #+end_src
