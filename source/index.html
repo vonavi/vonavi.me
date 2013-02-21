@@ -9,10 +9,10 @@ layout: default
 
   {{ post.content | split: '<!--more-->' | first }}
 
-  <p><a href="{{ post.url }}">Далее...</a></p>
+  <p><a href="{{ post.url }}" class="icon-hand-right button">Читать далее</a></p>
 {% endfor %}
 
-<p>
+<p style="display:inline-block;width:100%;">
   <!-- Pagination links -->
   {% case paginator.previous_page %}
   {% when nil %}

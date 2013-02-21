@@ -1,7 +1,8 @@
 /* Art Deco web color scheme
  * http://www.creativecolorschemes.com/resources/free-color-schemes/art-deco-color-scheme.shtml
- * dark-blue: #3f647e   blue: #688fad           light-blue: #9fc1d3
- * light-grey: #c9c9c9  light-green: #95d47a
+ * low-blue:  #3f647e    blue:       #688fad    high-blue: #9fc1d3
+ * high-grey: #c9c9c9    high-green: #95d47a
+ * low-cyan:  #00b0b2    high-cyan:  #52ccce
  */
 @font-face {
   font-family: FontAwesome;
@@ -12,6 +13,7 @@ a {
   color: #3f647e;
   outline: none;
 }
+a:hover {color: #00b0b2 !important;}
 
 body {
   position: absolute;
@@ -32,15 +34,17 @@ body {
   position: relative;
   clear: both;
 }
+#crosscol-wrapper, a.button {
+  background-color: #3f647e;
+  box-shadow: 0 1px 3px rgba(0,0,0,.4), inset 0 -1px 1px rgba(0,0,0,.1), inset 0 1px 1px rgba(255,255,255,.1);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,.4), inset 0 -1px 1px rgba(0,0,0,.1), inset 0 1px 1px rgba(255,255,255,.1);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.4), inset 0 -1px 1px rgba(0,0,0,.1), inset 0 1px 1px rgba(255,255,255,.1);
+  -o-box-shadow: 0 1px 3px rgba(0,0,0,.4), inset 0 -1px 1px rgba(0,0,0,.1), inset 0 1px 1px rgba(255,255,255,.1);
+  z-index: 10;
+}
 #crosscol-wrapper {
   float: left;
   width: 100%;
-  background-color: #3f647e;
-  box-shadow: 0 1px 3px rgba(63,100,126,.8), inset 0 -1px 1px rgba(0,0,0,.1);
-  -moz-box-shadow: 0 1px 3px rgba(63,100,126,.8), inset 0 -1px 1px rgba(0,0,0,.1);
-  -webkit-box-shadow: 0 1px 3px rgba(63,100,126,.8), inset 0 -1px 1px rgba(0,0,0,.1);
-  -o-box-shadow: 0 1px 3px rgba(63,100,126,.8), inset 0 -1px 1px rgba(0,0,0,.1);
-  z-index: 10;
 }
 #header-wrapper {
   width: 100%;
@@ -62,58 +66,36 @@ body {
   background-color: #3f647e;
 }
 
-#crosscol-wrapper ul.PageList {padding-left: 1.2em;}
+#crosscol-wrapper ul.PageList {padding-left: .9em;}
 #crosscol-wrapper ul.PageList li {
   float: left;
+  margin: 0 .9em;
   height: 2em;
   line-height: 2em;
   list-style: none;
 }
-#crosscol-wrapper ul.PageList li a {
+#crosscol-wrapper a, a.button {
   display: inline-block;
-  padding: 0 1.4em;
-  color: #c9c9c9;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-  text-decoration: none;
-  text-shadow: 0 -1px rgba(0,0,0,.3);
-}
-#crosscol-wrapper ul.PageList li a:hover {color: #ddd;}
-[class^="icon-"]:before {
-  display: inline-block;
-  vertical-align: middle;
-  width: 1em;
-  margin-right: 8px;
+  padding: 0 8px;
   color: #95d47a;
-  font-family: FontAwesome;
-  font-size: 19px;
-  font-style: normal;
-  font-weight: normal;
-  text-align: right;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  text-decoration: none;
 }
-/* Fix the unproper size of the icon-home in FA 3.0 */
-.icon-home:before {
-  content: "\f015";
-  font-size: 20px;
-  margin-right: 7px;
-  margin-bottom: 2px;
-}
-.icon-archive:before {content: "\f01c";}
-.icon-about:before {content: "\f05a";}
-.icon-rss:before {content: "\f09e";}
 
 #header-wrapper a.title {
+  color: #3f647e !important;
   font-family: "Lucida Grande", "Trebuchet MS", Arial, sans-serif;
   font-size: 24px;
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
-  text-shadow: 0 1px 1px rgba(63,100,126,.5);
+  text-shadow: 0 1px 1px rgba(0,0,0,.2);
 }
 #header-wrapper p.description {
   color: #688fad;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  cursor: default;
 }
 
 #footer-wrapper #footer {
@@ -122,7 +104,41 @@ body {
   font-size: 14px;
   text-align: center;
 }
-#footer-wrapper #footer a {color: #688fad;}
+#footer-wrapper a {color: #688fad;}
+
+a.button {
+  float: right;
+  line-height: 2em;
+  padding-left: 8px;
+
+  border-radius: 3px;         /* CSS3 */
+  -moz-border-radius: 3px;    /* Firefox */
+  -webkit-border-radius: 3px; /* Safari, Chrome */
+}
+
+[class^="icon-"]:before, [class^="icon-"]:after {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  color: #688fad;
+  font-family: FontAwesome;
+  font-size: 19px;
+  font-style: normal;
+  text-align: right;
+  text-shadow: 0 -1px rgba(0,0,0,.4);
+}
+[class^="icon-"]:before {margin-right: 8px;}
+[class^="icon-"]:after {margin-left: 8px;}
+/* Fix the improper size of the icon-home in FA 3.0 */
+.icon-home:before {
+  content: "\f015";
+  font-size: 20px;
+  margin: 0 6px 2px 1px;
+}
+.icon-archive:before {content: "\f01c";}
+.icon-about:before {content: "\f05a";}
+.icon-rss:before {content: "\f09e";}
+.icon-hand-right:after {content: "\f0a4";}
 
 #flattr {
   position: absolute;
