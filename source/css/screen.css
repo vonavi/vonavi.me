@@ -13,7 +13,7 @@ a {
   color: #3f647e;
   outline: none;
 }
-a:hover {color: #00b0b2 !important;}
+a:hover {color: #00b0b2;}
 
 body {
   position: absolute;
@@ -49,7 +49,7 @@ body {
 #header-wrapper {
   width: 100%;
   background-color: #9fc1d3;
-  padding: .7em 0 .8em 1.6em;
+  padding: .7em 0 .8em 2.5em;
 }
 #main {
   width: 35em;
@@ -66,6 +66,7 @@ body {
   background-color: #3f647e;
 }
 
+#crosscol-wrapper ul.PageList {padding-left: .9em}
 #crosscol-wrapper ul.PageList li {
   float: left;
   line-height: 0;
@@ -73,23 +74,18 @@ body {
 }
 #crosscol-wrapper a, a.button {
   display: inline-block;
-  height: 2.1em;
-  line-height: 2em;
+  height: 32px;
+  line-height: 31px;
   padding: 0 1.5em;
   color: #95d47a;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   text-decoration: none;
 }
-#crosscol-wrapper a:hover, a.button:hover {
-  background-color: #52ccce;
-}
-#crosscol-wrapper a:hover:before, a.button:hover:after {
-  color: #00b0b2;
-}
+#crosscol-wrapper a:hover, a.button:hover {color: #52ccce;}
 
 #header-wrapper a.title {
-  color: #3f647e !important;
+  color: #3f647e;
   font-family: "Lucida Grande", "Trebuchet MS", Arial, sans-serif;
   font-size: 24px;
   font-weight: bold;
@@ -121,20 +117,25 @@ a.button {
 [class^="icon-"]:before, [class^="icon-"]:after {
   display: inline-block;
   vertical-align: middle;
-  margin-bottom: -1px;
+  width: 1em;
   color: #688fad;
   font-family: FontAwesome;
   font-size: 19px;
   text-shadow: 0 -1px rgba(0,0,0,.4);
 }
-[class^="icon-"]:before {margin-right: 8px;}
-[class^="icon-"]:after {margin-left: 8px;}
+[class^="icon-"]:before {
+  margin-right: 8px;
+  text-align: right;
+}
+[class^="icon-"]:after {
+  margin-left: 8px;
+  text-align: left;
+}
 /* Fix the improper size of the icon-home in FA 3.0 */
 .icon-home:before {
   content: "\f015";
   font-size: 20px;
-  margin-right: 6px;
-  margin-bottom: 0;
+  margin: 0 6px 2px 1px;
 }
 .icon-archive:before {content: "\f01c";}
 .icon-about:before {content: "\f05a";}
