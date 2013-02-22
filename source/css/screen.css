@@ -12,8 +12,10 @@
   font-family: FontAwesome;
   src: url("/fonts/Font-Awesome/fontawesome-webfont.woff") format("woff");
 }
+
 /* Fix "page shift" problem that happens on loading pages of different lengths */
 html {overflow-y: scroll;}
+
 * {margin: 0; padding: 0;}
 a {
   color: #3f647e;
@@ -88,7 +90,6 @@ body {
   font-size: 15px;
   text-decoration: none;
 }
-#crosscol-wrapper a:hover, a.button:hover {color: #52ccce;}
 
 #header-wrapper a.title {
   color: #3f647e;
@@ -141,6 +142,11 @@ a.button {
   margin-left: 8px;
   text-align: left;
 }
+[class^="icon-"]:hover:before, [class^="icon-"]:hover:after {
+  color: #95d47a;
+  text-shadow: none;
+}
+
 /* Fix the improper size of the icon-home in FA 3.0 */
 .icon-home:before {
   content: "\f015";
