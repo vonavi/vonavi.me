@@ -4,8 +4,6 @@
   font-family: "PT Sans Caption", "Lucida Grande", "Trebuchet MS", sans-serif;
 }
 #main h1 {
-  display: inline-block;
-  width: 100%;
   margin-top: .67em;
   font-size: 24px;
   padding-top: .33em;
@@ -15,6 +13,7 @@
   display: inline-block;
   text-decoration: none;
 }
+#main h1 a:hover {color: #688fad;}
 #main h2 {
   font-size: 21px;
   padding-top: .4em;
