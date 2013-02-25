@@ -105,6 +105,7 @@ table td {
 
 pre, code {
   font-family: Inconsolata, "Courier New", Courier, monospace;
+  color: #555;
   background-color: #efefef;
   border: 1px solid #ddd;
 
