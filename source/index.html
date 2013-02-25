@@ -9,7 +9,7 @@ layout: default
 
   {{ post.content | split: '<!--more-->' | first }}
 
-  <p><a href="{{ post.url }}" class="icon-hand-right button">Читать далее</a></p>
+  <div class="button"><a href="{{ post.url }}" class="icon-circle-arrow-right">Читать далее</a></div>
 {% endfor %}
 
 <p>

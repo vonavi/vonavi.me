@@ -41,7 +41,7 @@ body {
   position: relative;
   clear: both;
 }
-#crosscol-wrapper, a.button {
+#crosscol-wrapper, .button {
   height: 2em;
   line-height: 2em;
   background-color: #3f647e;
@@ -82,7 +82,7 @@ body {
   background-color: #3f647e;
 }
 
-#crosscol-wrapper a, a.button {
+#crosscol-wrapper a, .button a {
   display: inline-block;
   color: #9fc1d3;
   font-family: "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
@@ -100,7 +100,7 @@ body {
   float: left;
   padding: 0 1.5em;
 }
-#crosscol-wrapper a:hover, a.button:hover {
+#crosscol-wrapper a:hover, .button a:hover {
   color: #c9c9c9;
 }
 
@@ -129,7 +129,9 @@ body {
   color: #688fad;
 }
 
-a.button {
+.button {
+  display: inline-block;
+  margin-bottom: 1em;
   padding: 0 8px;
   border: 1px solid rgba(0,0,0,.4);
 
@@ -175,7 +177,7 @@ a.button {
 .icon-rss:before {
   content: "\f09e";
 }
-.icon-hand-right:before {
+.icon-circle-arrow-right:before {
   content: "\f0a9";
 }
 
