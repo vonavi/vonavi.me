@@ -42,24 +42,24 @@ body {
   clear: both;
 }
 #crosscol-wrapper, a.button {
-  height: 32px;
+  height: 2em;
+  line-height: 2em;
   background-color: #3f647e;
-
-  box-sizing: border-box;         /* Opera/IE 8+ */
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  background-image: linear-gradient(bottom, #3f647e 50%, rgba(255,255,255,.1) 51%, rgba(255,255,255,.4) 100%);
+  background-image: -moz-linear-gradient(bottom, #3f647e 50%, rgba(255,255,255,.1) 51%, rgba(255,255,255,.4) 100%);
+  background-image: -webkit-linear-gradient(bottom, #3f647e 50%, rgba(255,255,255,.1) 51%, rgba(255,255,255,.4) 100%);
+  background-image: -o-linear-gradient(bottom, #3f647e 50%, rgba(255,255,255,.1) 51%, rgba(255,255,255,.4) 100%);
 }
 #crosscol-wrapper {
   float: left;
   width: 100%;
   padding-left: 1em;
-  border-bottom: 1px solid rgba(0,0,0,.1);
+  border-bottom: 1px solid rgba(0,0,0,.3);
 
-  box-shadow: 0 1px 3px rgba(0,0,0,.5), inset 0 -1px 2px rgba(0,0,0,.1);
-  -moz-box-shadow: 0 1px 3px rgba(0,0,0,.5), inset 0 -1px 2px rgba(0,0,0,.1);
-  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.5), inset 0 -1px 2px rgba(0,0,0,.1);
-  -o-box-shadow: 0 1px 3px rgba(0,0,0,.5), inset 0 -1px 2px rgba(0,0,0,.1);
-
+  box-shadow: 0 1px 3px rgba(0,0,0,.4), inset 0 -2px rgba(0,0,0,.1), inset 0 1px rgba(255,255,255,.2);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,.4), inset 0 -2px rgba(0,0,0,.1), inset 0 1px rgba(255,255,255,.2);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.4), inset 0 -2px rgba(0,0,0,.1), inset 0 1px rgba(255,255,255,.2);
+  -o-box-shadow: 0 1px 3px rgba(0,0,0,.4), inset 0 -2px rgba(0,0,0,.1), inset 0 1px rgba(255,255,255,.2);
   z-index: 10;
 }
 #header-wrapper {
@@ -84,10 +84,12 @@ body {
 
 #crosscol-wrapper a, a.button {
   display: inline-block;
-  color: #95d47a;
-  font-size: 15px;
+  color: #9fc1d3;
   font-family: "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
   text-decoration: none;
+  text-shadow: 0 -1px rgba(0,0,0,.3);
 
   user-select: none;
   -moz-user-select: none;
@@ -96,8 +98,10 @@ body {
 }
 #crosscol-wrapper a {
   float: left;
-  line-height: 33px;
   padding: 0 1.5em;
+}
+#crosscol-wrapper a:hover, a.button:hover {
+  color: #c9c9c9;
 }
 
 #header-wrapper a.title {
@@ -107,7 +111,7 @@ body {
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
-  text-shadow: 0 1px 1px rgba(0,0,0,.3);
+  text-shadow: 0 1px 2px rgba(0,0,0,.4);
 }
 #header-wrapper p.description {
   color: #688fad;
@@ -118,42 +122,42 @@ body {
 #footer-wrapper #footer {
   color: #688fad;
   font-family: "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   text-align: center;
 }
-
-#footer-wrapper #footer a {color: #688fad;}
-#footer-wrapper #footer a:hover {color: #52ccce;}
+#footer-wrapper #footer a {
+  color: #688fad;
+}
 
 a.button {
-  line-height: 31px;
   padding: 0 8px;
-  border: 1px solid rgba(0,0,0,.1);
+  border: 1px solid rgba(0,0,0,.4);
+
+  box-shadow: 0 1px 3px rgba(0,0,0,.6), inset 0 -2px rgba(0,0,0,.2), inset 0 1px rgba(255,255,255,.2);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,.6), inset 0 -2px rgba(0,0,0,.2), inset 0 1px rgba(255,255,255,.2);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.6), inset 0 -2px rgba(0,0,0,.2), inset 0 1px rgba(255,255,255,.2);
+  -o-box-shadow: 0 1px 3px rgba(0,0,0,.6), inset 0 -2px rgba(0,0,0,.2), inset 0 1px rgba(255,255,255,.2);
 
   border-radius: 8px;         /* CSS3 */
   -moz-border-radius: 8px;    /* Firefox */
   -webkit-border-radius: 8px; /* Safari, Chrome */
-
-  box-shadow: 0 1px 3px rgba(0,0,0,.7), inset 0 -1px 2px rgba(0,0,0,.2), inset 0 1px 2px rgba(255,255,255,.2);
-  -moz-box-shadow: 0 1px 3px rgba(0,0,0,.7), inset 0 -1px 2px rgba(0,0,0,.2), inset 0 1px 2px rgba(255,255,255,.2);
-  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.7), inset 0 -1px 2px rgba(0,0,0,.2), inset 0 1px 2px rgba(255,255,255,.2);
-  -o-box-shadow: 0 1px 3px rgba(0,0,0,.7), inset 0 -1px 2px rgba(0,0,0,.2), inset 0 1px 2px rgba(255,255,255,.2);
 }
 
 [class^="icon-"]:before, [class^="icon-"]:after {
   display: inline-block;
   vertical-align: middle;
   margin-bottom: 1px;
-  color: #688fad;
+  color: #95d47a;
   font-family: FontAwesome;
   font-size: 19px;
+  font-weight: normal;
   text-shadow: 0 -1px rgba(0,0,0,.4);
 }
-[class^="icon-"]:before {margin-right: 8px;}
-[class^="icon-"]:after {margin-left: 8px;}
-[class^="icon-"]:hover:before, [class^="icon-"]:hover:after {
-  color: #95d47a;
-  text-shadow: none;
+[class^="icon-"]:before {
+  margin-right: 8px;
+}
+[class^="icon-"]:after {
+  margin-left: 8px;
 }
 
 /* Fix the improper size of the icon-home in FA 3.0 */
@@ -162,10 +166,18 @@ a.button {
   font-size: 20px;
   margin: 0 6px 2px 1px;
 }
-.icon-archive:before {content: "\f01c";}
-.icon-about:before {content: "\f05a";}
-.icon-rss:before {content: "\f09e";}
-.icon-hand-right:before {content: "\f0a9";}
+.icon-archive:before {
+  content: "\f01c";
+}
+.icon-about:before {
+  content: "\f05a";
+}
+.icon-rss:before {
+  content: "\f09e";
+}
+.icon-hand-right:before {
+  content: "\f0a9";
+}
 
 #flattr {
   position: absolute;
