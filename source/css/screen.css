@@ -6,6 +6,7 @@
 
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin,cyrillic);
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Caption:700&subset=latin,cyrillic);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:700&subset=latin,cyrillic);
 @import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
 @font-face {
   font-family: FontAwesome;
@@ -37,30 +38,23 @@ body {
   overflow: hidden;
 }
 
-#crosscol-wrapper, #header-wrapper, #main {
-  position: relative;
-  clear: both;
-}
 #crosscol-wrapper, .button {
+  height: 2em;
+  line-height: 2em;
   background-color: #3f647e;
-  background-image: linear-gradient(bottom, #3f647e 50%, rgba(255,255,255,.05) 51%, rgba(255,255,255,.2) 100%);
-  background-image: -moz-linear-gradient(bottom, #3f647e 50%, rgba(255,255,255,.05) 51%, rgba(255,255,255,.2) 100%);
-  background-image: -webkit-linear-gradient(bottom, #3f647e 50%, rgba(255,255,255,.05) 51%, rgba(255,255,255,.2) 100%);
-  background-image: -o-linear-gradient(bottom, #3f647e 50%, rgba(255,255,255,.05) 51%, rgba(255,255,255,.2) 100%);
 }
 #crosscol-wrapper {
   float: left;
   width: 100%;
   padding-left: 1em;
-  border-bottom: 1px solid #3f647e;
 
-  box-shadow: 0 1px 3px rgba(0,0,0,.5), inset 0 -1px rgba(255,255,255,.1), inset 0 1px rgba(255,255,255,.1);
-  -moz-box-shadow: 0 1px 3px rgba(0,0,0,.5), inset 0 -1px rgba(255,255,255,.1), inset 0 1px rgba(255,255,255,.1);
-  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.5), inset 0 -1px rgba(255,255,255,.1), inset 0 1px rgba(255,255,255,.1);
-  -o-box-shadow: 0 1px 3px rgba(0,0,0,.5), inset 0 -1px rgba(255,255,255,.1), inset 0 1px rgba(255,255,255,.1);
-  z-index: 10;
+  box-shadow: 0 1px 3px rgba(0,0,0,.5), inset 0 -2px rgba(0,0,0,.1);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,.5), inset 0 -2px rgba(0,0,0,.1);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.5), inset 0 -2px rgba(0,0,0,.1);
+  -o-box-shadow: 0 1px 3px rgba(0,0,0,.5), inset 0 -2px rgba(0,0,0,.1);
 }
 #header-wrapper {
+  clear: both;
   width: 100%;
   background-color: #9fc1d3;
   padding: .7em 0 .8em 2.5em;
@@ -82,14 +76,11 @@ body {
 
 #crosscol-wrapper a, .button a {
   display: inline-block;
-  height: 2em;
-  line-height: 2em;
   color: #9fc1d3;
-  font-family: "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "PT Sans Narrow", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 15px;
   font-weight: bold;
   text-decoration: none;
-  text-shadow: 0 -1px rgba(0,0,0,.3);
 
   user-select: none;
   -moz-user-select: none;
@@ -131,28 +122,26 @@ body {
 
 .button {
   display: inline-block;
-  margin-bottom: 1em;
   padding: 0 8px;
-  border: 1px solid #3f647e;
 
-  box-shadow: 0 1px 3px rgba(0,0,0,.6), inset -1px -1px rgba(255,255,255,.1), inset 1px 1px rgba(255,255,255,.1);
-  -moz-box-shadow: 0 1px 3px rgba(0,0,0,.6), inset -1px -1px rgba(255,255,255,.1), inset 1px 1px rgba(255,255,255,.1);
-  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.6), inset -1px -1px rgba(255,255,255,.1), inset 1px 1px rgba(255,255,255,.1);
-  -o-box-shadow: 0 1px 3px rgba(0,0,0,.6), inset -1px -1px rgba(255,255,255,.1), inset 1px 1px rgba(255,255,255,.1);
+  box-shadow: 0 1px 3px rgba(0,0,0,.6), inset 0 -2px rgba(0,0,0,.1);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,.6), inset 0 -2px rgba(0,0,0,.1);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.6), inset 0 -2px rgba(0,0,0,.1);
+  -o-box-shadow: 0 1px 3px rgba(0,0,0,.6), inset 0 -2px rgba(0,0,0,.1);
 
-  border-radius: 8px;         /* CSS3 */
-  -moz-border-radius: 8px;    /* Firefox */
-  -webkit-border-radius: 8px; /* Safari, Chrome */
+  border-radius: 6px;         /* CSS3 */
+  -moz-border-radius: 6px;    /* Firefox */
+  -webkit-border-radius: 6px; /* Safari, Chrome */
 }
 
 [class^="icon-"]:before, [class^="icon-"]:after {
   display: inline-block;
   vertical-align: middle;
+  margin-top: -1px;
   color: #95d47a;
   font-family: FontAwesome;
   font-size: 19px;
   font-weight: normal;
-  text-shadow: 0 -1px rgba(0,0,0,.4);
 }
 [class^="icon-"]:before {
   margin-right: 8px;
@@ -165,7 +154,7 @@ body {
 .icon-home:before {
   content: "\f015";
   font-size: 20px;
-  margin: 0 6px 2px 1px;
+  margin: -1px 6px 1px 1px;
 }
 .icon-archive:before {
   content: "\f01c";
