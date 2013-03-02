@@ -6,7 +6,7 @@
 
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin,cyrillic);
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Caption:700&subset=latin,cyrillic);
-@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=latin,cyrillic);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:700&subset=latin,cyrillic);
 @import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
 @font-face {
   font-family: FontAwesome;
@@ -39,25 +39,27 @@ body {
 }
 
 #crosscol-wrapper, .button {
-  height: 2em;
-  line-height: 2em;
   background-color: #3f647e;
+  background-image: linear-gradient(bottom, rgba(0,0,0,.2) 0%, rgba(0,0,0,0) 33%, rgba(255,255,255,0) 33%, rgba(255,255,255,.3) 100%);
+  background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.2) 0%, rgba(0,0,0,0) 33%, rgba(255,255,255,0) 33%, rgba(255,255,255,.3) 100%);
+  background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.2) 0%, rgba(0,0,0,0) 33%, rgba(255,255,255,0) 33%, rgba(255,255,255,.3) 100%);
+  background-image: -o-linear-gradient(bottom, rgba(0,0,0,.2) 0%, rgba(0,0,0,0) 33%, rgba(255,255,255,0) 33%, rgba(255,255,255,.3) 100%);
 }
 #crosscol-wrapper {
   float: left;
   width: 100%;
-  padding-left: 1.2em;
+  padding-left: 1.4em;
 
-  box-shadow: 0 1px 3px rgba(0,0,0,.5), inset 0 -2px rgba(0,0,0,.1);
-  -moz-box-shadow: 0 1px 3px rgba(0,0,0,.5), inset 0 -2px rgba(0,0,0,.1);
-  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.5), inset 0 -2px rgba(0,0,0,.1);
-  -o-box-shadow: 0 1px 3px rgba(0,0,0,.5), inset 0 -2px rgba(0,0,0,.1);
+  box-shadow: 0 1px 3px rgba(0,0,0,.6);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,.6);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.6);
+  -o-box-shadow: 0 1px 3px rgba(0,0,0,.6);
 }
 #header-wrapper {
   clear: both;
   width: 100%;
   background-color: #9fc1d3;
-  padding: .7em 0 .8em 2.5em;
+  padding: .7em 0 .8em 2.9em;
 }
 #main {
   width: 35em;
@@ -75,10 +77,13 @@ body {
 }
 
 #crosscol-wrapper a, .button a {
-  display: inline-block;
-  color: #9fc1d3;
+  height: 2em;
+  line-height: 1.95em;
+  color: #c9c9c9;
   font-family: "PT Sans Narrow", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: bold;
   text-decoration: none;
+  text-shadow: 0 -1px rgba(0,0,0,.3);
 
   user-select: none;
   -moz-user-select: none;
@@ -87,10 +92,10 @@ body {
 }
 #crosscol-wrapper a {
   float: left;
-  padding: 0 1.2em;
+  padding: 0 1.4em;
 }
 #crosscol-wrapper a:hover, .button a:hover {
-  color: #c9c9c9;
+  color: #9fc1d3;
 }
 
 #header-wrapper a.title {
@@ -100,7 +105,7 @@ body {
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
-  text-shadow: 0 1px 2px rgba(0,0,0,.4);
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
 }
 #header-wrapper p.description {
   color: #688fad;
@@ -122,23 +127,25 @@ body {
   display: inline-block;
   padding: 0 8px;
 
-  box-shadow: 0 1px 3px rgba(0,0,0,.6), inset 0 -2px rgba(0,0,0,.1);
-  -moz-box-shadow: 0 1px 3px rgba(0,0,0,.6), inset 0 -2px rgba(0,0,0,.1);
-  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.6), inset 0 -2px rgba(0,0,0,.1);
-  -o-box-shadow: 0 1px 3px rgba(0,0,0,.6), inset 0 -2px rgba(0,0,0,.1);
+  box-shadow: 0 1px 3px rgba(0,0,0,.7);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,.7);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.7);
+  -o-box-shadow: 0 1px 3px rgba(0,0,0,.7);
 
-  border-radius: 6px;         /* CSS3 */
-  -moz-border-radius: 6px;    /* Firefox */
-  -webkit-border-radius: 6px; /* Safari, Chrome */
+  border-radius: 5px;         /* CSS3 */
+  -moz-border-radius: 5px;    /* Firefox */
+  -webkit-border-radius: 5px; /* Safari, Chrome */
 }
 
 [class^="icon-"]:before, [class^="icon-"]:after {
   display: inline-block;
   vertical-align: middle;
-  margin-top: -1px;
+  line-height: 0;
   color: #95d47a;
   font-family: FontAwesome;
   font-size: 19px;
+  font-weight: normal;
+  text-shadow: 0 -1px rgba(0,0,0,.4);
 }
 [class^="icon-"]:before {
   margin-right: 8px;
@@ -151,7 +158,7 @@ body {
 .icon-home:before {
   content: "\f015";
   font-size: 20px;
-  margin: -2px 6px 1px 1px;
+  margin: -1px 6px 0 1px;
 }
 .icon-archive:before {
   content: "\f01c";
