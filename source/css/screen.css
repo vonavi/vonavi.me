@@ -6,7 +6,6 @@
 
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin,cyrillic);
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Caption:700&subset=latin,cyrillic);
-@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:700&subset=latin,cyrillic);
 @import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
 @font-face {
   font-family: FontAwesome;
@@ -39,6 +38,8 @@ body {
 }
 
 #crosscol-wrapper, .button {
+  height: 2em;
+  line-height: 2em;
   background-color: #3f647e;
   background-image: linear-gradient(bottom, rgba(0,0,0,.2) 0%, rgba(0,0,0,0) 33%, rgba(255,255,255,0) 33%, rgba(255,255,255,.3) 100%);
   background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.2) 0%, rgba(0,0,0,0) 33%, rgba(255,255,255,0) 33%, rgba(255,255,255,.3) 100%);
@@ -59,7 +60,7 @@ body {
   clear: both;
   width: 100%;
   background-color: #9fc1d3;
-  padding: .7em 0 .8em 2.9em;
+  padding: .7em 0 .8em 2.8em;
 }
 #main {
   width: 35em;
@@ -77,10 +78,9 @@ body {
 }
 
 #crosscol-wrapper a, .button a {
-  height: 2em;
-  line-height: 1.95em;
-  color: #c9c9c9;
-  font-family: "PT Sans Narrow", "Helvetica Neue", Helvetica, sans-serif;
+  color: #9fc1d3;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
   font-weight: bold;
   text-decoration: none;
   text-shadow: 0 -1px rgba(0,0,0,.3);
@@ -95,7 +95,7 @@ body {
   padding: 0 1.4em;
 }
 #crosscol-wrapper a:hover, .button a:hover {
-  color: #9fc1d3;
+  color: #c9c9c9;
 }
 
 #header-wrapper a.title {
@@ -141,6 +141,7 @@ body {
   display: inline-block;
   vertical-align: middle;
   line-height: 0;
+  margin-top: -1px;
   color: #95d47a;
   font-family: FontAwesome;
   font-size: 19px;
@@ -158,7 +159,7 @@ body {
 .icon-home:before {
   content: "\f015";
   font-size: 20px;
-  margin: -1px 6px 0 1px;
+  margin: -2px 6px 0 1px;
 }
 .icon-archive:before {
   content: "\f01c";
