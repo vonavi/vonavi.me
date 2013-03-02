@@ -140,7 +140,7 @@ body {
 [class^="icon-"]:before, [class^="icon-"]:after {
   display: inline-block;
   vertical-align: middle;
-  line-height: 0;
+  line-height: 1px;
   margin-top: -1px;
   color: #95d47a;
   font-family: FontAwesome;
