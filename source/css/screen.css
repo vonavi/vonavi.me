@@ -4,8 +4,7 @@
  * high-grey: #c9c9c9    high-green: #95d47a
  */
 
-@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin,cyrillic);
-@import url(http://fonts.googleapis.com/css?family=PT+Sans+Caption:700&subset=latin,cyrillic);
+@import url(http://fonts.googleapis.com/css?family=Marmelad&subset=latin,cyrillic);
 @import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
 @font-face {
   font-family: FontAwesome;
@@ -24,7 +23,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  font: 16px/1.4 "PT Sans", "Lucida Grande", "Trebuchet MS", sans-serif;
+  font: 16px/1.4 Georgia, serif;
   color: #222;
   background-color: #f8f8f8;
   background-image: url("/images/noise.png");
@@ -60,7 +59,7 @@ body {
   clear: both;
   width: 100%;
   background-color: #9fc1d3;
-  padding: .7em 0 .8em 2.8em;
+  padding: .7em 0 .8em 2.7em;
 }
 #main {
   width: 35em;
@@ -100,7 +99,7 @@ body {
 
 #header-wrapper a.title {
   color: #3f647e;
-  font-family: "PT Sans Caption", "Lucida Grande", "Trebuchet MS", sans-serif;
+  font-family: Marmelad, "Lucida Grande", "Trebuchet MS", sans-serif;
   font-size: 24px;
   font-weight: bold;
   text-transform: uppercase;
@@ -109,13 +108,13 @@ body {
 }
 #header-wrapper p.description {
   color: #688fad;
-  font-family: "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   cursor: default;
 }
 
 #footer-wrapper #footer {
   color: #688fad;
-  font-family: "PT Sans", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   text-align: center;
 }
@@ -141,7 +140,7 @@ body {
   display: inline-block;
   vertical-align: middle;
   line-height: 1px;
-  margin-top: -1px;
+  margin-bottom: 1px;
   color: #95d47a;
   font-family: FontAwesome;
   font-size: 19px;
@@ -159,7 +158,7 @@ body {
 .icon-home:before {
   content: "\f015";
   font-size: 20px;
-  margin: -2px 6px 0 1px;
+  margin: 0 6px 2px 1px;
 }
 .icon-archive:before {
   content: "\f01c";
