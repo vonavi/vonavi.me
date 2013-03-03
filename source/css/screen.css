@@ -58,7 +58,7 @@ body {
   clear: both;
   width: 100%;
   background-color: #9fc1d3;
-  padding: .7em 0 .8em 2.7em;
+  padding: .7em 0 .8em 2.8em;
 }
 #main {
   width: 35em;
@@ -77,12 +77,10 @@ body {
 
 #crosscol-wrapper a, .button a {
   float: left;
-  color: #9fc1d3;
+  color: #c9c9c9;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
-  font-weight: bold;
   text-decoration: none;
-  text-shadow: 0 -1px rgba(0,0,0,.4);
 
   user-select: none;
   -moz-user-select: none;
@@ -90,10 +88,10 @@ body {
   -ms-user-select: none;
 }
 #crosscol-wrapper a {
-  padding: 0 1.4em;
+  padding: 0 1.5em;
 }
 #crosscol-wrapper a:hover, .button a:hover {
-  color: #c9c9c9;
+  color: #9fc1d3;
 }
 
 #header-wrapper a.title {
@@ -147,7 +145,7 @@ div.button-wrapper {
   color: #95d47a;
   font-family: FontAwesome;
   font-size: 19px;
-  font-weight: normal;
+  text-shadow: 0 -1px rgba(0,0,0,.4);
 }
 [class^="icon-"]:before {
   margin-right: 8px;
