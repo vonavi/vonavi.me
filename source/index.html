@@ -9,9 +9,9 @@ layout: default
 
   {{ post.content | split: '<!--more-->' | first }}
 
-  <p>
+  <div class="button-wrapper">
     <span class="button"><a href="{{ post.url }}" class="icon-circle-arrow-right">Читать далее</a></span>
-  </p>
+  </div>
 {% endfor %}
 
 <p>
