@@ -6,8 +6,8 @@
 }
 #main h1 {
   font-size: 24px;
-  padding-top: .33em;
-  padding-bottom: .33em;
+  margin-top: .33em;
+  margin-bottom: .33em;
 }
 #main h1 a {
   display: inline-block;
@@ -16,20 +16,24 @@
 #main h1 a:hover {color: #688fad;}
 #main h2 {
   font-size: 21px;
-  padding-top: .4em;
-  padding-bottom: .4em;
+  margin-top: .4em;
+  margin-bottom: .4em;
 }
 #main h3 {
   font-size: 18px;
-  padding-top: .5em;
-  padding-bottom: .5em;
+  margin-top: .5em;
+  margin-bottom: .5em;
 }
 #main h4 {
-  padding-top: .6em;
-  padding-bottom: .6em;
+  margin-top: .6em;
+  margin-bottom: .6em;
 }
 
-#main p {margin-bottom: 1em;}
+#main p {
+  float: left;
+  width: 100%;
+  margin-bottom: 1em;
+}
 #main ul, #main ol {
   list-style-position: outside;
   margin-left: 2em;
@@ -105,9 +109,8 @@ table td {
 
 pre, code {
   font-family: Inconsolata, "Courier New", Courier, monospace;
-  color: #555;
-  background-color: #efefef;
-  border: 1px solid #ddd;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
 
   border-radius: 3px;
   -moz-border-radius: 3px;
@@ -126,6 +129,7 @@ code {
   display: inline-block;
   line-height: 1em;
   padding: 1px 3px;
+  border-color: #eaeaea;
 }
 pre code {
   padding: 0 !important;
