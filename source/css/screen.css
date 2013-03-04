@@ -8,8 +8,8 @@
 @import url(http://fonts.googleapis.com/css?family=Marmelad&subset=latin,cyrillic);
 @import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
 @font-face {
-  font-family: FontAwesome;
-  src: url("/fonts/Font-Awesome/fontawesome-webfont.woff") format("woff");
+  font-family: "Octicons Regular";
+  src: url("/fonts/Octicons/octicons-regular-webfont.woff") format("woff");
 }
 
 /* Fix "page shift" problem that happens on loading pages of different lengths */
@@ -79,7 +79,7 @@ body {
 
 #crosscol-wrapper a, .button a {
   float: left;
-  color: #c9c9c9;
+  color: #9fc1d3;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   text-decoration: none;
@@ -114,11 +114,14 @@ body {
 #footer-wrapper #footer {
   color: #688fad;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   text-align: center;
 }
 #footer-wrapper #footer a {
   color: #688fad;
+}
+#footer-wrapper #footer a:hover {
+  color: #52ccce;
 }
 
 div.button-wrapper {
@@ -140,39 +143,22 @@ div.button-wrapper {
 }
 
 [class^="icon-"]:before, [class^="icon-"]:after {
-  display: inline-block;
-  vertical-align: middle;
-  line-height: 1px;
-  margin-bottom: 1px;
   color: #95d47a;
-  font-family: FontAwesome;
-  font-size: 19px;
+  font-family: "Octicons Regular";
+  font-size: 16px;
 }
 [class^="icon-"]:before {
-  margin-right: 8px;
+  margin-right: 6px;
 }
 [class^="icon-"]:after {
-  margin-left: 8px;
+  margin-left: 6px;
 }
 
-/* Fix the improper size of the icon-home in FA 3.0 */
-.icon-home:before {
-  content: "\f015";
-  font-size: 20px;
-  margin: 0 6px 2px 1px;
-}
-.icon-archive:before {
-  content: "\f01c";
-}
-.icon-about:before {
-  content: "\f05a";
-}
-.icon-rss:before {
-  content: "\f09e";
-}
-.icon-circle-arrow-right:before {
-  content: "\f0a9";
-}
+.icon-home:before {content: "\f08d";}
+.icon-archive:before {content: "\f096";}
+.icon-about:before {content: "\f059";}
+.icon-feed:before {content: "\f034";}
+.icon-arr-right:before {content: "\f03e";}
 
 #flattr {
   position: absolute;
