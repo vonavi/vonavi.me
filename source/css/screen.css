@@ -92,9 +92,6 @@ body {
 #crosscol-wrapper a {
   padding: 0 1.6em;
 }
-#crosscol-wrapper a:hover, .button a:hover {
-  color: #52ccce;
-}
 
 #header-wrapper a.title {
   color: #3f647e;
@@ -143,6 +140,7 @@ div.button-wrapper {
 }
 
 [class^="icon-"]:before, [class^="icon-"]:after {
+  line-height: 0;
   color: #95d47a;
   font-family: "Octicons Regular";
   font-size: 16px;
@@ -152,6 +150,9 @@ div.button-wrapper {
 }
 [class^="icon-"]:after {
   margin-left: 6px;
+}
+[class^="icon-"]:hover:before, [class^="icon-"]:hover:after {
+  color: #52ccce;
 }
 
 .icon-home:before {content: "\f08d";}
