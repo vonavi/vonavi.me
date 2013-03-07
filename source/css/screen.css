@@ -27,7 +27,6 @@ body {
   height: 100%;
   font: 16px/1.4 Georgia, serif;
   color: #333;
-  background-image: url("/images/noise.png");
 }
 #outer-wrapper {
   position: relative;
@@ -35,16 +34,21 @@ body {
   min-width: 800px;
   min-height: 100%;
   overflow: hidden;
+  background-image: url(/images/noise.png);
 }
 
 #crosscol-wrapper, .button {
   height: 2em;
   line-height: 2em;
   background-color: #3f647e;
-  background-image: linear-gradient(bottom, rgba(0,0,0,.1) 0%, rgba(0,0,0,0) 33%, rgba(255,255,255,0) 33%, rgba(255,255,255,.25) 100%);
-  background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.1) 0%, rgba(0,0,0,0) 33%, rgba(255,255,255,0) 33%, rgba(255,255,255,.25) 100%);
-  background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.1) 0%, rgba(0,0,0,0) 33%, rgba(255,255,255,0) 33%, rgba(255,255,255,.25) 100%);
-  background-image: -o-linear-gradient(bottom, rgba(0,0,0,.1) 0%, rgba(0,0,0,0) 33%, rgba(255,255,255,0) 33%, rgba(255,255,255,.25) 100%);
+  background-image: linear-gradient(bottom, rgba(0,0,0,.1) 0%, rgba(0,0,0,0) 33%,
+    rgba(255,255,255,0) 33%, rgba(255,255,255,.25) 100%), url(/images/noise.png);
+  background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.1) 0%, rgba(0,0,0,0) 33%,
+    rgba(255,255,255,0) 33%, rgba(255,255,255,.25) 100%), url(/images/noise.png);
+  background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.1) 0%, rgba(0,0,0,0) 33%,
+    rgba(255,255,255,0) 33%, rgba(255,255,255,.25) 100%), url(/images/noise.png);
+  background-image: -o-linear-gradient(bottom, rgba(0,0,0,.1) 0%, rgba(0,0,0,0) 33%,
+    rgba(255,255,255,0) 33%, rgba(255,255,255,.25) 100%), url(/images/noise.png);
 }
 #crosscol-wrapper {
   float: left;
@@ -59,8 +63,9 @@ body {
 #header-wrapper {
   clear: both;
   width: 100%;
-  background-color: #9fc1d3;
   padding: .7em 0 .8em 2.8em;
+  background-color: #9fc1d3;
+  background-image: url(/images/noise.png);
 }
 #main {
   width: 35em;
@@ -75,6 +80,7 @@ body {
   height: 2em;
   line-height: 2em;
   background-color: #3f647e;
+  background-image: url(/images/noise.png);
 }
 
 #crosscol-wrapper a, .button a {
