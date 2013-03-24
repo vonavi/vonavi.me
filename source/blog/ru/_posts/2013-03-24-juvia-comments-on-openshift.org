@@ -1,0 +1,114 @@
+---
+layout:   post
+title:    Комментируем вместе с Juvia на облегчённом языке разметки Markdown
+comments: yes
+---
+
+Какой же блог без комментариев и вездесущих комментаторов? Только на сей раз речь пойдёт не о популярнейших сервисах [[http://disqus.com][Disqus]] и [[http://www.intensedebate.com][IntenseDebate]], а о том, как установить себе комментарии [[https://github.com/phusion/juvia][Juvia]]. Тем самым, мы скажем дружное \laquo{}нет\raquo использованию HTML кода в комментариях, заменив их легковесной разметкой [[http://ru.wikipedia.org/wiki/Markdown][Markdown]], да ещё и с превью комментариев \laquo{}на лету\raquo. На сегодня, именно *Juvia* стала связующим звеном между комментаторами и ведущим этого блога.
+
+#+html: <!--more-->
+
+*** Создание приложения Juvia
+
+Система комментариев *Juvia* имеет открытый исходный код, с ней вы не привязаны к какому-либо сервису, а вправе выбирать свой вариант размещения, например, на [[https://www.openshift.com][OpenShift]]. Пробы комментаторского пера с *Juvia* доступны на [[http://juvia-demo.phusion.nl/admin/sites/1/test][тестовой странице]] с логином =a@a.com= и паролем =123456=. Для тех, кому комментарии пришлись по нраву, есть [[https://github.com/openshift/juvia-example][пример Juvia на OpenShift]]. Настройка клиента уже описана [[{{site.url}}/blog/ru/2012/12/27/jekyll-on-openshift/][здесь]], поэтому сразу перейдём к созданию приложения
+#+begin_src console
+  $ rhc app create juvia ruby-1.9
+#+end_src
+где =juvia= --- имя системы комментариев. Её база управляется [[http://ru.wikipedia.org/wiki/MySQL][MySQL]] и подключается к приложению отдельно
+#+begin_src console
+  $ rhc cartridge add mysql-5.1 -a juvia
+#+end_src
+Запоминать логин и пароль к базе нет нужды, поскольку они хранятся в переменных =OPENSHIFT_MYSQL_DB_USERNAME= и =OPENSHIFT_MYSQL_DB_PASSWORD=. Войдём в директорию приложения
+#+begin_src console
+  $ cd juvia
+#+end_src
+и добавим удалённый репозиторий с примером *Juvia* на *OpenShift*
+#+begin_src console
+  $ git remote add juvia -m master git://github.com/openshift/juvia-example.git
+#+end_src
+Остаётся перенести его в нашу директорию. Ввиду возможных конфликтов, условимся со стратегией их разрешения:
+#+begin_src console
+  $ git pull -s recursive -X theirs juvia master
+#+end_src
+Тип стратегии задан ключом =-s recursive=, а любые конфликты между локальным и удалённым репозиторием будут решены в пользу последнего, в соответствии с опцией =-X theirs=.
+
+*** Водружение Juvia на сервер
+
+Отредактируем файл конфигурации =config/application.yml= с учётом примечаний из [[https://github.com/phusion/juvia/blob/master/config/application.yml.example][данного примера]]. Параметры *Juvia* при размещении на *OpenShift* задаются в разделе =production=, который приводится к примерно следующему виду:
+#+begin_src yaml
+  production:
+    base_url: http://juvia-<namespace>.rhcloud.com
+    from: juvia@yoursite.com
+    email_method: sendmail
+#+end_src
+В =base_url= задан полный URL местонахождения приложения. Для отправки уведомлений используется локальная служба сообщений =sendmail= на *OpenShift*. Независимо от указанного email в поле =from=, отсылка происходит от имени =no-reply@rhcloud.com=.
+
+Разместим *Juvia* на сервере вместе с внесёнными правками:
+#+begin_src sh
+  $ git add .
+  $ git commit -m "my first commit"
+  $ git push origin master
+#+end_src
+При первом посещении страницы =http://juvia-<namespace>.rhcloud.com= создаётся администратор приложения, а указанный в аккаунте адрес почты используется для отсылки извещений о комментариях.
+
+*Примечание.* Владельцам почты на *Gmail* необходимо настроить спам-фильтр, чтобы сообщения не попали в нежелательные. В этом вам поможет меню /\laquo{}Создать новый фильтр\raquo/ (/Настройки/ \to /Фильтры/). Нужно заполнить поле /\laquo{}От\raquo/ как =no-reply@rhcloud.com=, потом выбрать /\laquo{}Создать фильтр в соответствии с этим запросом\raquo/ и задать действие /\laquo{}Никогда не отправлять в спам\raquo/, а напоследок /\laquo{}Создать фильтр\raquo/.
+
+*** Подключение комментариев к блогу
+
+В раздел *Sites* админки *Juvia* добавляете свой блог и получаете уникальный ключ сайта. На странице *Help* приведён JavaScript-сценарий, который нужно всего лишь добавить к страницам, где планируются комментарии. Первый раздел JavaScript, где указаны =options=, я модифицировал под использование совместно с *Jekyll*:
+#+begin_src js
+  {% raw %}var options = {
+    container   : '#comments',
+    site_key    : '(some site key)',
+    topic_key   : '{{ page.url }}',
+    topic_url   : '{{ site.url }}{{ page.url }}',
+    topic_title : '{{ page.title }}' || '{{ site.url }}{{ page.url }}',
+    include_base: !window.Juvia,
+    include_css : !window.Juvia
+  };{% endraw %}
+#+end_src
+Главное его отличие заключается в =topic_key=, однозначно задающим ключ страницы с  комментариями. Если оставить его как =location.pathname=, то страница вида =index.html= будет идентифицироваться по-разному, в зависимости от того, был введён в адресной строке браузера URL с явным указанием =index.html= или нет. Форму для отправки комментариев создавать не нужно, достаточно разместить на её месте элемент
+#+begin_src html
+  <div id="comments"></div>
+#+end_src
+(или с любым другим /id/, указанном в свойстве =container=).
+
+*** Работа с копиями MySQL базы
+
+Модерация комментариев производится с сайта приложения. Но бывают ситуации, когда необходима сама MySQL база, будь то её правка или перенос. *Juvia* хранит в базе данных всех пользователей, =site_key= для каждого из сайтов и всю информацию по комментариям, что позволяет восстанавливать все данные приложения по дампу базы MySQL.
+
+Каждое приложение на *OpenShift* имеет доступ по [[http://ru.wikipedia.org/wiki/SSH][SSH]], и *Juvia* в этом не исключение. Нужно просто ввести
+#+begin_src console
+  $ rhc app show juvia
+#+end_src
+и найти в выводе команды подключение по SSH, которое имеет вид =uuid@juvia-<namespace>.rhcloud.com=. Теперь зайдём в приложение *Juvia* на сервере
+#+begin_src console
+  $ ssh uuid@juvia-<namespace>.rhcloud.com
+#+end_src
+и создадим там дамп MySQL базы, воспользовавшись модификацией [[https://www.openshift.com/forums/openshift/network-access-problem-to-mysql-cartridge-in-scaled-app][примера с форума OpenShift]]:
+#+begin_src sh
+  mysqldump -h $OPENSHIFT_MYSQL_DB_HOST -P $OPENSHIFT_MYSQL_DB_PORT \
+  -u $OPENSHIFT_MYSQL_DB_USERNAME -p$OPENSHIFT_MYSQL_DB_PASSWORD \
+  juvia > ${OPENSHIFT_TMP_DIR}juvia.sql
+#+end_src
+Имя базы =juvia= должно совпадать с именем приложения. Отметим, что пароль администратора базы данных задаётся /без разделяющего пробела/, то есть =-p$OPENSHIFT_MYSQL_DB_PASSWORD=. В результате будет создан файл =/tmp/juvia.sql=, содержащий дамп MySQL базы. Скопировать дамп на локальный компьютер можно утилитой [[http://ru.wikipedia.org/wiki/SCP][SCP]], работа которой схожа с обычной командой =cp=:
+#+begin_src console
+  $ scp uuid@juvia-<namespace>.rhcloud.com:/tmp/juvia.sql .
+#+end_src
+
+Загрузка дампа на *OpenShift* осуществляется аналогично
+#+begin_src console
+  $ scp juvia.sql uuid@<app>-<namespace>.rhcloud.com:/tmp/
+#+end_src
+с той лишь разницей, что =uuid= соответствует приложению, куда заливается база. Подключимся к новому приложению по SSH
+#+begin_src console
+  $ ssh uuid@<app>-<namespace>.rhcloud.com
+#+end_src
+и импортируем данные в его MySQL базу. Только учтите, что /вся предыдущая база данных будет утеряна/. Воспользуемся модификацией [[https://openshift.redhat.com/community/forums/openshift/how-to-import-mysql-exported-db][другого примера с форума OpenShift]], где =[DBNAME]= означает имя базы, куда импортируются данные:
+#+begin_src sh
+  mysql -h $OPENSHIFT_MYSQL_DB_HOST -P $OPENSHIFT_MYSQL_DB_PORT \
+  -u $OPENSHIFT_MYSQL_DB_USERNAME -p$OPENSHIFT_MYSQL_DB_PASSWORD \
+  [DBNAME] < ${OPENSHIFT_TMP_DIR}juvia.sql
+#+end_src
+
+*Примечание.* Для внесения изменений в базу MySQL рекомендуется приложение [[http://www.phpmyadmin.net/][phpMyAdmin]], с доступной для всех [[http://demo.phpmyadmin.net/][демо-версией]].
