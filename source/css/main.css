@@ -2,7 +2,7 @@
 #main h1, #main h2, #main h3,
 #main h4, #main h5, #main h6 {
   color: #3f647e;
-  font-family: Marmelad, "Lucida Grande", "Trebuchet MS", sans-serif;
+  font-family: Marmelad, "Trebuchet MS", sans-serif;
 }
 #main h1 {
   font-size: 24px;
@@ -103,7 +103,7 @@ table td {
 }
 
 pre, code {
-  font-family: Inconsolata, "Courier New", Courier, monospace;
+  font-family: Inconsolata, "Courier New", monospace;
   background-color: #f8f8f8;
   border: 1px solid #ccc;
 

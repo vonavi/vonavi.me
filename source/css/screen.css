@@ -86,7 +86,7 @@ body {
 #crosscol-wrapper a, .button a {
   float: left;
   color: #9fc1d3;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
   text-decoration: none;
 
@@ -101,7 +101,7 @@ body {
 
 #header-wrapper a.title {
   color: #3f647e;
-  font-family: Marmelad, "Lucida Grande", "Trebuchet MS", sans-serif;
+  font-family: Marmelad, "Trebuchet MS", sans-serif;
   font-size: 24px;
   font-weight: bold;
   text-transform: uppercase;
@@ -110,13 +110,13 @@ body {
 }
 #header-wrapper p.description {
   color: #688fad;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   cursor: default;
 }
 
 #footer-wrapper #footer {
   color: #688fad;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
   text-align: center;
 }
