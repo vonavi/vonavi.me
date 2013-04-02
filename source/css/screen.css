@@ -86,7 +86,7 @@ body {
 #crosscol-wrapper a, .button a {
   float: left;
   color: #9fc1d3;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   text-decoration: none;
 
@@ -110,13 +110,13 @@ body {
 }
 #header-wrapper p.description {
   color: #688fad;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   cursor: default;
 }
 
 #footer-wrapper #footer {
   color: #688fad;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   text-align: center;
 }
