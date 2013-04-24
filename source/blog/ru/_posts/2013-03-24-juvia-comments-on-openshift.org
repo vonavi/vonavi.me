@@ -89,7 +89,7 @@ comments: yes
 #+begin_src sh
   mysqldump -h $OPENSHIFT_MYSQL_DB_HOST -P $OPENSHIFT_MYSQL_DB_PORT \
   -u $OPENSHIFT_MYSQL_DB_USERNAME -p$OPENSHIFT_MYSQL_DB_PASSWORD \
-  juvia > ${OPENSHIFT_TMP_DIR}juvia.sql
+  juvia > $OPENSHIFT_TMP_DIR/juvia.sql
 #+end_src
 Имя базы =juvia= должно совпадать с именем приложения. Отметим, что пароль администратора базы данных задаётся /без разделяющего пробела/, то есть =-p$OPENSHIFT_MYSQL_DB_PASSWORD=. В результате будет создан файл =/tmp/juvia.sql=, содержащий дамп MySQL базы. Скопировать дамп на локальный компьютер можно утилитой [[http://ru.wikipedia.org/wiki/SCP][SCP]], работа которой схожа с обычной командой =cp=:
 #+begin_src console
@@ -108,7 +108,7 @@ comments: yes
 #+begin_src sh
   mysql -h $OPENSHIFT_MYSQL_DB_HOST -P $OPENSHIFT_MYSQL_DB_PORT \
   -u $OPENSHIFT_MYSQL_DB_USERNAME -p$OPENSHIFT_MYSQL_DB_PASSWORD \
-  [DBNAME] < ${OPENSHIFT_TMP_DIR}juvia.sql
+  [DBNAME] < $OPENSHIFT_TMP_DIR/juvia.sql
 #+end_src
 
 *Примечание.* Для внесения изменений в базу MySQL рекомендуется приложение [[http://www.phpmyadmin.net/][phpMyAdmin]], с доступной для всех [[http://demo.phpmyadmin.net/][демо-версией]].
