@@ -1,0 +1,8 @@
+---
+---
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+</IfModule>
+
+RewriteCond %{HTTP_HOST} ^blog-vonavi.rhcloud.com$
+RewriteRule (.*)$ {{ site.url }}/$1 [R=301,L]
