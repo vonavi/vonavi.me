@@ -9,7 +9,7 @@
 
 {% assign categories = "blog" | split: "|" %}
 {% for page in site.pages %}
-  {% assign dir = page.url | split: "/" | join | truncatewords: 1, "" %}
+  {% assign dir = page.url | remove_first: "/" | split: "/" | first %}
   {% if categories contains dir %}
   <url>
     <loc>{{ site.url }}{{ page.url }}</loc>
