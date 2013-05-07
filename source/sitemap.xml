@@ -7,7 +7,7 @@
     <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
   </url>
 
-{% assign categories = "blog" | split: "|" %}
+{% assign categories = "en|ru" | split: "|" %}
 {% for page in site.pages %}
   {% assign dir = page.url | remove_first: "/" | split: "/" | first %}
   {% if categories contains dir %}
