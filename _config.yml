@@ -13,4 +13,4 @@ googleplus: https://plus.google.com/106537166685709212154
 
 imgdir: http://dl.dropbox.com/u/35307988/www.vonavi.me/images
 
-include: ['.gitkeep', '.htaccess']
+keep_files: ['.gitkeep']
