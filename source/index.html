@@ -7,7 +7,7 @@ layout: default
   <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
   <p>{{ post.date | localize: '%d %b %Y' }}</p>
 
-  {{ post.content | split: '<!--more-->' | first }}
+  {{ post.excerpt }}
 
   <div class="button-wrapper">
     <span class="button"><a href="{{ post.url }}" class="icon-arr-right">Читать далее</a></span>
