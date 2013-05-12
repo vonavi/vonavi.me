@@ -168,9 +168,3 @@ div.button-wrapper {
 .icon-about:before {content: "\f059";}
 .icon-feed:before {content: "\f034";}
 .icon-arr-right:before {content: "\f03e";}
-
-#flattr {
-  position: absolute;
-  margin-top: 2em;
-  left: 2em;
-}
