@@ -16,16 +16,11 @@ layout: default
 
 <p>
   <!-- Pagination links -->
-  {% case paginator.previous_page %}
-  {% when nil %}
-    <!-- No previous page -->
-  {% when 1 %}
-    <a href="/" class="previous">Позже</a>
-  {% else %}
-    <a href="/page{{paginator.previous_page}}" class="previous">Позже</a>
-  {% endcase %}
-  <span class="page_number">Страница {{paginator.page}} из {{paginator.total_pages}}</span>
+  {% if paginator.previous_page %}
+    <a href="/{{ paginator.previous_page_path }}" class="previous">Позже</a>
+  {% endif %}
+  <span class="page_number">Страница {{ paginator.page }} из {{ paginator.total_pages }}</span>
   {% if paginator.next_page %}
-    <a href="/page{{paginator.next_page}}" class="next">Раньше</a>
+    <a href="/{{ paginator.next_page_path }}" class="next">Раньше</a>
   {% endif %}
 </p>
