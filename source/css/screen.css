@@ -147,7 +147,7 @@ div.button-wrapper {
 
 [class^="icon-"]:before, [class^="icon-"]:after {
   display: inline-block;
-  line-height: 0;
+  line-height: 30px;
   width: 1em;
   color: #95d47a;
   font-family: "Octicons Regular";
