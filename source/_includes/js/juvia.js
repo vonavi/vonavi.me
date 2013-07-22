@@ -1,12 +1,13 @@
 (function() {
   var options = {
-    container   : '#comments',
-    site_key    : 'l4s7w2xqw8mv0ykiuo3oxumvfqkook6',
-    topic_key   : '{{ page.url }}',
-    topic_url   : '{{ site.url }}{{ page.url }}',
-    topic_title : '{{ page.title }}' || '{{ site.url }}{{ page.url }}',
-    include_base: true,
-    include_css : false
+    container     : '#comments',
+    site_key      : 'l4s7w2xqw8mv0ykiuo3oxumvfqkook6',
+    topic_key     : '{{ page.url }}',
+    topic_url     : '{{ site.url }}{{ page.url }}',
+    topic_title   : '{{ page.title }}' || '{{ site.url }}{{ page.url }}',
+    include_base  : true,
+    include_css   : false,
+    comment_order : 'earliest-first'
   };
 
   function makeQueryString(options) {
