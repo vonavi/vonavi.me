@@ -4,7 +4,7 @@ url: http://www.vonavi.me
 destination: public
 pygments: false # default python pygments have been replaced by pygments.rb
 permalink: pretty
-paginate: 5 # the number of post per page
+paginate: 5                     # the number of post per page
 
 title: "Редактор на стероидах"
 description: "O редакторе GNU Emacs, ОС Linux, движке Jekyll и не только"
@@ -12,7 +12,7 @@ googleplus: https://plus.google.com/106537166685709212154
 
 imgdir: http://dl.dropbox.com/u/35307988/www.vonavi.me/images
 
-exclude: ['README', 'Gemfile*']
+exclude: ['vendor', 'README', 'Gemfile*']
 
 keep_files: ['.gitkeep']
 
