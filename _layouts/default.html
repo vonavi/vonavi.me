@@ -16,30 +16,24 @@
           rel="alternate" title="vonavi-blog-ru"
           type="application/atom+xml" />
 
-    <!-- Screen CSS -->
-    <link rel="stylesheet" href="/css/screen.css" type="text/css"
-          media="screen, projection" />
+    <!-- Default stylesheet -->
+    {% stylesheet default %}
 
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="/css/main.css" type="text/css"
-          media="screen, projection" />
-
-    <!-- Syntax highlighting CSS -->
-    <link rel="stylesheet" href="/css/solarized.css" type="text/css" />
+    <!-- Syntax highlighting stylesheet -->
+    {% stylesheet solarized %}
 
     <!-- ColorBox -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="/js/jquery.colorbox-min.js"></script>
-    <link rel="stylesheet" href="/css/colorbox.css" type="text/css" />
+    {% stylesheet colorbox %}
     <script type="text/javascript">
       $(document).ready(function() {
         $('a[href$=".png"], a[href$=".gif"], a[href$=".jpg"], a[href$=".jpeg"]').colorbox();
       });
     </script>
 
-    <!-- Juvia commenting system CSS -->
-    <link rel="stylesheet" href="/css/juvia.css" type="text/css"
-          media="screen, projection" />
+    <!-- Juvia commenting system stylesheet -->
+    {% stylesheet juvia %}
   </head>
 
   <body>

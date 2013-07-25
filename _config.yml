@@ -15,3 +15,10 @@ imgdir: http://dl.dropbox.com/u/35307988/www.vonavi.me/images
 exclude: ['README', 'Gemfile*']
 
 keep_files: ['.gitkeep']
+
+#
+# Plugin: jekyll-assets
+#
+assets:
+  # Sets CSS compressor
+  css_compressor: yui
