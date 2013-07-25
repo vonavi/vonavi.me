@@ -20,5 +20,7 @@ keep_files: ['.gitkeep']
 # Plugin: jekyll-assets
 #
 assets:
+  # Sets JS compressor
+  js_compressor: yui
   # Sets CSS compressor
   css_compressor: yui
