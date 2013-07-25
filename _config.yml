@@ -1,7 +1,6 @@
 safe: false
 url: http://www.vonavi.me
 
-source: source
 destination: public
 pygments: false # default python pygments have been replaced by pygments.rb
 permalink: pretty
@@ -12,5 +11,7 @@ description: "O редакторе GNU Emacs, ОС Linux, движке Jekyll и
 googleplus: https://plus.google.com/106537166685709212154
 
 imgdir: http://dl.dropbox.com/u/35307988/www.vonavi.me/images
+
+exclude: ['README', 'Gemfile*']
 
 keep_files: ['.gitkeep']

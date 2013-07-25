@@ -17,12 +17,12 @@ layout: default
 <p>
   <!-- Pagination links -->
   {% if paginator.previous_page %}
-    <a href="/{{ paginator.previous_page_path }}" class="previous">Позже</a>
+    <a href="{{ paginator.previous_page_path }}" class="previous">Позже</a>
   {% endif %}
 
   <span class="page_number">Страница {{ paginator.page }} из {{ paginator.total_pages }}</span>
 
   {% if paginator.next_page %}
-    <a href="/{{ paginator.next_page_path }}" class="next">Раньше</a>
+    <a href="{{ paginator.next_page_path }}" class="next">Раньше</a>
   {% endif %}
 </p>
