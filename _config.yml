@@ -12,7 +12,7 @@ googleplus: https://plus.google.com/106537166685709212154
 
 imgdir: http://dl.dropbox.com/u/35307988/www.vonavi.me/images
 
-exclude: ['vendor', 'README', 'Gemfile*']
+exclude: ['Gemfile*', 'README', 'vendor']
 
 keep_files: ['.gitkeep']
 
@@ -20,7 +20,6 @@ keep_files: ['.gitkeep']
 # Plugin: jekyll-assets
 #
 assets:
-  # Sets JS compressor
-  js_compressor: yui
-  # Sets CSS compressor
-  css_compressor: yui
+  compress:
+    js: yui
+    css: yui

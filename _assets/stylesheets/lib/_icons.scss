@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "Octicons Regular";
+  src: url("/fonts/Octicons/octicons-regular-webfont.woff") format("woff");
+}
+
+[class^="icon-"]:before, [class^="icon-"]:after {
+  display: inline-block;
+  line-height: 30px;
+  width: 1em;
+  color: $green;
+  font: {
+    family: "Octicons Regular";
+    size: 16px;
+  }
+}
+[class^="icon-"]:before {
+  margin-right: 6px;
+}
+[class^="icon-"]:after {
+  margin-left: 6px;
+}
+[class^="icon-"]:hover:before, [class^="icon-"]:hover:after {
+  color: $light-cyan;
+}
+
+.icon-home:before {
+  content: "\f08d";
+}
+.icon-archive:before {
+  content: "\f096";
+}
+.icon-about:before {
+  content: "\f059";
+}
+.icon-feed:before {
+  content: "\f034";
+}
+.icon-arr-right:before {
+  content: "\f03e";
+}
