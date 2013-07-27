@@ -8,9 +8,5 @@ layout: default
 <p><a href="#">Наверх</a></p>
 
 {% if page.comments %}
-<div id="comments"></div>
-<script type="text/javascript" class="juvia">
-  {% include javascripts/juvia.js %}
-</script>
-<p><a href="#">Наверх</a></p>
+  {% include juvia-comments.html %}
 {% endif %}
