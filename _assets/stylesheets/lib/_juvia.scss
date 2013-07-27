@@ -1,0 +1,120 @@
+.juvia-comment {
+  min-height: 64px;
+  margin-bottom: 30px;
+
+  .juvia-metadata {
+    position: relative;
+    margin-left: 84px;
+    margin-bottom: 1em;
+    padding: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #e2e2e2; /* Old browsers */
+    background: -moz-linear-gradient(top, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e2e2e2), color-stop(50%,#dbdbdb), color-stop(51%,#d1d1d1)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%); /* Opera11.10+ */
+    background: -ms-linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%); /* IE10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#d1d1d1',GradientType=0 ); /* IE6-9 */
+    background: linear-gradient(top, #e2e2e2 0%,#dbdbdb 50%,#d1d1d1 51%); /* W3C */
+
+    .juvia-avatar {
+      float: left;
+      margin-top: -8px;
+      margin-left: -92px;
+      img {
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+      }
+    }
+    .juvia-author {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .juvia-creation-date {
+      position: absolute;
+      right: 12px;
+      top: 10px;
+      font-size: 12px;
+    }
+  }
+
+  .juvia-data {
+    margin-left: 92px;
+    .juvia-reply-to-comment {
+      font: {
+        family: Arial, Helvetica, sans-serif;
+        size: 12px;
+      }
+    }
+  }
+}
+
+.juvia-moderating {
+  font-style: italic;
+}
+
+.juvia-field input {
+  width: 20em;
+}
+
+.juvia-example-text {
+  color: #888;
+}
+
+.juvia-field .juvia-input, .juvia-textarea-field {
+  margin-bottom: 0.5em;
+}
+
+.juvia-help-content {
+  position: absolute;
+  font-size: 14px;
+  width: 14em;
+  border: solid 1px black;
+  background-color: #ffffe0;
+  border: solid 1px #ffddaa;
+  padding: 8px;
+  box-shadow: 3px 3px 5px #888;
+  -moz-box-shadow: 3px 3px 5px #888;
+  -webkit-box-shadow: 3px 3px 5px #888;
+}
+
+.juvia-textarea-field textarea {
+  width: 50em;
+  height: 15em;
+}
+
+.juvia-form-actions {
+  .juvia-action {
+    display: inline;
+  }
+  .juvia-error {
+    display: inline;
+    color: red;
+    margin-left: 1em;
+  }
+}
+
+.juvia-preview {
+  .juvia-preview-content {
+    background-color: #ffffdd;
+    border: solid 1px #ffeebb;
+    padding: 8px;
+    & > *:first-child {
+      margin-top: 0 !important;
+    }
+    & > *:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  .juvia-self-ad {
+    margin: 1em 0;
+    font: {
+      family: Arial, Helvetica, sans-serif;
+      size: 12px;
+    }
+    color: #888;
+  }
+}
