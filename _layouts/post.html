@@ -2,19 +2,6 @@
 layout: default
 ---
 
-<!-- Post's stylesheet -->
-{% stylesheet post %}
-
-<!-- ColorBox -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-{% javascript jquery.colorbox-min %}
-
-<script type="text/javascript">
-  $(document).ready(function() {
-  $('a[href$=".png"], a[href$=".gif"], a[href$=".jpg"], a[href$=".jpeg"]').colorbox();
-  });
-</script>
-
 <h1>{{ page.title }}</h1>
 <p>{{ page.date | localize: '%d %b %Y' }}</p>
 {{ content }}

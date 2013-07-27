@@ -18,6 +18,17 @@
 
     <!-- Default stylesheet -->
     {% stylesheet default %}
+    <!-- Post's stylesheet -->
+    {% stylesheet post %}
+
+    <!-- ColorBox -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    {% javascript jquery.colorbox-min %}
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('a[href$=".png"], a[href$=".gif"], a[href$=".jpg"], a[href$=".jpeg"]').colorbox();
+      });
+    </script>
   </head>
 
   <body>
