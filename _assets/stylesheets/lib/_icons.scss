@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Octicons Regular";
-  src: url("/fonts/Octicons/octicons-regular-webfont.woff") format("woff");
+  src: url(asset_path("Octicons/octicons-regular-webfont.woff")) format("woff");
 }
 
 [class^="icon-"]:before, [class^="icon-"]:after {
