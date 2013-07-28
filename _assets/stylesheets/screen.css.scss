@@ -40,7 +40,7 @@ a {
   min-width: 800px;
   min-height: 100%;
   overflow: hidden;
-  background-image: url(/images/noise.png);
+  background-image: url(asset_path("noise.png"));
 }
 
 #navbar {
@@ -59,7 +59,7 @@ a {
   padding: .7em 0 .8em 2.8em;
   background: {
     color: $light-blue;
-    image: url(/images/noise.png);
+    image: url(asset_path("noise.png"));
   }
 
   a.title {
@@ -98,7 +98,7 @@ a {
   line-height: $footer-height;
   background: {
     color: $dark-blue;
-    image: url(/images/noise.png);
+    image: url(asset_path("noise.png"));
   }
 
   #footer {
