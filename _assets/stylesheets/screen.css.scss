@@ -43,7 +43,7 @@ a {
   background-image: url(/images/noise.png);
 }
 
-#crosscol-wrapper {
+#navbar {
   @include navbar (rgba(0,0,0,.5));
   float: left;
   width: 100%;
