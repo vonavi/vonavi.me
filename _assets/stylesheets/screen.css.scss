@@ -1,14 +1,15 @@
 $font-size: 16px;
 $footer-height: 2em;
 
-@import "http://fonts.googleapis.com/css?family=Marmelad&subset=latin,cyrillic";
-@import "http://fonts.googleapis.com/css?family=Inconsolata:400,700";
+@import url(http://fonts.googleapis.com/css?family=Marmelad&subset=latin,cyrillic);
+@import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
 @import "lib/theme";
 @import "lib/navbar";
 @import "lib/icons";
 @import "lib/main";
 @import "lib/juvia";
 @import "lib/solarized";
+@import "compass/css3/border-radius";
 
 // Fix "page shift" problem that happens on loading pages of different lengths
 html {
@@ -44,10 +45,10 @@ a {
 }
 
 #navbar {
-  @include navbar (rgba(0,0,0,.5));
   float: left;
   width: 100%;
   padding-left: 1.4em;
+  @include navbar (rgba(0,0,0,.5));
   a {
     padding: 0 1.6em;
   }
@@ -121,12 +122,9 @@ div.button-wrapper {
   line-height: 0;
   margin-bottom: 1em;
   .button {
-    @include navbar (rgba(0,0,0,.6));
     display: inline-block;
     padding: 0 8px;
-
-    border-radius: 5px;         /* CSS3 */
-    -moz-border-radius: 5px;    /* Firefox */
-    -webkit-border-radius: 5px; /* Safari, Chrome */
+    @include navbar (rgba(0,0,0,.6));
+    @include border-radius (5px);
   }
 }

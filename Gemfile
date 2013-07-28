@@ -1,9 +1,10 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "jekyll", "~> 1.1.2"
-gem "org-ruby", "~> 0.8.1"
-gem "pygments.rb", "~> 0.5.2"
-gem "i18n", "~> 0.6.4"
-gem "sass", "~> 3.2.9"
-gem "jekyll-assets", "~> 0.6.1"
-gem "yui-compressor", "~> 0.11.0"
+gem 'jekyll', '~> 1.1.2'
+gem 'org-ruby', '~> 0.8.1'
+gem 'pygments.rb', '~> 0.5.2'
+gem 'i18n', '~> 0.6.4'
+gem 'sass', '~> 3.2.9'
+gem 'compass', '~> 0.12.2'
+gem 'jekyll-assets', '~> 0.6.1'
+gem 'yui-compressor', '~> 0.11.0'

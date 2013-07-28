@@ -1,20 +1,15 @@
+@import "compass/css3/images";
+@import "compass/css3/box-shadow";
+@import "compass/css3/user-interface";
+
 @mixin navbar ($shadow-color) {
   height: 2em;
   line-height: 2em;
   background-color: $dark-blue;
-  background-image: linear-gradient(bottom, rgba(0,0,0,.1) 0%, rgba(0,0,0,0) 33%,
-    rgba(255,255,255,0) 33%, rgba(255,255,255,.25) 100%), url(asset_path("noise.png"));
-  background-image: -moz-linear-gradient(bottom, rgba(0,0,0,.1) 0%, rgba(0,0,0,0) 33%,
-    rgba(255,255,255,0) 33%, rgba(255,255,255,.25) 100%), url(asset_path("noise.png"));
-  background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.1) 0%, rgba(0,0,0,0) 33%,
-    rgba(255,255,255,0) 33%, rgba(255,255,255,.25) 100%), url(asset_path("noise.png"));
-  background-image: -o-linear-gradient(bottom, rgba(0,0,0,.1) 0%, rgba(0,0,0,0) 33%,
-    rgba(255,255,255,0) 33%, rgba(255,255,255,.25) 100%), url(asset_path("noise.png"));
-
-  box-shadow: 0 1px 3px $shadow-color;
-  -moz-box-shadow: 0 1px 3px $shadow-color;
-  -webkit-box-shadow: 0 1px 3px $shadow-color;
-  -o-box-shadow: 0 1px 3px $shadow-color;
+  @include background-image (linear-gradient(bottom, rgba(0,0,0,.1) 0%, rgba(0,0,0,0) 33%,
+                                             rgba(255,255,255,0) 33%, rgba(255,255,255,.25) 100%),
+                             url(asset_path("noise.png")));
+  @include box-shadow (0 1px 3px $shadow-color);
 
   a {
     float: left;
@@ -24,10 +19,6 @@
       size: 14px;
     }
     text-decoration: none;
-
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+    @include user-select (none);
   }
 }
