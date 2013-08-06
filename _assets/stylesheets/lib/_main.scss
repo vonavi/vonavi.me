@@ -1,6 +1,5 @@
 @import "solarized_light";
 @import "juvia";
-@import "compass/css3/border-radius";
 
 @mixin v-align($headline-size) {
   $padding: $font-size - (1.4 - 1)/2 * ($headline-size + $font-size);
@@ -114,21 +113,21 @@
 
   pre, code {
     font-family: Inconsolata, "Courier New", monospace;
-    border: 1px solid $base2_sol;
-    @include border-radius(3px);
+    color: $base00_sol;
+    background-color: $base3_sol;
   }
   code {
     display: inline-block;
     line-height: 1em;
-    padding: 0 3px 1px;
-    color: $dark-blue;
-    background-color: #f8f8f8;
-    border-color: rgba(0,0,0,.1);
+    padding: 1px 4px 2px;
+    border: 1px solid rgba(0,0,0,.15);
   }
   pre {
     margin-bottom: 1em;
     padding: 5px;
     overflow: auto;
+    border-top: 1px solid rgba(0,0,0,.15);
+    border-bottom: 1px solid rgba(0,0,0,.15);
     code {
       padding: 0;
       border: none;
