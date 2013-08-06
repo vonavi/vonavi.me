@@ -1,7 +1,8 @@
+@import "solarized_light";
+@import "juvia";
 @import "compass/css3/border-radius";
-@import "compass/css3/box-shadow";
 
-@mixin v-align ($headline-size) {
+@mixin v-align($headline-size) {
   $padding: $font-size - (1.4 - 1)/2 * ($headline-size + $font-size);
   font-size: $headline-size;
   padding-top: $padding;
@@ -14,7 +15,7 @@
     font-family: Marmelad, "Trebuchet MS", sans-serif;
   }
   h1 {
-    @include v-align (24px);
+    @include v-align(24px);
     a {
       display: inline-block;
       text-decoration: none;
@@ -24,13 +25,13 @@
     }
   }
   h2 {
-    @include v-align (21px);
+    @include v-align(21px);
   }
   h3 {
-    @include v-align (18px);
+    @include v-align(18px);
   }
   h4 {
-    @include v-align (16px);
+    @include v-align(16px);
   }
 
   p {
@@ -40,14 +41,14 @@
     list-style-position: outside;
     margin-left: 2em;
     margin-bottom: 1em;
+    ul, ol {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
   }
   ul.posts {
     margin-left: 0;
     list-style-type: none;
-  }
-  ul ul, ul ol, ol ol, ol ul {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
   }
   img {
     margin-bottom: 1em;
@@ -101,37 +102,37 @@
   }
   table {
     margin-bottom: 1em;
-  }
-  table th {
-    border-bottom: 1px solid #bbb;
-    padding: .2em 1em;
-  }
-  table td {
-    border-bottom: 1px solid #ddd;
-    padding: .2em 1em;
+    th {
+      border-bottom: 1px solid #bbb;
+      padding: .2em 1em;
+    }
+    td {
+      border-bottom: 1px solid #ddd;
+      padding: .2em 1em;
+    }
   }
 
   pre, code {
     font-family: Inconsolata, "Courier New", monospace;
+    border: 1px solid $base2_sol;
+    @include border-radius(3px);
+  }
+  code {
+    display: inline-block;
+    line-height: 1em;
+    padding: 0 3px 1px;
+    color: $dark-blue;
     background-color: #f8f8f8;
-    border: 1px solid #ccc;
-    @include border-radius (3px);
+    border-color: rgba(0,0,0,.1);
   }
   pre {
     margin-bottom: 1em;
     padding: 5px;
     overflow: auto;
-    @include box-shadow (rgba(0,0,0,.07) 0 1px 2px inset);
-  }
-  code {
-    display: inline-block;
-    line-height: 1em;
-    padding: 1px 3px;
-    border-color: #eaeaea;
-  }
-  pre code {
-    padding: 0 !important;
-    border: none !important;
+    code {
+      padding: 0;
+      border: none;
+    }
   }
   pre::-webkit-scrollbar {
     height: 8px;

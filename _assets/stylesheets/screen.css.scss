@@ -7,8 +7,6 @@ $footer-height: 2em;
 @import "lib/navbar";
 @import "lib/icons";
 @import "lib/main";
-@import "lib/juvia";
-@import "lib/solarized";
 @import "compass/css3/border-radius";
 
 // Fix "page shift" problem that happens on loading pages of different lengths
@@ -48,7 +46,7 @@ a {
   float: left;
   width: 100%;
   padding-left: 1.4em;
-  @include navbar (rgba(0,0,0,.5));
+  @include navbar(rgba(0,0,0,.5));
   a {
     padding: 0 1.6em;
   }
@@ -124,7 +122,7 @@ div.button-wrapper {
   .button {
     display: inline-block;
     padding: 0 8px;
-    @include navbar (rgba(0,0,0,.6));
-    @include border-radius (5px);
+    @include navbar(rgba(0,0,0,.6));
+    @include border-radius(5px);
   }
 }
