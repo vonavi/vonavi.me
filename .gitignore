@@ -3,4 +3,4 @@
 bin/
 public/*
 !public/.gitkeep
-*/_drafts/
+_drafts/
