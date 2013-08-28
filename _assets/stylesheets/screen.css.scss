@@ -4,9 +4,12 @@ $footer-height: 2em;
 @import url(http://fonts.googleapis.com/css?family=Marmelad&subset=latin,cyrillic);
 @import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
 @import "lib/theme";
+@import "lib/solarized";
+@include solarized-light;
 @import "lib/navbar";
 @import "lib/icons";
 @import "lib/main";
+@import "lib/juvia";
 @import "compass/css3/border-radius";
 
 // Fix "page shift" problem that happens on loading pages of different lengths

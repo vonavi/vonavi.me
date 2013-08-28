@@ -1,6 +1,3 @@
-@import "solarized_light";
-@import "juvia";
-
 @mixin v-align($headline-size) {
   $padding: $font-size - (1.4 - 1)/2 * ($headline-size + $font-size);
   font-size: $headline-size;
@@ -112,22 +109,22 @@
   }
 
   pre, code {
-    font-family: Inconsolata, "Courier New", monospace;
-    color: $base00_sol;
-    background-color: $base3_sol;
+    font-family: PragmataPro, Inconsolata, "Courier New", monospace;
   }
   code {
     display: inline-block;
     line-height: 1em;
     padding: 1px 4px 2px;
-    border: 1px solid rgba(0,0,0,.15);
+    border: 1px solid $base2_sol;
+
+    background-color: $base3_sol;
+    color: $base00_sol;
   }
   pre {
     margin-bottom: 1em;
     padding: 5px;
     overflow: auto;
-    border-top: 1px solid rgba(0,0,0,.15);
-    border-bottom: 1px solid rgba(0,0,0,.15);
+    border: 1px solid $base2_sol;
     code {
       padding: 0;
       border: none;
