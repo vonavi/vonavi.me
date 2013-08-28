@@ -1,3 +1,5 @@
+@import "compass/css3/border-radius";
+
 @mixin v-align($headline-size) {
   $padding: $font-size - (1.4 - 1)/2 * ($headline-size + $font-size);
   font-size: $headline-size;
@@ -108,14 +110,18 @@
     }
   }
 
-  pre, code {
+  @include solarized-light;
+  .highlight, pre, code {
     font-family: PragmataPro, Inconsolata, "Courier New", monospace;
+    @include border-radius(4px);
+  }
+  pre, code {
+    border: 1px solid $base2_sol;
   }
   code {
     display: inline-block;
     line-height: 1em;
     padding: 1px 4px 2px;
-    border: 1px solid $base2_sol;
 
     background-color: $base3_sol;
     color: $base00_sol;
@@ -124,7 +130,6 @@
     margin-bottom: 1em;
     padding: 5px;
     overflow: auto;
-    border: 1px solid $base2_sol;
     code {
       padding: 0;
       border: none;
