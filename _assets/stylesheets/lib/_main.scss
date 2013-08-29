@@ -112,7 +112,7 @@
 
   @include solarized-light;
   .highlight, pre, code {
-    font-family: PragmataPro, Inconsolata, "Courier New", monospace;
+    font-family: Inconsolata, "Courier New", monospace;
     @include border-radius(4px);
   }
   pre, code {
