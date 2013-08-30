@@ -114,23 +114,20 @@
   @include solarized-light;
   .highlight, pre, code {
     font-family: Inconsolata, "Courier New", monospace;
-    @include border-radius(4px);
-  }
-  pre, code {
-    border: 1px solid $base2_sol;
+    @include border-radius(3px);
   }
   code {
     display: inline-block;
     line-height: 1em;
-    padding: 1px 4px 2px;
-
-    background-color: $base3_sol;
-    color: $base00_sol;
+    padding: 0 3px 1px;
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
   }
   pre {
     margin-bottom: 1em;
     padding: 5px;
     overflow: auto;
+    border: 1px solid $base2_sol;
     code {
       padding: 0;
       border: none;
