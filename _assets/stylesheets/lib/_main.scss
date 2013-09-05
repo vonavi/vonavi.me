@@ -116,6 +116,7 @@
     @include border-radius(7px);
     background-image: url(asset_path("noise.png"));
     font-family: Inconsolata, "Courier New", monospace;
+    font-size: 17px;
   }
   code {
     padding: 0 2px;
@@ -123,6 +124,7 @@
     border: 1px solid #ddd;
     background-color: #f8f8f8;
     font-family: Inconsolata, "Courier New", monospace;
+    font-size: 17px;
     white-space: nowrap;
   }
   pre {
