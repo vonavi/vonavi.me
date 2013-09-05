@@ -111,27 +111,25 @@
     }
   }
 
-  @include solarized-light;
-  .highlight, pre, code {
+  @include solarized-dark;
+  .highlight, pre {
+    @include border-radius(7px);
+    background-image: url(asset_path("noise.png"));
     font-family: Inconsolata, "Courier New", monospace;
-    @include border-radius(3px);
   }
   code {
-    display: inline-block;
-    line-height: 1em;
-    padding: 0 3px 1px;
+    padding: 0 2px;
+    @include border-radius(3px);
     border: 1px solid #ddd;
     background-color: #f8f8f8;
+    font-family: Inconsolata, "Courier New", monospace;
+    white-space: nowrap;
   }
   pre {
     margin-bottom: 1em;
-    padding: 5px;
+    padding: 5px 9px;
     overflow: auto;
-    border: 1px solid $base2_sol;
-    code {
-      padding: 0;
-      border: none;
-    }
+    border: 1px solid $base02_sol;
   }
   pre::-webkit-scrollbar {
     height: 8px;
