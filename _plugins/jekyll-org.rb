@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require 'org-ruby'
 
 module Jekyll
@@ -14,7 +15,11 @@ module Jekyll
     end
 
     def convert(content)
-      Orgmode::Parser.new(content).to_html
+      output = Orgmode::Parser.new(content).to_html
+
+      # Clean up in output from ZERO WIDTH SPACE char which can
+      # present in input Org file
+      output.gsub "​", ""
     end
   end
 
@@ -27,7 +32,11 @@ module Jekyll
     def orgify(input)
       site = @context.registers[:site]
       converter = site.getConverterImpl(Jekyll::OrgConverter)
-      converter.convert(input)
+      output = converter.convert(input)
+
+      # Clean up in output from ZERO WIDTH SPACE char which can
+      # present in input Org file
+      output.gsub "​", ""
     end
   end
 end
