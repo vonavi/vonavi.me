@@ -115,19 +115,19 @@
   .highlight, pre {
     @include border-radius(7px);
     background-image: url(asset_path("noise.png"));
-    font: 17px/21px Inconsolata, "Courier New", monospace;
+    font: 16px/20px Consolas, "Courier New", monospace;
   }
   code {
     padding: 0 2px;
     @include border-radius(3px);
     border: 1px solid #ddd;
     background-color: #f8f8f8;
-    font: 17px/21px Inconsolata, "Courier New", monospace;
+    font: 16px/20px Consolas, "Courier New", monospace;
     white-space: nowrap;
   }
   pre {
     margin-bottom: 1em;
-    padding: 5px 9px;
+    padding: 6px 8px;
     overflow: auto;
     border: 1px solid $base02_sol;
   }
