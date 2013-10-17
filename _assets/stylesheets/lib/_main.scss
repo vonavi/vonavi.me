@@ -9,10 +9,7 @@
 }
 
 #main {
-  h1, h2, h3, h4, h5, h6 {
-    color: $dark-blue;
-    font-family: Marmelad, "Trebuchet MS", sans-serif;
-  }
+  h1, h2, h3, h4, h5, h6 { color: $dark-blue; }
   h1 {
     @include v-align(32px);
   }
