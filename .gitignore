@@ -1,6 +1,4 @@
-.bundle/
-.rvmrc
-bin/
+.ruby-*
 public/*
 !public/.gitkeep
 _drafts/
