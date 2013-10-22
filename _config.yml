@@ -21,14 +21,6 @@ keep_files: ['.gitkeep']
 #
 assets:
   #
-  # Pathnames where to find assets relative to the root of the site.
-  #
-  sources:
-    - _assets/javascripts
-    - _assets/stylesheets
-    - _assets/images
-    - _assets/fonts
-  #
   # Sets compressors. No compression by default.
   #
   compress:
