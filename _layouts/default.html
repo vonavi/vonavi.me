@@ -20,6 +20,11 @@
     {% stylesheet screen %}
     <!-- ColorBox -->
     {% include colorbox.html %}
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      {% javascript html5shiv %}
+      {% javascript respond.min %}
+    <![endif]-->
   </head>
 
   <body>
@@ -57,5 +62,13 @@
       <!-- end footer wrapper -->
     </div>
     <!-- end outer wrapper -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    {% javascript jquery %}
+    {% javascript bootstrap.min %}
+    {% javascript holder %}
   </body>
 </html>
