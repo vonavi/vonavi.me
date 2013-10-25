@@ -1,0 +1,29 @@
+// Navbar
+// -------------------------
+
+.navbar {
+  border: none;
+  .box-shadow(0 1px 3px rgba(0,0,0,.5));
+}
+.navbar-default {
+  #gradient .vertical(lighten(@dark-blue, 15%), darken(@dark-blue, 5%));
+  font-family: @font-family-sans-serif;
+}
+
+
+// Glyphicons
+// -------------------------
+
+.glyphicon {
+  width: 1em;
+  top: 0;
+  color: @green;
+}
+a:hover .glyphicon { color: @light-cyan; }
+
+// Individual icons
+.glyphicon-home { &:before { content: "\f08d"; } }
+.glyphicon-archive { &:before { content: "\f096"; } }
+.glyphicon-about { &:before { content: "\f059"; } }
+.glyphicon-feed { &:before { content: "\f034"; } }
+.glyphicon-arrow-right { &:before { content: "\f03e"; } }
