@@ -1,20 +1,25 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
+<html lang="ru">
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
     {% if page.url == "/" %}
+      <meta name="description" content="{{ site.description }}">
       <title>{{ site.title }}</title>
-      <meta name="description" content="{{ site.description }}" />
-      <link href="{{ site.googleplus }}" rel="publisher" />
     {% else %}
       <title>{{ page.title }} - {{ site.title }}</title>
     {% endif %}
-    <link href="{{ site.googleplus }}?rel=author" />
 
-    <link rel="icon" href="/favicon.png" type="image/png" />
-    <link href="http://feeds.feedburner.com/vonavi-blog-ru"
-          rel="alternate" title="vonavi-blog-ru"
-          type="application/atom+xml" />
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+    <!-- Atom feed -->
+    <link href="http://feeds.feedburner.com/vonavi-blog-ru" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+
+    <!-- Google+ Direct Connect -->
+    <link href="{{ site.googleplus }}" rel="author">
+    <link href="{{ site.googleplus }}" rel="publisher">
 
     <!-- Default stylesheet -->
     {% stylesheet screen %}
