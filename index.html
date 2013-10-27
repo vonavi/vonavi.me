@@ -14,15 +14,31 @@ layout: default
   </div>
 {% endfor %}
 
-<p>
-  <!-- Pagination links -->
+<ul class="pagination">
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous">Позже</a>
+    <li><a href="{{ paginator.previous_page_path }}">&laquo;</a></li>
+  {% else %}
+    <li class="disabled"><a>&laquo;</a></li>
   {% endif %}
 
-  <span class="page_number">Страница {{ paginator.page }} из {{ paginator.total_pages }}</span>
+  {% if page.url == "/" %}
+    <li class="active"><a href="/">1 <span class="sr-only">(current)</span></a></li>
+  {% else %}
+    <li><a href="/">1</a></li>
+  {% endif %}
+
+  {% for i in (2..paginator.total_pages) %}
+    {% capture i_url %}/page{{ i }}/{% endcapture %}
+    {% if page.url == i_url %}
+      <li class="active"><a href="/page{{ i }}/">{{ i }} <span class="sr-only">(current)</span></a></li>
+    {% else %}
+      <li><a href="/page{{ i }}/">{{ i }}</a></li>
+    {% endif %}
+  {% endfor %}
 
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next">Раньше</a>
+    <li><a href="{{ paginator.next_page_path }}">&raquo;</a></li>
+  {% else %}
+    <li class="disabled"><a>&raquo;</a></li>
   {% endif %}
-</p>
+</ul>
