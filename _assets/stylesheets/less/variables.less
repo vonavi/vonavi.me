@@ -12,9 +12,7 @@
 // Typography
 // -------------------------
 
-@font-size-base:          16px;
-@line-height-base:        1.375; // 22/16
-
+@content-font-family:     Verdana, @font-family-sans-serif;
 @headings-font-family:    Marmelad, "Trebuchet MS", sans-serif;
 @headings-font-weight:    700;
 
@@ -36,7 +34,7 @@
 // -------------------------
 
 // Basics of a navbar
-@navbar-height:                    (1.7 * @line-height-computed);
+@navbar-height:                    (2 * @line-height-computed);
 @navbar-margin-bottom:             0;
 @navbar-default-bg:                @dark-blue;
 @navbar-border-radius:             0;
@@ -44,3 +42,9 @@
 // Navbar links
 @navbar-default-link-color:                @light-blue;
 @navbar-default-link-hover-color:          @navbar-default-link-color;
+
+
+// Sticky footer
+// -------------------------
+
+@footer-height: @navbar-height;

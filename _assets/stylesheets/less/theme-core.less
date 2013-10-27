@@ -34,6 +34,7 @@ html {
   }
 
   .description {
+    font-size: (@font-size-base + 1);
     color: @blue;
     cursor: default;
   }
@@ -42,8 +43,6 @@ html {
 
 // Sticky footer
 // -------------------------
-
-@footer-height: @navbar-height;
 
 html, body {
   height: 100%;
@@ -57,13 +56,12 @@ html, body {
 }
 
 #footer {
+  clear: both;
   .clearfix();
   background-color: @dark-blue;
   color: @blue;
 
-  p {
-    margin: (0.35 * @line-height-computed) 0;
-  }
+  p { margin-top: (0.5 * @line-height-computed); }
 
   a {
     text-decoration: underline;
@@ -79,6 +77,7 @@ html, body {
 // -------------------------
 
 .glyphicon {
+  font-size: 16px;
   width: 1em;
   color: @green;
 }
@@ -101,4 +100,20 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   color: @dark-blue;
 }
-h4 a:hover { text-decoration: none; }
+h2 a:hover { text-decoration: none; }
+
+
+// Miscellaneous
+// -------------------------
+
+#content-wrapper {
+  font-family: @content-font-family;
+  p a { text-decoration: underline; }
+}
+blockquote p {
+  font: italic @font-size-base~"/"@line-height-base @content-font-family;
+}
+pre, code {
+  font-size: (@font-size-base + 1);
+  line-height: (@line-height-computed - 1);
+}
