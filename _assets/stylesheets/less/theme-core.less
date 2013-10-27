@@ -34,6 +34,41 @@
 }
 
 
+// Sticky footer
+// -------------------------
+
+@footer-height: @navbar-height;
+
+html, body {
+  height: 100%;
+}
+#wrap {
+  min-height: 100%;
+  margin-bottom: -@footer-height;
+}
+#push, #footer {
+  height: @footer-height;
+}
+
+#footer {
+  .clearfix();
+  background-color: @dark-blue;
+  color: @blue;
+
+  p {
+    margin: (0.35 * @line-height-computed) 0;
+  }
+
+  a {
+    text-decoration: underline;
+    color: @blue;
+    &:hover {
+      color: @light-cyan;
+    }
+  }
+}
+
+
 // Glyphicons
 // -------------------------
 
