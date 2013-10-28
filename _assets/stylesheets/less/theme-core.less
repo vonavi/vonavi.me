@@ -119,6 +119,12 @@ h2 a {
 
 #content-wrapper {
   font-family: @content-font-family;
+
+  // Solarized theme for code highlighting
+  .solarized();
+  .highlight {
+    .na, .c, .cm, .c1, .go { color: @base1_sol; }
+  }
 }
 blockquote p {
   font: italic @font-size-base~"/"@line-height-base @content-font-family;
