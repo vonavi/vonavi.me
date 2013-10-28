@@ -114,9 +114,38 @@ h2 a {
 blockquote p {
   font: italic @font-size-base~"/"@line-height-base @content-font-family;
 }
+
+
+// Code
+// ------------------------
+
 pre, code {
   font-size: (@font-size-base + 1);
   line-height: (@line-height-computed - 1);
+}
+pre {
+  white-space: pre;
+  overflow: auto;
+}
+pre::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+pre::-webkit-scrollbar-track-piece {
+  margin-bottom: 10px;
+  background-color: #e5e5e5;
+  -webkit-border-radius: 4px;
+}
+pre::-webkit-scrollbar-thumb:vertical {
+  height: 25px;
+  background-color: #ccc;
+  -webkit-border-radius: 4px;
+  -webkit-box-shadow: white 0 1px 1px;
+}
+pre::-webkit-scrollbar-thumb:horizontal {
+  width: 25px;
+  background-color: #ccc;
+  -webkit-border-radius: 4px;
 }
 
 
@@ -139,4 +168,15 @@ pre, code {
 .solarized();
 .highlight {
   .na, .c, .cm, .c1, .go { color: @base1_sol; }
+}
+
+
+// Miscellaneous
+// -------------------------
+
+a[href$=".png"], a[href$=".gif"], a[href$=".jpg"], a[href$=".jpeg"] {
+  cursor: pointer;
+  cursor: zoom-in;
+  cursor: -moz-zoom-in;
+  cursor: -webkit-zoom-in;
 }
