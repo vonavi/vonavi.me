@@ -8,12 +8,13 @@ html {
 // -------------------------
 
 .navbar {
-  border: none;
+  border-width: 0 0 1px;
   .box-shadow(0 1px 1px rgba(0,0,0,.4));
 }
 .navbar-default {
   #gradient .vertical(lighten(@dark-blue, 10%), @dark-blue);
 }
+.navbar-nav a { .user-select(none); }
 
 
 // Page Header
@@ -34,7 +35,7 @@ html {
   }
 
   .description {
-    font-size: (@font-size-base + 1);
+    font-size: 16px;
     color: @blue;
     cursor: default;
   }
@@ -61,7 +62,10 @@ html, body {
   background-color: @dark-blue;
   color: @blue;
 
-  p { margin-top: (0.5 * @line-height-computed); }
+  p {
+    margin-bottom: 0;
+    padding: @padding-base-vertical 0;
+  }
 
   a {
     text-decoration: underline;
