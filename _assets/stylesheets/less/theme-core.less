@@ -105,7 +105,13 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   color: @dark-blue;
 }
-h2 a:hover { text-decoration: none; }
+h2 a {
+  color: @dark-blue;
+  &:hover {
+    color: @cyan;
+    text-decoration: none;
+  }
+}
 
 
 // Miscellaneous
@@ -113,7 +119,6 @@ h2 a:hover { text-decoration: none; }
 
 #content-wrapper {
   font-family: @content-font-family;
-  p a { text-decoration: underline; }
 }
 blockquote p {
   font: italic @font-size-base~"/"@line-height-base @content-font-family;
