@@ -113,19 +113,7 @@ h2 a {
   }
 }
 
-
-// Miscellaneous
-// -------------------------
-
-#content-wrapper {
-  font-family: @content-font-family;
-
-  // Solarized theme for code highlighting
-  .solarized();
-  .highlight {
-    .na, .c, .cm, .c1, .go { color: @base1_sol; }
-  }
-}
+#content-wrapper { font-family: @content-font-family; }
 blockquote p {
   font: italic @font-size-base~"/"@line-height-base @content-font-family;
 }
@@ -134,6 +122,10 @@ pre, code {
   line-height: (@line-height-computed - 1);
 }
 
+
+// Buttons
+// -------------------------
+
 .btn {
   font-family: @font-family-sans-serif;
   text-decoration: none !important;
@@ -141,4 +133,13 @@ pre, code {
 }
 .btn-primary {
   #gradient .vertical(lighten(@dark-blue, 10%), @dark-blue);
+}
+
+
+// Solarized color scheme
+// -------------------------
+
+.solarized();
+.highlight {
+  .na, .c, .cm, .c1, .go { color: @base1_sol; }
 }
