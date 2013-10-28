@@ -93,6 +93,7 @@ a:hover .glyphicon { color: @light-cyan; }
 .glyphicon-about { &:before { content: "\f059"; } }
 .glyphicon-feed { &:before { content: "\f034"; } }
 .glyphicon-arrow-right { &:before { content: "\f03e"; } }
+.glyphicon-arrow-up { &:before { content: "\f03d"; } }
 
 
 // Typography
@@ -120,4 +121,13 @@ blockquote p {
 pre, code {
   font-size: (@font-size-base + 1);
   line-height: (@line-height-computed - 1);
+}
+
+.btn {
+  font-family: @font-family-sans-serif;
+  text-decoration: none !important;
+  .box-shadow(0 1px 1px rgba(0,0,0,.3));
+}
+.btn-primary {
+  #gradient .vertical(lighten(@dark-blue, 10%), @dark-blue);
 }

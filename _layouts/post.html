@@ -5,7 +5,9 @@ layout: default
 <h2>{{ page.title }}</h2>
 <p>{{ page.date | localize: '%d %b %Y' }}</p>
 {{ content }}
-<p><a href="#">Наверх</a></p>
+<p><a href="#" class="btn btn-primary">
+  <span class="glyphicon glyphicon-arrow-up"></span> Наверх
+</a></p>
 
 {% if page.comments %}
   {% include juvia-comments.html %}

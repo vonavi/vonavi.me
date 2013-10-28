@@ -9,9 +9,9 @@ layout: default
 
   {{ post.excerpt }}
 
-  <div class="button-wrapper">
-    <span class="button"><a href="{{ post.url }}" class="icon-arr-right">Читать далее</a></span>
-  </div>
+  <p><a href="{{ post.url }}" class="btn btn-primary">
+    <span class="glyphicon glyphicon-arrow-right"></span> Читать далее
+  </a></p>
 {% endfor %}
 
 <ul class="pagination">
