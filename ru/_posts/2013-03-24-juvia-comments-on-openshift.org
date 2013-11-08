@@ -4,11 +4,11 @@ title:    Комментируем вместе с Juvia на облегчённ
 comments: yes
 ---
 
-Какой же блог без комментариев и вездесущих комментаторов? Только на сей раз речь пойдёт не о популярнейших сервисах [[http://disqus.com][Disqus]] и [[http://www.intensedebate.com][IntenseDebate]], а о том, как установить себе комментарии [[https://github.com/phusion/juvia][Juvia]]. Тем самым, мы скажем дружное \laquo{}нет\raquo использованию HTML кода в комментариях, заменив их легковесной разметкой [[http://ru.wikipedia.org/wiki/Markdown][Markdown]], да ещё и с превью комментариев \laquo{}на лету\raquo. На сегодня, именно *Juvia* стала связующим звеном между комментаторами и ведущим этого блога.
+Какой же блог без комментариев и вездесущих комментаторов? Только на сей раз речь пойдёт не о популярнейших сервисах [[http://disqus.com/][Disqus]] и [[http://www.intensedebate.com/][IntenseDebate]], а о том, как установить себе комментарии [[https://github.com/phusion/juvia][Juvia]]. Тем самым, мы скажем дружное \laquo{}нет\raquo использованию HTML кода в комментариях, заменив их легковесной разметкой [[http://ru.wikipedia.org/wiki/Markdown][Markdown]], да ещё и с превью комментариев \laquo{}на лету\raquo. На сегодня, именно *Juvia* стала связующим звеном между комментаторами и ведущим этого блога.
 
 *** Создание приложения Juvia
 
-Система комментариев *Juvia* имеет открытый исходный код, с ней вы не привязаны к какому-либо сервису, а вправе выбирать свой вариант размещения, например, на [[https://www.openshift.com][OpenShift]]. Пробы комментаторского пера с *Juvia* доступны на [[http://juvia-demo.phusion.nl/admin/sites/1/test][тестовой странице]] с логином =a@a.com= и паролем =123456=. Для тех, кому комментарии пришлись по нраву, есть [[https://github.com/openshift/juvia-example][пример Juvia на OpenShift]]. Настройка клиента уже описана [[{% post_url 2012-12-27-jekyll-on-openshift %}][здесь]], поэтому сразу перейдём к созданию приложения
+Система комментариев *Juvia* имеет открытый исходный код, с ней вы не привязаны к какому-либо сервису, а вправе выбирать свой вариант размещения, например, на [[https://www.openshift.com/][OpenShift]]. Пробы комментаторского пера с *Juvia* доступны на [[http://juvia-demo.phusion.nl/][тестовой странице]] с логином =a@a.com= и паролем =123456=. Для тех, кому комментарии пришлись по нраву, есть [[https://github.com/openshift-quickstart/juvia-example][пример Juvia на OpenShift]]. Настройка клиента уже описана [[{% post_url 2012-12-27-jekyll-on-openshift %}][здесь]], поэтому сразу перейдём к созданию приложения
 #+begin_src console
   $ rhc app create juvia ruby-1.9
 #+end_src
@@ -102,7 +102,7 @@ comments: yes
 #+begin_src console
   $ ssh uuid@<app>-<namespace>.rhcloud.com
 #+end_src
-и импортируем данные в его MySQL базу. Только учтите, что /вся предыдущая база данных будет утеряна/. Воспользуемся модификацией [[https://openshift.redhat.com/community/forums/openshift/how-to-import-mysql-exported-db][другого примера с форума OpenShift]], где =[DBNAME]= означает имя базы, куда импортируются данные:
+и импортируем данные в его MySQL базу. Только учтите, что /вся предыдущая база данных будет утеряна/. Воспользуемся модификацией [[https://www.openshift.com/forums/openshift/how-to-import-mysql-exported-db][другого примера с форума OpenShift]], где =[DBNAME]= означает имя базы, куда импортируются данные:
 #+begin_src sh
   mysql -h $OPENSHIFT_MYSQL_DB_HOST -P $OPENSHIFT_MYSQL_DB_PORT \
   -u $OPENSHIFT_MYSQL_DB_USERNAME -p$OPENSHIFT_MYSQL_DB_PASSWORD \

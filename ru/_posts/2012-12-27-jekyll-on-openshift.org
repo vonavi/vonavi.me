@@ -4,11 +4,11 @@ title:    "Дело в красной шляпе: сервер OpenShift от Re
 comments: yes
 ---
 
-Очередной акт пьесы /о бесплатных хостингах для Jekyll/, после успешных [[{% post_url 2012-09-19-jekyll-plugins-on-gh %}][покорения GitHub]] и [[{% post_url 2012-11-12-fast-jekyll-on-heroku %}][укрощения Heroku]], посвящается серверу [[https://openshift.redhat.com][OpenShift]]. Последний представляет собой облачную [[http://ru.wikipedia.org/wiki/Platform_as_a_service][PaaS]]-платформу от небезызвестной компании RedHat на основе открытого исходного кода [[https://openshift.redhat.com/community/open-source][OpenShift Origin]]. Поддержка программ на [[https://openshift.redhat.com/community/developers/technologies][различных языках]], [[https://openshift.redhat.com/community/developers/remote-access][доступ по SSH]] делают установку приложений одновременно гибкой и простой, подробности сего действа в отношении Jekyll и будут изложены ниже.
+Очередной акт пьесы /о бесплатных хостингах для Jekyll/, после успешных [[{% post_url 2012-09-19-jekyll-plugins-on-gh %}][покорения GitHub]] и [[{% post_url 2012-11-12-fast-jekyll-on-heroku %}][укрощения Heroku]], посвящается серверу [[https://www.openshift.com/][OpenShift]]. Последний представляет собой облачную [[http://ru.wikipedia.org/wiki/Platform_as_a_service][PaaS]]-платформу от небезызвестной компании RedHat на основе открытого исходного кода [[http://openshift.github.io/][OpenShift Origin]]. Поддержка программ на [[https://www.openshift.com/developers/technologies][различных языках]], [[https://www.openshift.com/developers/remote-access][доступ по SSH]] делают установку приложений одновременно гибкой и простой, подробности сего действа в отношении Jekyll и будут изложены ниже.
 
 *** Настройка OpenShift и создание приложений
 
-Конечно же, вам стоит начать с [[https://openshift.redhat.com/app/account/new][регистрации на OpenShift]]; управление приложениями осуществляется из [[http://openshift.redhat.com/app/console][web-консоли]] или обычной консоли после установки [[https://openshift.redhat.com/community/developers/install-the-client-tools][клиентской части]]
+Конечно же, вам стоит начать с [[https://openshift.redhat.com/app/account/new][регистрации на OpenShift]]; управление приложениями осуществляется из [[https://openshift.redhat.com/app/console/applications][web-консоли]] или обычной консоли после установки [[https://www.openshift.com/developers/rhc-client-tools-install][клиентской части]]
 #+begin_src console
   $ gem install rhc
 #+end_src
@@ -42,7 +42,7 @@ comments: yes
 
 *** Генерация сайта с Jekyll
 
-OpenShift использует сервер [[https://www.phusionpassenger.com][Passenger]] с интерфейсом [[http://rack.github.com][Rack]], управляется который файлом =config.ru= в директории приложения. При отсутствии =config.ru= за основу сайта берётся содержимое магической папки =public=, которая определяет корень приложения /DocumentRoot/. Без сожалений можно расстаться со всеми файлами приложения, за исключением ключевых директорий =.openshift=, =public= и, пожалуй, =tmp= (как временное хранилище файлов). Чтобы Git не удалял папки =public= и =tmp= (он рассматривает пустые директории как несуществующие), в каждой из них находится пустой файл =.gitkeep=.
+OpenShift использует сервер [[https://www.phusionpassenger.com/][Passenger]] с интерфейсом [[http://rack.github.io/][Rack]], управляется который файлом =config.ru= в директории приложения. При отсутствии =config.ru= за основу сайта берётся содержимое магической папки =public=, которая определяет корень приложения /DocumentRoot/. Без сожалений можно расстаться со всеми файлами приложения, за исключением ключевых директорий =.openshift=, =public= и, пожалуй, =tmp= (как временное хранилище файлов). Чтобы Git не удалял папки =public= и =tmp= (он рассматривает пустые директории как несуществующие), в каждой из них находится пустой файл =.gitkeep=.
 
 При настройке Jekyll на OpenShift, папкой назначения должна быть =public=, а запуск сервера --- отменён (Passenger справляется с такими обязанностями на порядок лучше, чем сервер WEBrick из состава Jekyll), что на языке файла конфигурации =_config.yml= выражается в форме
 #+begin_src yaml
@@ -60,7 +60,7 @@ OpenShift использует сервер [[https://www.phusionpassenger.com][
   !public/.gitkeep
 #+end_src
 
-Однако мы всё ещё не указали запуск Jekyll'а, для чего как раз предназначены скрипты в папке =.openshift/action_hooks/=, каждый из которых соответствует [[https://openshift.redhat.com/community/developers/deploying-and-building-applications][своей стадии запуска]]. Перед этим делом неплохо ознакомиться с [[https://openshift.redhat.com/community/page/openshift-environment-variables][переменными окружения OpenShift]], а также с [[https://openshift.redhat.com/community/developers/get-started][примерами приложений]]. В нашем случае достаточно добавить в =.openshift/action_hooks/build= следующее:
+Однако мы всё ещё не указали запуск Jekyll'а, для чего как раз предназначены скрипты в папке =.openshift/action_hooks/=, каждый из которых соответствует [[https://www.openshift.com/developers/deploying-and-building-applications][своей стадии запуска]]. Перед этим делом неплохо ознакомиться с [[https://www.openshift.com/page/openshift-environment-variables][переменными окружения OpenShift]], а также с [[https://www.openshift.com/developers/get-started][примерами приложений]]. В нашем случае достаточно добавить в =.openshift/action_hooks/build= следующее:
 #+begin_src sh
   # Fix problem with Jekyll and UTF-8
   export LANG=en_US.UTF-8
