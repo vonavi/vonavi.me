@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'jekyll', '~> 1.2.1'
-gem 'pygments.rb', '~> 0.5.2'
+gem 'jekyll', '~> 1.3.0'
+gem 'pygments.rb', '~> 0.5.4'
 gem 'org-ruby'
 gem 'i18n'
 gem 'less'
