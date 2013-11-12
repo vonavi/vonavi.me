@@ -4,11 +4,13 @@ title:    Комментируем вместе с Juvia на облегчённ
 comments: yes
 ---
 
-Какой же блог без комментариев и вездесущих комментаторов? Только на сей раз речь пойдёт не о популярнейших сервисах [[http://disqus.com/][Disqus]] и [[http://www.intensedebate.com/][IntenseDebate]], а о том, как установить себе комментарии [[https://github.com/phusion/juvia][Juvia]]. Тем самым, мы скажем дружное \laquo{}нет\raquo использованию HTML кода в комментариях, заменив их легковесной разметкой [[http://ru.wikipedia.org/wiki/Markdown][Markdown]], да ещё и с превью комментариев \laquo{}на лету\raquo. На сегодня, именно *Juvia* стала связующим звеном между комментаторами и ведущим этого блога.
+Какой же блог без комментариев и вездесущих комментаторов? Только на сей раз речь пойдёт не о популярнейших сервисах [[http://disqus.com/][Disqus]] и [[http://www.intensedebate.com/][IntenseDebate]], а о том, как установить себе комментарии [[https://github.com/phusion/juvia][Juvia]]. Тем самым, мы скажем дружное \laquo{}нет\raquo использованию HTML кода в комментариях, заменив его легковесной разметкой [[http://ru.wikipedia.org/wiki/Markdown][Markdown]], да ещё и с превью комментариев \laquo{}на лету\raquo. На сегодня, именно *Juvia* стала связующим звеном между комментаторами и ведущим этого блога.
 
 *** Создание приложения Juvia
 
-Система комментариев *Juvia* имеет открытый исходный код, с ней вы не привязаны к какому-либо сервису, а вправе выбирать свой вариант размещения, например, на [[https://www.openshift.com/][OpenShift]]. Пробы комментаторского пера с *Juvia* доступны на [[http://juvia-demo.phusion.nl/][тестовой странице]] с логином =a@a.com= и паролем =123456=. Для тех, кому комментарии пришлись по нраву, есть [[https://github.com/openshift-quickstart/juvia-example][пример Juvia на OpenShift]]. Настройка клиента уже описана [[{% post_url 2012-12-27-jekyll-on-openshift %}][здесь]], поэтому сразу перейдём к созданию приложения
+Система комментариев *Juvia* имеет открытый исходный код, с ней вы не привязаны к какому-либо сервису, а вправе выбирать свой вариант размещения, например, на [[https://www.openshift.com/][OpenShift]]. Пробы комментаторского пера с *Juvia* доступны на [[http://juvia-demo.phusion.nl/][тестовой странице]] с логином =a@a.com= и паролем =123456=. Для тех, кому комментарии пришлись по нраву, есть мой [[https://github.com/vonavi/juvia-openshift][пример Juvia на OpenShift]]. Не рекомендую пользоваться [[https://github.com/openshift-quickstart/juvia-example][другим примером]], который на сегодня устарел и не поддерживает, например, изменение порядка комментариев.
+
+Настройка аккаунта на *OpenShift* уже описана [[{% post_url 2012-12-27-jekyll-on-openshift %}][здесь]], поэтому сразу перейдём к созданию приложения
 #+begin_src console
   $ rhc app create juvia ruby-1.9
 #+end_src
@@ -22,7 +24,7 @@ comments: yes
 #+end_src
 и добавим удалённый репозиторий с примером *Juvia* на *OpenShift*
 #+begin_src console
-  $ git remote add juvia -m master git://github.com/openshift/juvia-example.git
+  $ git remote add juvia -m master git://github.com/vonavi/juvia-openshift.git
 #+end_src
 Остаётся перенести его в нашу директорию. Ввиду возможных конфликтов, условимся со стратегией их разрешения:
 #+begin_src console
@@ -53,23 +55,24 @@ comments: yes
 
 *** Подключение комментариев к блогу
 
-В раздел *Sites* админки *Juvia* добавляете свой блог и получаете уникальный ключ сайта. На странице *Help* приведён JavaScript-сценарий, который нужно всего лишь добавить к страницам, где планируются комментарии. Первый раздел JavaScript, где указаны =options=, я модифицировал под использование совместно с *Jekyll*:
+В раздел \laquo{}Sites\raquo админки *Juvia* добавляете свой блог и получаете уникальный ключ сайта. [[http://juvia-demo.phusion.nl/admin/help/embedding][На странице помощи]] приведён JavaScript-сценарий, который нужно всего лишь добавить к страницам, где планируются комментарии. Первый раздел JavaScript, где указаны =options=, я модифицировал под использование совместно с *Jekyll*:
 #+begin_src js
   {% raw %}var options = {
-    container   : '#comments',
-    site_key    : '(some site key)',
-    topic_key   : '{{ page.url }}',
-    topic_url   : '{{ site.url }}{{ page.url }}',
-    topic_title : '{{ page.title }}' || '{{ site.url }}{{ page.url }}',
-    include_base: !window.Juvia,
-    include_css : !window.Juvia
+    container    : '#comments',
+    site_key     : '(some site key)',
+    topic_key    : '{{ page.url }}',
+    topic_url    : '{{ site.url }}{{ page.url }}',
+    topic_title  : '{{ page.title }}' || '{{ site.url }}{{ page.url }}',
+    include_base : !window.Juvia,
+    include_css  : !window.Juvia,
+    comment_order: 'earliest-first'
   };{% endraw %}
 #+end_src
-Главное его отличие заключается в =topic_key=, однозначно задающим ключ страницы с  комментариями. Если оставить его как =location.pathname=, то страница вида =index.html= будет идентифицироваться по-разному, в зависимости от того, был введён в адресной строке браузера URL с явным указанием =index.html= или нет. Форму для отправки комментариев создавать не нужно, достаточно разместить на её месте элемент
+Главное его отличие заключается в =topic_key=, однозначно задающим ключ страницы с комментариями. Если оставить его как =location.pathname=, то страница вида =index.html= будет идентифицироваться по-разному, в зависимости от того, был введён в адресной строке браузера URL с явным указанием =index.html= или нет. Форму для отправки комментариев создавать не нужно, достаточно разместить на её месте элемент
 #+begin_src html
   <div id="comments"></div>
 #+end_src
-(или с любым другим /id/, указанном в свойстве =container=).
+(или с любым другим =id=, указанном в свойстве =container=).
 
 *** Работа с копиями MySQL базы
 
@@ -89,7 +92,7 @@ comments: yes
   -u $OPENSHIFT_MYSQL_DB_USERNAME -p$OPENSHIFT_MYSQL_DB_PASSWORD \
   juvia > $OPENSHIFT_TMP_DIR/juvia.sql
 #+end_src
-Имя базы =juvia= должно совпадать с именем приложения. Отметим, что пароль администратора базы данных задаётся /без разделяющего пробела/, то есть =-p$OPENSHIFT_MYSQL_DB_PASSWORD=. В результате будет создан файл =/tmp/juvia.sql=, содержащий дамп MySQL базы. Скопировать дамп на локальный компьютер можно утилитой [[http://ru.wikipedia.org/wiki/SCP][SCP]], работа которой схожа с обычной командой =cp=:
+Имя базы =juvia= должно совпадать с именем приложения. Отметим, что пароль администратора базы данных /задаётся без разделяющего пробела/, то есть =-p$OPENSHIFT_MYSQL_DB_PASSWORD=. В результате будет создан файл =/tmp/juvia.sql=, содержащий дамп MySQL базы. Скопировать дамп на локальный компьютер можно утилитой [[http://ru.wikipedia.org/wiki/SCP][SCP]], работа которой схожа с обычной командой =cp=:
 #+begin_src console
   $ scp uuid@juvia-<namespace>.rhcloud.com:/tmp/juvia.sql .
 #+end_src
