@@ -11,8 +11,6 @@ safe:        false
 pygments:    false
 paginate:    5                  # the number of post per page
 
-encoding:   UTF-8
-gems:       ['jekyll-assets']
 exclude:    ['Gemfile*', 'README', 'vendor']
 keep_files: ['.gitkeep']
 

@@ -4,5 +4,8 @@
 # before the deploy step.  This script gets executed directly, so it
 # could be python, php, ruby, etc.
 
+# Fix problem with Jekyll and UTF-8
+export LANG=en_US.UTF-8
+
 cd $OPENSHIFT_REPO_DIR
 bundle exec jekyll build
