@@ -14,7 +14,7 @@ comments: yes
 
 В разделе /\laquo{}Разметка дисков\raquo/ выбираем /\laquo{}Вручную\raquo/, и далее --- /\laquo{}Настройка менеджера логических томов (LVM)\raquo/:
 
-[[{{ site.imgdir }}/partman_active_partition_0.png][{{ site.imgdir }}/partman_active_partition_0.png]]
+[[{{ site.imgdir }}/partman-active-partition-0.png][{{ site.imgdir }}/partman-active-partition-0.png]]
 
 *** Настройка менеджера логических томов
 
@@ -28,13 +28,13 @@ comments: yes
 
 Настройка начинается с создания группы томов:
 
-[[{{ site.imgdir }}/partman-lvm_mainmenu_0.png][{{ site.imgdir }}/partman-lvm_mainmenu_0.png]]
+[[{{ site.imgdir }}/partman-lvm-mainmenu-0.png][{{ site.imgdir }}/partman-lvm-mainmenu-0.png]]
 
 Я отвёл под группу =debian= весь диск sda. Вы можете использовать свои названия групп, в любом сочетании с имеющимися дисками и разделами. Учтите, что /после записи изменений на диск, вся информация на нём будет потеряна/.
 
 *** Создание логических томов
 
-[[{{ site.imgdir }}/partman-lvm_mainmenu_1.png][{{ site.imgdir }}/partman-lvm_mainmenu_1.png]]
+[[{{ site.imgdir }}/partman-lvm-mainmenu-1.png][{{ site.imgdir }}/partman-lvm-mainmenu-1.png]]
 
 Соответствует созданию обычных разделов, среди которых у нас будут:
 
@@ -46,7 +46,7 @@ comments: yes
 
 Для примера, поделюсь настройкой корневого тома:
 
-[[{{ site.imgdir }}/partman_choose_partition_0.png][{{ site.imgdir }}/partman_choose_partition_0.png]]
+[[{{ site.imgdir }}/partman-choose-partition-0.png][{{ site.imgdir }}/partman-choose-partition-0.png]]
 
 Каждому тому можно задать свой тип файловой системы, точку и опции монтирования.
 
@@ -54,7 +54,7 @@ comments: yes
 
 Картина расположения томов получилась следующей:
 
-[[{{ site.imgdir }}/partman_choose_partition_1.png][{{ site.imgdir }}/partman_choose_partition_1.png]]
+[[{{ site.imgdir }}/partman-choose-partition-1.png][{{ site.imgdir }}/partman-choose-partition-1.png]]
 
 Теперь же вам осталось выбрать зеркала архивов для менеджера пакетов APT, на этом установка *Debian* завершена.
 
