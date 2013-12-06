@@ -1,4 +1,4 @@
-.ruby-*
-public/*
-!public/.gitkeep
-_drafts/
+/.ruby-*
+/public/*
+!/public/.gitkeep
+/*/_drafts/
