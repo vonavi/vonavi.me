@@ -1,0 +1,110 @@
+---
+layout:   post
+title:    Раздача Wi-Fi на ноутбуке с использованием NetworkManager
+comments: yes
+---
+
+Интернет глубоко и прочно проник в нашу жизнь и сознание. Настолько, что вне доступа к нему трудно представить работу ставших обыденными для нас вещей, таких как планшет или смартфон. И всё хорошо, если бы не необходимость Wi-Fi сети, паутина которой ещё не полностью охватила наше жизненное пространство. А её отсутствие способно превратить столь дорогие нашему сердцу вещи в красивые безделушки. Но не всё потеряно, если под рукой имеется ноутбук с подключением к сети Интернет и Wi-Fi картой с режимом точки доступа.
+
+*** Настройка Wi-Fi на ноутбуке
+
+Все шаги по настройке проводились на ноутбуке [[http://www.notebookcheck-ru.com/Obzor-subnoutbuka-Dell-Vostro-3350.54704.0.html][Dell Vostro 3350]] с установленной *Gentoo*, и в других случаях должны рассматриваться только как приближённое руководство. Следуя [[http://wiki.gentoo.org/wiki/Wifi][Gentoo Wiki]], установим пакет =sys-apps/pciutils= и узнаем модель нашей Wi-Fi карты
+#+begin_src console
+  # lspci | grep -i network
+  09:00.0 Network controller: Intel Corporation Centrino Wireless-N 1030 [Rainbow Peak] (rev 34)
+#+end_src
+Теперь настроим ядро *Linux*
+#+begin_src kernel-config
+  [*] Networking support  --->
+    [*]   Wireless  --->
+      [*]   cfg80211 - wireless configuration API
+      [*]   Generic IEEE 802.11 Networking Stack (mac80211)
+      [*]   Enable LED triggers
+
+  Device Drivers  --->
+    Generic Driver Options  --->
+      [*] Userspace firmware loading support
+      [*] Fallback user-helper invocation for firmware loading
+
+    [*] Network device support  --->
+      [*]   Wireless LAN  --->
+        [*]   Intel Wireless WiFi Next Gen AGN - Wireless-N/Advanced-N/Ultimate-N (iwlwifi)
+        [*]     Intel Wireless WiFi DVM Firmware support
+#+end_src
+Такая настройка раздела /\laquo{}Device Drivers\raquo/ характерна для карт *Intel Wireless WiFi*, многие из которых требуют догрузки микрокода из пространства пользователя.
+
+В выборе нужной прошивки (/firmware/) нам снова поможет страница [[http://wiki.gentoo.org/wiki/Wifi][Gentoo Wiki]] (например, моей Wi-Fi карте подошла =sys-firmware/iwl6030-ucode=). Можно не вдаваться в детали и сразу ставить все прошивки для ядра *Linux*: =sys-kernel/linux-firmware=. Загрузка с новым ядром и проверка догрузки прошивки прошли на ура:
+#+begin_src console
+  $ dmesg | grep firmware
+  [    5.420695] iwlwifi 0000:09:00.0: loaded firmware version 18.168.6.1 op_mode iwldvm
+#+end_src
+Теперь вывод =ifconfig -a= должен показать интерфейс Wi-Fi карты =wlan0=.
+
+*** Точка доступа Wi-Fi усилиями NetworkManager
+
+Проверим, поддерживает ли Wi-Fi карта режим точки доступа (/Access Point/), с помощью команды =iw list=, что доступна после установки =net-wireless/iw=. Среди /\laquo{}Supported interface modes\raquo/ должна быть запись =AP=.
+
+Традиционно точка доступа в *Linux* настраивалась через [[http://en.wikipedia.org/wiki/HostAP][HostAP]], и вот, не так давно такая возможность появилась в [[https://projects.gnome.org/NetworkManager/][NetworkManager]], в версии 0.9.8. Сам режим точки доступа, а также поддержка [[http://ru.wikipedia.org/wiki/WPA][WPA/WPA2 шифрования]], предоставлены [[http://hostap.epitest.fi/wpa_supplicant/][WPA Supplicant]]. Выставим флаги установки:
+#+begin_src text
+  net-wireless/wpa_supplicant     ap
+  net-misc/networkmanager         connection-sharing wifi
+#+end_src
+На данный момент у меня стоит [[http://ru.wikipedia.org/wiki/KDE][KDE]], где достаточно установить =kde-misc/networkmanagement= и добавить виджет /\laquo{}Управление сетью\raquo/. Настройка виджета очень проста: заходим в /\laquo{}Управление соединениями\raquo/ \to /\laquo{}Беспроводные\raquo/ и добавляем /\laquo{}Общедоступное\raquo/ соединение.
+
+[[{{ site.imgdir }}/shared-wireless-connection-1.png][{{ site.imgdir }}/shared-wireless-connection-1.png]]
+
+Выбираем защиту сети /\laquo{}WPA/WPA2 Personal\raquo/ и вводим пароль (соединение не создаётся, пока пароль не имеет достаточной длины).
+
+[[{{ site.imgdir }}/shared-wireless-connection-2.png][{{ site.imgdir }}/shared-wireless-connection-2.png]]
+
+И настраиваем IP-адреса:
+
+[[{{ site.imgdir }}/shared-wireless-connection-3.png][{{ site.imgdir }}/shared-wireless-connection-3.png]]
+
+Wi-Fi точка доступа будет создаваться при подключении к данному соединению.
+
+*** Настройка IPTables и NAT
+
+Для раздачи трафика по Wi-Fi настроим [[http://ru.wikipedia.org/wiki/Iptables][IPTables]]. В простом случае достаточно поддержки следующих возможностей в ядре *Linux*:
+#+begin_src kernel-config
+  [*] Networking support  --->
+    Networking options  --->
+      [*] TCP/IP networking
+      [*]   IP: advanced router
+
+      [*] Network packet filtering framework (Netfilter)  --->
+        Core Netfilter Configuration  --->
+          [*] Netfilter connection tracking support
+
+        IP: Netfilter Configuration  --->
+          [*] IPv4 connection tracking support (required for NAT)
+          [*] IP tables support (required for filtering/masq/NAT)
+          [*]   Packet filtering
+          [*]   IPv4 NAT
+          [*]     MASQUERADE target support
+#+end_src
+
+Затем откроем =/etc/sysctl.conf= и исправим строки
+#+begin_src sh
+  # Disables packet forwarding
+  net.ipv4.ip_forward = 0
+#+end_src
+на
+#+begin_src sh
+  # Enables packet forwarding
+  net.ipv4.ip_forward = 1
+#+end_src
+Новые настройки вступят в силу с перезапуском службы =sysctl=.
+
+[[http://www.opennet.ru/docs/RUS/iptables/][Подробное руководство]] по *IPTables* включает сценарий [[http://www.opennet.ru/docs/RUS/iptables/misc/iptables-tutorial/scripts/rc.flush-iptables.txt][rc.flush-iptables]], который сбрасывает все IP-таблицы. И начнём мы с его запуска, заменив значение переменной =IPTABLES= на правильный путь к утилите =iptables=. После чего вводим команду
+#+begin_src console
+  # iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+#+end_src
+и наслаждаемся доступом в Интернет через Wi-Fi. Для сохранения текущих таблиц достаточно перезапустить службу =iptables=
+#+begin_src console
+  # /etc/init.d/iptables restart
+#+end_src
+И не забудьте добавить её в автозапуск
+#+begin_src console
+  # rc-update add iptables default
+#+end_src
