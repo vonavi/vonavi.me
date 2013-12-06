@@ -56,8 +56,8 @@ comments: yes
 #+end_src
 Остальные файлы в директории назначения *Git* должен игнорировать в соответствии со строками в =.gitignore=
 #+begin_src sh
-  public/*
-  !public/.gitkeep
+  /public/*
+  !/public/.gitkeep
 #+end_src
 
 Однако мы всё ещё не указали запуск *Jekyll*-а, для чего как раз предназначены скрипты в директории =.openshift/action_hooks/=, каждый из которых соответствует [[https://www.openshift.com/developers/deploying-and-building-applications][своей стадии запуска]]. Перед этим делом неплохо ознакомиться с [[https://www.openshift.com/page/openshift-environment-variables][переменными окружения OpenShift]], а также с [[https://www.openshift.com/developers/get-started][примерами приложений]]. В нашем случае достаточно добавить в =.openshift/action_hooks/build= следующее:

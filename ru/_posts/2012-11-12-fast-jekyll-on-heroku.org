@@ -65,7 +65,7 @@ comments: yes
 #+end_src
 Внесём =_site/= в список игнорируемых
 #+begin_src console
-  $ echo '_site/' >> .gitignore
+  $ echo '/_site/' >> .gitignore
 #+end_src
 
 После чего остаётся наполнить новый сайт содержанием и развернуть приложение на *Heroku*:
