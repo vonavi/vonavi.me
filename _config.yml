@@ -6,13 +6,13 @@ googleplus:  https://plus.google.com/106537166685709212154
 
 destination: public
 permalink:   pretty
-safe:        false
-# Default python pygments have been replaced by pygments.rb
-pygments:    false
 paginate:    5                  # the number of post per page
 
 exclude:    ['Gemfile*', 'README', 'vendor']
 keep_files: ['.gitkeep']
+gems:       ['jekyll-assets']
+
+encoding: UTF-8
 
 #
 # Plugin: jekyll-assets
