@@ -47,7 +47,7 @@ title: Раздача Wi-Fi на ноутбуке с использование�
   net-wireless/wpa_supplicant     ap
   net-misc/networkmanager         connection-sharing wifi
 #+end_src
-На данный момент у меня стоит [[http://ru.wikipedia.org/wiki/KDE][KDE]], где достаточно установить =kde-misc/networkmanagement= и добавить виджет /\laquo{}Управление сетью\raquo/. Настройка виджета очень проста: заходим в /\laquo{}Управление соединениями\raquo/ \to /\laquo{}Беспроводные\raquo/ и добавляем /\laquo{}Общедоступное\raquo/ соединение.
+На данный момент у меня стоит [[http://ru.wikipedia.org/wiki/KDE][KDE]], где достаточно установить =kde-misc/plasma-nm=, добавить виджет /\laquo{}Network Management\raquo/ и с его помощью создать новое соединение /\laquo{}Wireless (shared)\raquo/.
 
 [[{{ site.imgdir }}/shared-wireless-connection-1.png][{{ site.imgdir }}/shared-wireless-connection-1.png]]
 

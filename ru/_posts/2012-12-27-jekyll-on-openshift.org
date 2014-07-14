@@ -42,15 +42,13 @@ title: "Дело в красной шляпе: сервер OpenShift от RedHa
 
 *OpenShift* использует модуль [[https://www.phusionpassenger.com/][Passenger]] (существует в вариациях для *Apache* и *Nginx*), предоставляющий интерфейс [[http://rack.github.io/][Rack]], который в свою очередь управляется файлом =config.ru= в директории приложения. При отсутствии =config.ru= за основу сайта берётся содержимое магической директории =public/=, которая определяет корень приложения /DocumentRoot/. Без сожалений можно расстаться со всеми файлами приложения, за исключением ключевых директорий =.openshift/=, =public/= и, пожалуй, =tmp/= (как временное хранилище файлов). Чтобы *Git* не удалял директории =public/= и =tmp/= (он рассматривает пустые директории как несуществующие), в каждой из них находится пустой файл =.gitkeep=.
 
-При настройке *Jekyll* на *OpenShift*, директорией назначения должна быть =public/=, а запуск сервера отменён (*Passenger* справляется с такими обязанностями на порядок лучше, чем сервер *WEBrick* из состава *Jekyll*), что на языке файла конфигурации =_config.yml= выражается в форме
+За генерацию содержимого сайта будет отвечать *Jekyll*, а функции сервера переложим на плечи *Passenger*, который справляется с такими обязанностями на порядок лучше, чем сервер *WEBrick* из состава *Jekyll*. Поэтому директорией назначения в =_config.yml= должна быть указана =public/=:
 #+begin_src yaml
-  auto: false
-  server: false
   destination: public
 #+end_src
-Не забудем и о файле =public/.gitkeep= (иначе *Jekyll* его запросто удалит). *Jekyll* игнорирует все скрытые файлы, кроме тех, что явно указаны директивой =include= (начиная с версии 0.12). Нужно создать пустой файл =.gitkeep= в директории с исходниками и добавить в =_config.yml= запись
+Позаботимся о том, чтобы *Jekyll* не удалял файл =public/.gitkeep=, добавив в =_config.yml= запись
 #+begin_src yaml
-  include: ['.gitkeep']
+  keep_files: ['.gitkeep']
 #+end_src
 Остальные файлы в директории назначения *Git* должен игнорировать в соответствии со строками в =.gitignore=
 #+begin_src sh
@@ -60,11 +58,8 @@ title: "Дело в красной шляпе: сервер OpenShift от RedHa
 
 Однако мы всё ещё не указали запуск *Jekyll*'а, для чего как раз предназначены скрипты в директории =.openshift/action_hooks/=, каждый из которых соответствует [[https://www.openshift.com/developers/deploying-and-building-applications][своей стадии запуска]]. Перед этим делом неплохо ознакомиться с [[https://www.openshift.com/page/openshift-environment-variables][переменными окружения OpenShift]], а также с [[https://www.openshift.com/developers/get-started][примерами приложений]]. В нашем случае достаточно добавить в =.openshift/action_hooks/build= следующее:
 #+begin_src sh
-  # Fix problem with Jekyll and UTF-8
-  export LANG=en_US.UTF-8
-
   cd $OPENSHIFT_REPO_DIR
-  bundle exec jekyll
+  bundle exec jekyll build
 #+end_src
 
 *** Заключительные штрихи по настройке
@@ -78,6 +73,10 @@ title: "Дело в красной шляпе: сервер OpenShift от RedHa
 и выполним команду
 #+begin_src console
   $ bundle install
+#+end_src
+Во избежание проблем с кодировкой укажем в =_config.yml=
+#+begin_src yaml
+  encoding: UTF-8
 #+end_src
 После чего развернём приложение на *OpenShift*:
 #+begin_src console
