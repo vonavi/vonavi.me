@@ -56,7 +56,7 @@ title: "Дело в красной шляпе: сервер OpenShift от RedHa
   !/public/.gitkeep
 #+end_src
 
-Однако мы всё ещё не указали запуск *Jekyll*'а, для чего как раз предназначены скрипты в директории =.openshift/action_hooks/=, каждый из которых соответствует [[https://www.openshift.com/developers/deploying-and-building-applications][своей стадии запуска]]. Перед этим делом неплохо ознакомиться с [[https://www.openshift.com/page/openshift-environment-variables][переменными окружения OpenShift]], а также с [[https://www.openshift.com/developers/get-started][примерами приложений]]. В нашем случае достаточно добавить в =.openshift/action_hooks/build= следующее:
+Однако мы всё ещё не указали запуск *Jekyll*-а, для чего как раз предназначены скрипты в директории =.openshift/action_hooks/=, каждый из которых соответствует [[https://www.openshift.com/developers/deploying-and-building-applications][своей стадии запуска]]. Перед этим делом неплохо ознакомиться с [[https://www.openshift.com/page/openshift-environment-variables][переменными окружения OpenShift]], а также с [[https://www.openshift.com/developers/get-started][примерами приложений]]. В нашем случае достаточно добавить в =.openshift/action_hooks/build= следующее:
 #+begin_src sh
   cd $OPENSHIFT_REPO_DIR
   bundle exec jekyll build
@@ -64,7 +64,7 @@ title: "Дело в красной шляпе: сервер OpenShift от RedHa
 
 *** Заключительные штрихи по настройке
 
-Для установки gem'ов, необходимых приложению, создадим =Gemfile=
+Для установки gem-ов, необходимых приложению, создадим =Gemfile=
 #+begin_src ruby
   source 'https://rubygems.org'
 
