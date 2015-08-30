@@ -1,6 +1,5 @@
 ---
-layout: default
-title:  О блоге
+title: О блоге
 ---
 
 ** О блоге

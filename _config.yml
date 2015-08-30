@@ -17,11 +17,24 @@ encoding: UTF-8
 # Default site configuration
 defaults:
   - scope:
-      path: ''
-      type: post
+      path: ru
+      type: pages
+    values:
+      layout: default
+
+  - scope:
+      path: ru
+      type: posts
     values:
       layout:   post
       comments: true
+
+  - scope:
+      path: ru
+      type: drafts
+    values:
+      layout:   post
+      comments: false
 
 #
 # Plugin: jekyll-assets
