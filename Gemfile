@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'jekyll', '~> 2.1'
+gem 'jekyll', '~> 2.5'
 gem 'org-ruby'
 gem 'i18n'
 gem 'less'
