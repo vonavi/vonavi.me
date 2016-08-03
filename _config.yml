@@ -10,7 +10,7 @@ paginate:    5                  # the number of post per page
 
 exclude:    ['Gemfile*', 'README', 'vendor']
 keep_files: ['.gitkeep']
-gems:       ['jekyll-assets']
+gems:       ['jekyll-assets', 'jekyll-paginate']
 
 encoding: UTF-8
 
@@ -35,14 +35,3 @@ defaults:
     values:
       layout:   post
       comments: false
-
-#
-# Plugin: jekyll-assets
-#
-assets:
-  #
-  # Sets compressors. No compression by default.
-  #
-  compress:
-    js:  yui
-    css: yui

@@ -5,4 +5,5 @@
 # could be python, php, ruby, etc.
 
 cd $OPENSHIFT_REPO_DIR
+export JEKYLL_ENV=production
 bundle exec jekyll build

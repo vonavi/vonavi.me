@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'jekyll', '~> 2.5'
+gem 'jekyll', '~> 3.2'
+gem 'jekyll-assets'
+gem 'jekyll-paginate'
 gem 'org-ruby'
 gem 'i18n'
 gem 'less'
 gem 'therubyracer'
-gem 'jekyll-assets'
-gem 'yui-compressor'
+gem 'autoprefixer-rails'
 
 group :development do
   # Automatically reload your browser when 'view' files are modified
