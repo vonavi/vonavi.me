@@ -1,8 +1,0 @@
----
----
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-</IfModule>
-
-RewriteCond %{HTTP_HOST} ^jekyll-vonavi.rhcloud.com$
-RewriteRule (.*)$ {{ site.url }}/$1 [R=301,L]
