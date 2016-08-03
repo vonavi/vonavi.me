@@ -1,4 +1,12 @@
+# Ignore 'jekyll-assets' cache
+/.asset-cache/
+
+# Ignore RVM data
 /.ruby-*
+
+# Ignore auto-generated Jekyll files
 /public/*
 !/public/.gitkeep
+
+# Ignore drafts
 /*/_drafts/
