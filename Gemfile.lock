@@ -106,6 +106,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
+  bundler
   guard-livereload
   i18n
   jekyll (~> 3.2)

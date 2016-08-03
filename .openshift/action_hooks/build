@@ -8,5 +8,4 @@
 export LANG=en_US.UTF-8
 
 cd $OPENSHIFT_REPO_DIR
-gem install bundler
 JEKYLL_ENV=production bundle exec jekyll build
