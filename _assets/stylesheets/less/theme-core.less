@@ -11,7 +11,10 @@ html {
 .navbar-default {
   #gradient .vertical(lighten(@dark-blue, 10%), @dark-blue);
 }
-.navbar-nav a { .user-select(none); }
+.navbar-nav a {
+  font: bold @font-size-small~"/"@line-height-base @content-font-family;
+  .user-select(none);
+}
 
 
 // Page Header
@@ -33,6 +36,7 @@ html {
 
   .description {
     font-size: 16px;
+    font-style: italic;
     color: @blue;
     cursor: default;
   }
@@ -109,6 +113,7 @@ h2 a {
   &:hover { color: @cyan; }
 }
 
+p { text-align: justify; }
 #content-wrapper { font-family: @content-font-family; }
 blockquote p {
   font: italic @font-size-base~"/"@line-height-base @content-font-family;
@@ -152,7 +157,7 @@ pre::-webkit-scrollbar-thumb:horizontal {
 // -------------------------
 
 .btn {
-  font-family: @font-family-sans-serif;
+  font: bold @font-size-small~"/"@line-height-base @content-font-family;
   text-decoration: none !important;
   .box-shadow(0 1px 2px rgba(0,0,0,.4));
 }
