@@ -10,7 +10,6 @@ paginate:    5                  # the number of post per page
 
 exclude:    ['Gemfile*', 'README', 'vendor']
 keep_files: ['.gitkeep']
-gems:       ['jekyll-assets', 'jekyll-paginate']
 
 encoding: UTF-8
 

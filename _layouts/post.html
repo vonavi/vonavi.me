@@ -6,7 +6,7 @@ layout: default
 <p>{{ page.date | localize: '%d %b %Y' }}</p>
 {{ content }}
 <p><a href="#" class="btn btn-primary">
-  <span class="glyphicon glyphicon-arrow-up"></span> Наверх
+  {% octicon arrow-up %} Наверх
 </a></p>
 
 {% if page.comments %}

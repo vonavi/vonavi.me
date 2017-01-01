@@ -84,20 +84,14 @@ html, body {
 // Glyphicons
 // -------------------------
 
-.glyphicon {
-  font-size: @font-size-base;
-  width: 1em;
-  color: @green;
+.octicon {
+  display: inline-block;
+  height: 22px;
+  vertical-align: top;
+  margin-right: 1px;
+  fill: @green;
 }
-a:hover .glyphicon { color: @light-cyan; }
-
-// Individual icons
-.glyphicon-home { &:before { content: "\f08d"; } }
-.glyphicon-archive { &:before { content: "\f096"; } }
-.glyphicon-about { &:before { content: "\f059"; } }
-.glyphicon-feed { &:before { content: "\f034"; } }
-.glyphicon-arrow-right { &:before { content: "\f03e"; } }
-.glyphicon-arrow-up { &:before { content: "\f03d"; } }
+a:hover .octicon { fill: @light-cyan; }
 
 
 // Typography
