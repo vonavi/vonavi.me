@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'bundler'
-gem 'jekyll', '~> 3.2.1'
+gem 'jekyll', '~> 3.3.1'
 gem 'org-ruby'
 gem 'i18n'
 gem 'less'
