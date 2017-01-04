@@ -14,6 +14,7 @@ gem 'rack', '~> 1.6.4'
 
 group :jekyll_plugins do
   gem 'jekyll-assets'
+  gem 'jekyll-feed'
   gem 'jekyll-livereload'
   gem 'jekyll-paginate'
   gem 'jekyll-octicons'
